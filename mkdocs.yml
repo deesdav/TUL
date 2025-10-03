@@ -7,8 +7,8 @@ theme:
     - navigation.instant
     - navigation.tabs
     - navigation.sections
-    - navigation.expand          # sidebar otevřený podle sekce
-    - navigation.footer          # tlačítka Next / Previous dole
+    - navigation.expand # sidebar otevřený podle sekce
+    - navigation.footer # tlačítka Next / Previous dole
     - toc.integrate
     - header.autohide
     - navigation.top
@@ -17,21 +17,34 @@ theme:
     - search.share
     - content.code.copy
     - content.code.annotate
-    - content.code.select        # umožní vybrat celý blok kódu jedním klikem
+    - content.code.select # umožní vybrat celý blok kódu jedním klikem
     - content.tabs.link
     - content.action.edit
-    - content.action.view        # tlačítko „View source“ u každé stránky
-    - content.footnote.tooltips  # poznámky pod čarou jako tooltipy
-    - content.tooltips           # tooltipy na definice
+    - content.action.view # tlačítko „View source“ u každé stránky
+    - content.footnote.tooltips # poznámky pod čarou jako tooltipy
+    - content.tooltips # tooltipy na definice
     - announce.dismiss
   plugins:
     - search
-    - glightbox        # klikneš na obrázek → otevře se v lightboxu
+    - glightbox # klikneš na obrázek → otevře se v lightboxu
     - git-revision-date-localized
     - git-revision-date
-    - minify:               # zmenší CSS/JS → rychlejší web
+    - minify: # zmenší CSS/JS → rychlejší web
         minify_html: true
-    - offline     
+    - offline
+    - pwa:
+      manifest:
+        name: TUL
+        short_name: TUL
+        start_url: /
+        display: standalone
+        background_color: "#ffffff"
+        theme_color: "#2196f3"
+    - seo:
+      site_name: TUL
+      site_description: "Výukové materiály TUL – programování, matematika, Linux, Matlab a další."
+      site_author: David
+      twitter: "@tul_example"
   palette:
     - scheme: default
       primary: blue
@@ -51,8 +64,8 @@ theme:
 
 extra:
   analytics:
-      provider: google
-      property: G-XXXXXXXXXX
+    provider: google
+    property: G-XXXXXXXXXX
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/
@@ -68,15 +81,15 @@ markdown_extensions:
   - codehilite
   - pymdownx.superfences
   - pymdownx.tabbed
-  - pymdownx.details        # skládací bloky (accordion)
-  - pymdownx.mark           # zvýraznění textu ==takto==
-  - pymdownx.keys           # vykreslování kláves jako <kbd>Ctrl</kbd>+<kbd>C</kbd>
-  - pymdownx.progressbar    # progress bary [=60%]
-  - pymdownx.tasklist       # checkboxy v seznamu
+  - pymdownx.details # skládací bloky (accordion)
+  - pymdownx.mark # zvýraznění textu ==takto==
+  - pymdownx.keys # vykreslování kláves jako <kbd>Ctrl</kbd>+<kbd>C</kbd>
+  - pymdownx.progressbar # progress bary [=60%]
+  - pymdownx.tasklist # checkboxy v seznamu
   - pymdownx.emoji
-  - pymdownx.inlinehilite   # zvýraznění kódu v řádku `print("hi")`
-  - pymdownx.snippets       # můžeš vkládat kousky MD z jiných souborů
-  - pymdownx.highlight   # zvýraznění kódu s volbami
+  - pymdownx.inlinehilite # zvýraznění kódu v řádku `print("hi")`
+  - pymdownx.snippets # můžeš vkládat kousky MD z jiných souborů
+  - pymdownx.highlight # zvýraznění kódu s volbami
   - toc:
       permalink: true
   - pymdownx.arithmatex:
@@ -91,4 +104,3 @@ nav:
   - Shell Linux: shell_linux/index.md
   - Matlab: matlab/index.md
   - Inženýrství: inzenyrstvi/index.md
-  - Dokumenty: dokumenty/index.md
