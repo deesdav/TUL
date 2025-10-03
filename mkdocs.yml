@@ -1,0 +1,17 @@
+site_name: TUL
+theme:
+  name: material
+nav:
+  - Home: index.md
+  - Algoritmizace programovani Java 1:
+    - Overview: algoritmizace_programovani_java_1/index.md
+  - Dokumenty:
+    - Overview: dokumenty/index.md
+  - Lineární algebra / Diskrétní mat:
+    - Overview: linearni_algerbra_diskretni_mat/index.md
+  - Matematika 1:
+    - Overview: matematika_1/index.md
+  - Shell Linux:
+    - Overview: shell_linux/index.md
+  - Matlab:
+    - Scripts: matlab/index.md
