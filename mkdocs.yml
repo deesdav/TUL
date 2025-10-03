@@ -98,13 +98,13 @@ extra_javascript:
   - https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js
 nav:
   - Domovská stránka: index.md
-  - Algoritmizace programovaní Java 1: algoritmizace_programovani_java_1/index.md
+  - Programování Java 1: algoritmizace_programovani_java_1/index.md
   - Lineární algebry a diskrétní mat: linearni_algerbra_diskretni_mat/index.md
   - Matematika 1: matematika_1/index.md
   - Matematika Seminář: seminar/index.md
-  - Úvod do shellu: shell_linux/index.md
+  - Shell: shell_linux/index.md
   - Matlab: matlab/index.md
-  - Úvod do Inženýrství: inzenyrstvi/index.md
+  - Inženýrství: inzenyrstvi/index.md
   - Odkazy: odkazy/index.md
 
   # py -m mkdocs build
