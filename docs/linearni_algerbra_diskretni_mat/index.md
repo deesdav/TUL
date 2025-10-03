@@ -1,19 +1,23 @@
 # Lineární algebra / Diskrétní mat
 
-Obsah složky:
+Obsah složky `linearni_algerbra_diskretni_mat`:
 
 - `KMA-PULA.pdf`
+- `1.jpg`, `2.jpg`, `3.jpg`, `4.jpg`, `5.jpg`, `6.jpg`, `7.jpg`, `8.jpg`
 
-### KMA-PULA.pdf
+### První a druhá přednáška
 
 <iframe src="KMA-PULA.pdf" width="100%" height="800px"></iframe>
 
-[Stáhnout KMA-PULA.pdf](KMA-PULA.pdf)
-![](IMG_2547.jpg)
-![](IMG_2549.jpg)
-![](IMG_2550.jpg)
-![](IMG_2551.jpg)
-![](IMG_2552.jpg)
-![](IMG_2553.jpg)
-![](IMG_2554.jpg)
-![](IMG_2555.jpg)
+[Stáhnout pdf](KMA-PULA.pdf)
+
+### Třetí přednáška
+
+![](1.jpg)
+![](2.jpg)
+![](3.jpg)
+![](4.jpg)
+![](5.jpg)
+![](6.jpg)
+![](7.jpg)
+![](8.jpg)

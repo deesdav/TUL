@@ -2,12 +2,9 @@
 
 Obsah složky `dokumenty`:
 
-- `heslo do liane.txt`
+- `soubor.pdf`, `Zapis-prezentace.pdf` ,`Zavazne-prohlaseni.pdf`
 - `kod tul.txt`
-- `SCAN0195.JPG`, `SCAN0196.JPG`, `SCAN0200.JPG`
-- `soubor.pdf`, `Zapis-prezentace.pdf`, `Zavazne-prohlaseni.pdf`
-
-PDF soubory (vložené níže). Pokud prohlížeč nepodporuje zobrazení PDF, klikněte na odkaz pro stažení.
+- `heslo do liane.txt`
 
 ### soubor.pdf
 
@@ -26,3 +23,14 @@ PDF soubory (vložené níže). Pokud prohlížeč nepodporuje zobrazení PDF, k
 <iframe src="Zavazne-prohlaseni.pdf" width="100%" height="800px"></iframe>
 
 [Stáhnout Zavazne-prohlaseni.pdf](Zavazne-prohlaseni.pdf)
+
+### Dulžité udaje 
+
+![](<kod tul.txt>)
+![](<heslo do liane.txt>)
+
+### Důležité dokumenty
+
+![](SCAN0195.JPG)
+![](SCAN0196.JPG)
+![](SCAN0200.JPG)

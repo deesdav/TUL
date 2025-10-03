@@ -1,14 +1,41 @@
 # Shell Linux
 
-Obsah složky:
+### Prikazy z prvni hodiny cviceni
 
-- `prvni-hodina-cviceni.docx`
+```bash
+    Ssh perun.nti.tul.cz
+    who
+    Yes
+    Heslo je sh
+    Passwd MUJJack3
+    Whoami
+    Ls
+    Ls -a
+    Ls -la
+    Pwd
+    Ls /
+    Ls /home/
+    Cd
+    Cd ..
+    Cd (bez ničeho nebo s tildou)
+    Mkdir adresar
+    Rmdir (prázdné adresáře)
+    Rm -r
+    Rm -r *
+    Rm -rf (smaže všechno takže systém) / sudo rm -rf
+    Cp -r (co a kam)
+    Mv
+    Touch
+    Rm s*
+    Man ls, cd… (maual)
+    Cp /home/jana/basnicky/m* .
+    Mkdir poezie
+    Mv m*.txt poezie
+    ----------------
+    Absolutní cesta začíná vždy v /
+    Relativní cesta začíná vždy v aktuálním wd (working directory)
+```
 
-Poznámka: `.docx` soubory se v MkDocs přímo nezobrazí; můžete je stáhnout kliknutím odkazu níže:
-
-- [prvni-hodina-cviceni.docx](prvni-hodina-cviceni.docx)
-
-Užitečné odkazy:
-
-- Oficiální sbírka shell skriptů (NTI TUL): http://shell.nti.tul.cz/
+### Skripty
+- Externí shell a skripty: [http://shell.nti.tul.cz/](http://shell.nti.tul.cz/)
 

@@ -1,37 +1,45 @@
 # TUL
 
-Welcome to the **TUL** repository!
- 
-## Overview
-The **TUL** repository serves as a centralized hub for all resources, code, and documentation associated with the TUL project. It is structured to facilitate efficient organization, collaboration, and scalability.
+Vítejte v repozitáři TUL!
 
-## Key Features
-- **Organized Structure**: A well-defined layout for project files and resources.
-- **Comprehensive Documentation**: Clear and concise guides to help users and contributors.
-- **Scalable Codebase**: Designed with maintainability and extensibility in mind.
+## Přehled
+Repozitář TUL slouží jako centrální úložiště zdrojů, kódu a dokumentace související s projektem TUL. Struktura je navržena pro přehlednost, spolupráci a rozšiřitelnost.
 
-## Getting Started
-To get started with the project, follow these steps:
+## Klíčové vlastnosti
+- Organizovaná struktura složek a materiálů.
+- Dokumentace pro snadné používání a sdílení.
+- Kód připravený pro další rozvoj.
 
-1. Clone the repository:
+## Začínáme
+1. Naklonujte repozitář:
     ```bash
     git clone https://github.com/deesdav/TUL.git
     ```
-2. Navigate to the project directory:
+2. Přesuňte se do adresáře projektu:
     ```bash
     cd TUL
     ```
 
-## Contributing
-We welcome contributions to the TUL project! To contribute:
+## Spuštění lokálního webu pomocí MkDocs (Material)
+1. Aktualizujte pip a nainstalujte MkDocs + Material theme:
+    ```powershell
+    python -m pip install --upgrade pip
+    python -m pip install mkdocs mkdocs-material
+    ```
+2. Ze složky repozitáře spusťte lokální server MkDocs:
+    ```powershell
+    py -m mkdocs serve
+    ```
+   Poznámka: někdy se místo příkazu `mkdocs serve` používá `py -m mkdocs serve`, pokud není složka Scripts v PATH. (Pokud jste měli na mysli `py -m mkdocs servo`, správný příkaz je `py -m mkdocs serve`.)
+3. Otevřete v prohlížeči:
+    ```
+    http://127.0.0.1:8000
+    ```
 
-1. Fork the repository.
-2. Create a new branch for your feature or bug fix.
-3. Submit a pull request with a detailed description of your changes.
+## Přispívání
+1. Forkněte repo.
+2. Vytvořte nový branch pro změny.
+3. Odešlete Pull Request s popisem změn.
 
-## License
-This project is distributed under the [MIT License](LICENSE). Please review the license file for more details.
-
----
-
-Keep this README up-to-date as the project progresses.
+## Licence
+Projekt je šířen pod licencí MIT. Pro více informací si přečtěte soubor LICENSE.

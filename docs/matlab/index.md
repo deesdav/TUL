@@ -1,6 +1,11 @@
 # Matlab scripts (cviceni)
 
-Zde jsou skripty z `matlab/`, vložené přímo pro snadné prohlížení.
+Obsah složky `matlab`:
+
+- `Cv01.m`
+- `Cv02.m`
+- `Cv03.m`
+
 
 ## cv01.m
 
