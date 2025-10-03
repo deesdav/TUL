@@ -26,6 +26,9 @@ Repozitář TUL slouží jako centrální úložiště zdrojů, kódu a dokument
     ```powershell
     python -m pip install --upgrade pip
     python -m pip install mkdocs mkdocs-material
+    py -m mkdocs build
+    py -m mkdocs gh-deploy
+
     ```
 2. Ze složky repozitáře spusťte lokální server MkDocs:
     ```powershell
