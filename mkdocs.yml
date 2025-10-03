@@ -97,7 +97,7 @@ markdown_extensions:
 extra_javascript:
   - https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js
 nav:
-  - Home: index.md
+  - Domovská stránka: index.md
   - Algoritmizace programovani Java 1: algoritmizace_programovani_java_1/index.md
   - Lineární algebra / Diskrétní mat: linearni_algerbra_diskretni_mat/index.md
   - Matematika 1: matematika_1/index.md
