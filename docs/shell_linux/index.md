@@ -1,5 +1,9 @@
 # Shell Linux
 
+Obsah složky `shell_linux`:
+
+- `prvni-hodina-cviceni.txt`
+
 ### Prikazy z prvni hodiny cviceni
 
 ```bash
