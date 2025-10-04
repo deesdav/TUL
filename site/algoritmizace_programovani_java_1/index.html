@@ -268,7 +268,7 @@
   
     
   
-  Lineární algebry a diskrétní mat
+  Lineární algebra a diskrétní mat
 
       </a>
     </li>
@@ -503,6 +503,61 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#co-je-algoritmizace" class="md-nav__link">
+    <span class="md-ellipsis">
+      Co je algoritmizace?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proc-java" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proč Java?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zakladni-stavebni-kameny-v-jave" class="md-nav__link">
+    <span class="md-ellipsis">
+      Základní stavební kameny v Javě
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jak-probiha-vyuka-cviceni" class="md-nav__link">
+    <span class="md-ellipsis">
+      Jak probíhá výuka / cvičení
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uzitecne-tipy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Užitečné tipy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prehled-vyuky" class="md-nav__link">
+    <span class="md-ellipsis">
+      Přehled výuky
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Přehled výuky">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#dulezite-obrazky" class="md-nav__link">
     <span class="md-ellipsis">
       Důležíté obrázky
@@ -510,8 +565,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#ulohy-v-jave" class="md-nav__link">
     <span class="md-ellipsis">
       Úlohy v Javě
@@ -519,8 +574,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#alg1_ulohy01_zacinamepdf" class="md-nav__link">
     <span class="md-ellipsis">
       alg1_ulohy01_zaciname.pdf
@@ -528,8 +583,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#alg1_ulohy02_pocitamepdf" class="md-nav__link">
     <span class="md-ellipsis">
       alg1_ulohy02_pocitame.pdf
@@ -537,13 +592,18 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#alg1_ulohy03_nejen_pocitamepdf" class="md-nav__link">
     <span class="md-ellipsis">
       alg1_ulohy03_nejen_pocitame.pdf
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -567,7 +627,7 @@
   
   
   <span class="md-ellipsis">
-    Lineární algebry a diskrétní mat
+    Lineární algebra a diskrétní mat
     
   </span>
   
@@ -726,13 +786,51 @@
 
 
 <h1 id="algoritmizace-programovani-java-1">Algoritmizace programovani - Java 1<a class="headerlink" href="#algoritmizace-programovani-java-1" title="Permanent link">&para;</a></h1>
-<p>Obsah složky <code>algoritmizace_programovani_java_1</code>:</p>
+<h2 id="co-je-algoritmizace">Co je algoritmizace?<a class="headerlink" href="#co-je-algoritmizace" title="Permanent link">&para;</a></h2>
 <ul>
-<li><code>KMA-PULA.pdf</code></li>
-<li><code>IMG_2239.jpg</code>, <code>IMG_2240.jpg</code>, <code>IMG_2241.jpg</code>, <code>IMG_2242.jpg</code></li>
-<li><code>alg1_ulohy01_zaciname.pdf</code>, <code>alg1_ulohy02_pocitame.pdf</code>, <code>alg1_ulohy03_nejen_pocitame.pdf</code></li>
+<li><strong>Algoritmus</strong> = přesný postup kroků, jak vyřešit daný problém.</li>
+<li>Algoritmizace = umění problém správně <strong>rozložit</strong> na kroky a převést ho do podoby, kterou zvládne počítač.</li>
+<li>Hlavní myšlenka: <strong>od problému → k algoritmu → k programu</strong>.</li>
 </ul>
-<p>Tady jsou soubory a složky z <code>algoritmizace_programovani_java_1</code>.</p>
+<h2 id="proc-java">Proč Java?<a class="headerlink" href="#proc-java" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Java je objektově orientovaný jazyk, jednoduchý na naučení, přenosný a univerzální.</li>
+<li>Program se píše do <strong>tříd (<code>class</code>)</strong> a spouští se přes <strong>metodu <code>main</code></strong>.</li>
+<li>Syntaxe je podobná C/C++, ale je přívětivější pro začátečníky.</li>
+</ul>
+<h2 id="zakladni-stavebni-kameny-v-jave">Základní stavební kameny v Javě<a class="headerlink" href="#zakladni-stavebni-kameny-v-jave" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Datové typy</strong> – <code>int</code>, <code>double</code>, <code>char</code>, <code>boolean</code>, <code>String</code></li>
+<li><strong>Vstup a výstup</strong> – <code>System.out.println()</code>, <code>Scanner</code> pro čtení vstupu</li>
+<li><strong>Podmínky</strong> – <code>if</code>, <code>else if</code>, <code>else</code>, logické operátory (<code>==</code>, <code>!=</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&amp;&amp;</code>, <code>||</code>)</li>
+<li><strong>Cykly</strong> – <code>for</code>, <code>while</code>, <code>do-while</code></li>
+<li><strong>Pole a řetězce</strong> – ukládání více hodnot</li>
+<li><strong>Metody (funkce)</strong> – rozdělení programu na menší části</li>
+<li><strong>Objekty a třídy</strong> – základ objektového programování</li>
+</ol>
+<h2 id="jak-probiha-vyuka-cviceni">Jak probíhá výuka / cvičení<a class="headerlink" href="#jak-probiha-vyuka-cviceni" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Nejprve <strong>základní příkazy a logika</strong>.</li>
+<li>Od jednoduchých programů („Hello World“, kalkulačka) k algoritmům řešícím složitější úlohy.</li>
+<li>Hodně důraz na <strong>samostatné úlohy</strong> (počítání, podmínky, smyčky, práce s čísly a textem).</li>
+</ul>
+<p>Typický postup:</p>
+<ol>
+<li>Teorie → vysvětlení nových konstrukcí</li>
+<li>Ukázka → malý příklad</li>
+<li>Samostatné úlohy → od základních po složitější</li>
+</ol>
+<h2 id="uzitecne-tipy">Užitečné tipy<a class="headerlink" href="#uzitecne-tipy" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Piš hodně kódu a testuj → praxe je klíč.</li>
+<li>Čti chybové hlášky – Java je přísná, ale napoví.</li>
+<li>Začni jednoduše a postupně přidávej složitost.</li>
+<li>Komentuj kód (<code>// poznámka</code>) → usnadní ladění.</li>
+</ul>
+<h2 id="prehled-vyuky">Přehled výuky<a class="headerlink" href="#prehled-vyuky" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://elearning.tul.cz/course/view.php?id=19200">Přehled na Elearning</a></li>
+</ul>
 <h3 id="dulezite-obrazky">Důležíté obrázky<a class="headerlink" href="#dulezite-obrazky" title="Permanent link">&para;</a></h3>
 <p><img alt="" src="IMG_2239.jpg" />
 <img alt="" src="IMG_2240.jpg" />
@@ -807,13 +905,13 @@
         
         
           
-          <a href="../linearni_algerbra_diskretni_mat/" class="md-footer__link md-footer__link--next" aria-label="Další: Lineární algebry a diskrétní mat">
+          <a href="../linearni_algerbra_diskretni_mat/" class="md-footer__link md-footer__link--next" aria-label="Další: Lineární algebra a diskrétní mat">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Další
               </span>
               <div class="md-ellipsis">
-                Lineární algebry a diskrétní mat
+                Lineární algebra a diskrétní mat
               </div>
             </div>
             <div class="md-footer__button md-icon">

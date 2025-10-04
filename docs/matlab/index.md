@@ -1,13 +1,48 @@
-# Matlab scripts (cviceni)
+# Výpočty, simulace a vizualizace v Matlabu
 
-Obsah složky `matlab`:
+Cvičení jsou zaměřená na **práci se skripty v Matlabu**, procvičení základních funkcí, tvorbu matic, práci s náhodnými čísly, cykly, funkcemi a jednoduchými algoritmy.
 
-- `Cv01.m`
-- `Cv02.m`
-- `Cv03.m`
+## Základy Matlabu
 
+- Prostředí Matlabu, skripty a funkce
+- Práce s okny, příkazy `clc`, `clear`, `close all`
 
-## cv01.m
+  ## Vektory a matice
+
+- Tvorba vektorů a matic
+- Indexování, řádky vs. sloupce
+- Operace: sčítání, násobení, transpozice, inverze
+
+  ## Náhodná čísla a statistika
+
+- Funkce `rand`, `randi`, `randn`
+- Výpočty součtu, průměru, středních hodnot
+- Manipulace s 3D maticemi
+
+## Cyklus a podmínky
+
+- `for`, `while`
+- `if`, `else`, `elseif`
+- Vnořené cykly a operace po prvcích
+
+  ## Funkce a vlastní algoritmy
+
+- Definice funkcí: `function`
+- Implementace jednoduchých algoritmů (např. bubble sort)
+- Vektorové vs. skalární operace
+
+  ## Vizualizace
+
+  - Grafy 2D a 3D (`plot`, `mesh`, `surf`)
+  - Přehledné zobrazení dat a výsledků
+
+## Přehled výuky
+
+- [Přehled na Elearning](https://elearning.tul.cz/course/view.php?id=20012)
+
+## Cvičení
+
+### cv01.m
 
 ```matlab
 clear;clc;
@@ -51,7 +86,7 @@ for i = 1:size(C,1)
 end
 ```
 
-## cv02.m
+### cv02.m
 
 ```matlab
 clear; clc;
@@ -73,10 +108,10 @@ for i = 1:size(C,1)
             soucet = soucet + C(i, j, k);
             pocet_prvku = pocet_prvku + 1;
         end
-    end 
+    end
 end
 average = soucet / pocet_prvku;
-average_sum = sum(C, "all") / pocet_prvku; 
+average_sum = sum(C, "all") / pocet_prvku;
 % 3
 A = squeeze(C(1,:,:));
 %radkove_prumery = mean(A, 2);
@@ -92,7 +127,7 @@ function y = fce_sin2_cos(x)
 end
 ```
 
-## cv03.m
+### cv03.m
 
 ```matlab
 clc; close;
@@ -105,7 +140,7 @@ for i = 1:size(Y, 2)-1 % sloupce % optimalizace a zrychleni kodu pomoci -1 a -i
     for j = 1:size(Y, 2)-i % sloupce
         for k = 1:size(Y, 1) % radky
             if Y(k, j) > Y(k, j + 1) % podminka pokud je prvni sloupec vetsi nez ten druhy (nasledujici)
-                % logika bubble sortu, temp = pomocná proměnná temporary 
+                % logika bubble sortu, temp = pomocná proměnná temporary
                 temp = Y(:,j);
                 Y(:, j) = Y(:, j + 1);
                 Y(:, j + 1) = temp;

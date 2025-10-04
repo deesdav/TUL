@@ -1,8 +1,22 @@
 # Shell Linux
 
-Obsah složky `shell_linux`:
+## Co to je?
 
-- `prvni-hodina-cviceni.txt`
+- Předmět zaměřený na základy práce v prostředí operačního systému Linux, s důrazem na ovládání pomocí příkazové řádky (shellu). Studenti se seznámí s principy práce v příkazové řádce operačního systému unixového typu.
+
+## Co se naučíš?
+
+- Orientace v systému: Práce s adresářovým stromem, práva souborů, uživatelé, správa procesů.
+- Příkazová řádka: Použití základních příkazů pro navigaci a manipulaci se soubory.
+- Shell scripting: Základy programování v shellu (bash).
+- Textové nástroje: Zpracování textu pomocí regulárních výrazů a textových proudů.
+- Výstupy z učení
+- Absolvent předmětu by měl zvládnout orientaci v základním uživatelském prostředí každého systému typu UNIX/Linux.
+
+## Přehled výuky
+
+- [Přehled na Elearning](https://elearning.tul.cz/course/view.php?id=19038)
+
 
 ### Prikazy z prvni hodiny cviceni
 
@@ -41,5 +55,5 @@ Obsah složky `shell_linux`:
 ```
 
 ### Skripty
-- Externí shell a skripty: [http://shell.nti.tul.cz/](http://shell.nti.tul.cz/)
 
+- Externí shell a skripty: [http://shell.nti.tul.cz/](http://shell.nti.tul.cz/)

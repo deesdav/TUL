@@ -1,13 +1,25 @@
 # Matematika 1
 
-Obsah složky `matematika_1`:
+## Základní info:
 
-- `PrehledSS.pdf`
-- `Prvni_prednaska.pdf`
-- `Druha_prednaska.pdf`
-- `Treti_prednaska.pdf`
-- `Cviceni3N.pdf`
-- `Příklady_MA1.pdf`
+Předmět **Matematika 1** na TUL (Technická univerzita v Liberci) je úvodní kurz vysokoškolské matematiky. Navazuje na znalosti ze střední školy a rozšiřuje je o důležité kapitoly pro technické a přírodovědné obory.  
+Typicky se probírá:
+
+- **Základy diferenciálního a integrálního počtu** (funkce, limity, derivace, integrály)
+- **Lineární algebra** (matice, vektory, soustavy lineárních rovnic)
+- **Kombinatorika, pravděpodobnost a statistika** (základy, často jen úvod)
+- **Řešení příkladů a aplikace v praxi** (inženýrské i přírodovědné problémy)
+
+Cílem předmětu je:
+
+- naučit studenty **pracovat s funkcemi** a chápat jejich vlastnosti,
+- **počítat limity, derivace a integrály**,
+- používat matematiku jako nástroj pro technické aplikace,
+- procvičit logické a abstraktní myšlení.
+
+## Přehled výuky
+
+- [Přehled na Elearning](https://elearning.tul.cz/course/view.php?id=20189)
 
 Odkazy a vložené PDF:
 
@@ -41,11 +53,12 @@ Odkazy a vložené PDF:
 
 [Stáhnout Příklady_MA1.pdf](Příklady_MA1.pdf)
 
-
 ### První cvičení
+
 ![](IMG_2244.jpg)
 ![](IMG_2245.jpg)
 
 ### Důležité fotky z přednašky
+
 ![](IMG_2521.jpg)
 ![](IMG_2532.jpg)

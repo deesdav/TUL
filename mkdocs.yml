@@ -99,7 +99,7 @@ extra_javascript:
 nav:
   - Domovská stránka: index.md
   - Programování Java 1: algoritmizace_programovani_java_1/index.md
-  - Lineární algebry a diskrétní mat: linearni_algerbra_diskretni_mat/index.md
+  - Lineární algebra a diskrétní mat: linearni_algerbra_diskretni_mat/index.md
   - Matematika 1: matematika_1/index.md
   - Matematika Seminář: seminar/index.md
   - Shell: shell_linux/index.md

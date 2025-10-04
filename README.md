@@ -45,7 +45,3 @@ Repozitář TUL slouží jako centrální úložiště zdrojů, kódu a dokument
 1. Forkněte repo.
 2. Vytvořte nový branch pro změny.
 3. Odešlete Pull Request s popisem změn.
-
-## Licence
-
-Projekt je šířen pod licencí MIT. Pro více informací si přečtěte soubor LICENSE.

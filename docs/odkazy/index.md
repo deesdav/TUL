@@ -2,8 +2,6 @@
 
 Vítejte! Níže najdete rychlé odkazy na nejdůležitější služby TUL a související nástroje.
 
----
-
 ## Služby TUL
 
 - [Stag](https://stag.tul.cz/) – studijní agenda
@@ -21,5 +19,5 @@ Vítejte! Níže najdete rychlé odkazy na nejdůležitější služby TUL a sou
 
 ### Tipy
 
-- Kliknutím na odkaz se otevře stránka v nové záložce.  
+- Kliknutím na odkaz se otevře stránka v nové záložce.
 - Tyto odkazy jsou hlavní pro každodenní práci a studium na TUL.

@@ -1,51 +1,96 @@
-# TUL
+# 🏫 TUL – Technická univerzita v Liberci
 
-Vítejte v repozitáři TUL!
+Vítejte v centrálním repozitáři TUL! Tento repozitář slouží jako úložiště zdrojů, kódu a dokumentace související s projekty a studiem.
 
-## Přehled
+## 📚 Přehled
 
-Repozitář TUL slouží jako centrální úložiště zdrojů, kódu a dokumentace související s projektem TUL. Struktura je navržena pro přehlednost, spolupráci a rozšiřitelnost.
+Struktura repozitáře je navržena pro **přehlednost, spolupráci a snadnou orientaci**. Najdeš tu vše od předmětů přes skripta až po užitečné odkazy.
 
-## Klíčové vlastnosti
+## ⚡ Předměty
+
+<div style="display: grid; grid-template-columns: auto auto; gap: 15px;">
+
+<div style="padding: 15px; background-color: #E3F2FD; border-radius: 10px; text-align: center;">
+
+<a href="algoritmizace_programovani_java_1/">💻 Programování Java 1</a>
+
+</div>
+
+<div style="padding: 15px; background-color: #FFF3E0; border-radius: 10px; text-align: center;">
+
+<a href="linearni_algerbra_diskretni_mat/">📐 Lineární algebra a diskrétní mat</a>
+
+</div>
+
+<div style="padding: 15px; background-color: #FCE4EC; border-radius: 10px; text-align: center;">
+
+<a href="matematika_1/">🔢 Matematika 1</a>
+
+</div>
+
+<div style="padding: 15px; background-color: #E8F5E9; border-radius: 10px; text-align: center;">
+
+<a href="seminar/">📝 Matematika Seminář</a>
+
+</div>
+
+<div style="padding: 15px; background-color: #FFFDE7; border-radius: 10px; text-align: center;">
+
+<a href="shell_linux/">🐚 Shell / Linux</a>
+
+</div>
+
+<div style="padding: 15px; background-color: #F3E5F5; border-radius: 10px; text-align: center;">
+
+<a href="matlab/">📊 Matlab</a>
+
+</div>
+
+<div style="padding: 15px; background-color: #E0F7FA; border-radius: 10px; text-align: center;">
+
+<a href="inzenyrstvi/">⚙️ Inženýrství</a>
+
+</div>
+
+<div style="padding: 15px; background-color: #FFEBEE; border-radius: 10px; text-align: center;">
+
+<a href="odkazy/">🔗 Odkazy </a>
+
+</div>
+
+</div>
+
+## 🌟 Klíčové vlastnosti
 
 - Organizovaná struktura složek a materiálů.
 - Dokumentace pro snadné používání a sdílení.
 - Kód připravený pro další rozvoj.
 
-## Začínáme
+---
 
-1. Naklonujte repozitář:
-   ```bash
-   git clone https://github.com/deesdav/TUL.git
-   ```
-2. Přesuňte se do adresáře projektu:
-   ```bash
-   cd TUL
-   ```
+## 🚀 Začínáme
 
-## Spuštění lokálního webu pomocí MkDocs (Material)
+```bash
+git clone https://github.com/deesdav/TUL.git
+cd TUL
+```
 
-1. Aktualizujte pip a nainstalujte MkDocs + Material theme:
-   ```powershell
-   py -m pip install --upgrade pip
-   py -m pip install mkdocs mkdocs-material
-   ```
-2. Ze složky repozitáře spusťte lokální server MkDocs:
-   ```powershell
-   py -m mkdocs serve
-   ```
-   Poznámka: někdy se místo příkazu `mkdocs serve` používá `py -m mkdocs serve`, pokud není složka Scripts v PATH.
-3. Otevřete v prohlížeči:
-   ```
-   http://127.0.0.1:8000
-   ```
+## 🖥️ Spuštění lokálního webu s MkDocs (Material)
 
-## Přispívání
+```bash
+py -m pip install --upgrade pip
+py -m pip install mkdocs mkdocs-material
+py -m mkdocs serve
+```
+
+```bash
+Otevřete v prohlížeči: http://127.0.0.1:8000
+```
+
+- Tip: Obrázky a ikony umístěte do složky docs/images, aby MkDocs správně načítal materiály.
+
+## 🤝 Přispívání
 
 1. Forkněte repo.
 2. Vytvořte nový branch pro změny.
 3. Odešlete Pull Request s popisem změn.
-
-## Licence
-
-Projekt je šířen pod licencí MIT. Pro více informací si přečtěte soubor LICENSE.

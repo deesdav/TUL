@@ -1,9 +1,42 @@
 # Lineární algebra / Diskrétní mat
 
-Obsah složky `linearni_algerbra_diskretni_mat`:
+## Lineární algebra
 
-- `KMA-PULA.pdf`
-- `1.jpg`, `2.jpg`, `3.jpg`, `4.jpg`, `5.jpg`, `6.jpg`, `7.jpg`, `8.jpg`
+Zabývá se **vektory, maticemi, determinanty, soustavami lineárních rovnic** a dalšími lineárními strukturami.
+
+**Základní nástroje:**
+
+- Matice a vektory
+- Determinanty
+- Soustavy lineárních rovnic
+- Vlastní čísla a vlastní vektory
+
+**Proč je důležitá:**
+
+- Základ pro **grafiku, strojové učení, fyzikální modelování**
+- Prakticky všude, kde se pracuje s daty v prostoru
+
+## Diskrétní matematika
+
+Zkoumá objekty, které jsou **oddělené a nespojité**.
+
+**Patří sem:**
+
+- Logika a predikáty
+- Množiny a relace
+- Kombinatorika (počítání, permutace, kombinace)
+- Grafy a stromy
+- Číselné struktury (modulární aritmetika, kongruence)
+
+**Proč je důležitá:**
+
+- Dává teoretický základ informatiky, algoritmů, sítí, kryptografie a databází
+
+## Přehled výuky
+
+- [Přehled na Elearning](https://elearning.tul.cz/course/view.php?id=20460)
+
+## Přednášky – rychlý přehled
 
 ### První a druhá přednáška
 
