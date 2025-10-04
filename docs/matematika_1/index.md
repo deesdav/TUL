@@ -41,6 +41,12 @@ Odkazy a vložené PDF:
 
 [Stáhnout Druha_prednaska.pdf](Druha_prednaska.pdf)
 
+### Treti_prednaska.pdf
+
+<iframe src="Treti_prednaska.pdf" width="100%" height="800px"></iframe>
+
+[Stáhnout Treti_prednaska.pdf](Treti_prednaska.pdf)
+
 ### Cviceni3N.pdf
 
 <iframe src="Cviceni3N.pdf" width="100%" height="800px"></iframe>
