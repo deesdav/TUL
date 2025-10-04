@@ -8,55 +8,66 @@ Struktura repozitáře je navržena pro **přehlednost, spolupráci a snadnou or
 
 ## ⚡ Předměty
 
-<div style="display: grid; grid-template-columns: auto auto; gap: 15px;">
+<style>
+.grid-predmety {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 sloupce na desktopu */
+  gap: 15px;
+}
 
-<div style="padding: 15px; background-color: #E3F2FD; border-radius: 10px; text-align: center;">
+@media (max-width: 768px) {
+  .grid-predmety {
+    grid-template-columns: 1fr; /* 1 sloupec na mobilu */
+  }
+}
 
-<a href="algoritmizace_programovani_java_1/">💻 Programování Java 1</a>
+.karta {
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  background-color: purple;
+}
 
-</div>
+.karta a {
+  color: white;
+  font-weight: 400;
+}
 
-<div style="padding: 15px; background-color: #FFF3E0; border-radius: 10px; text-align: center;">
+</style>
 
-<a href="linearni_algerbra_diskretni_mat/">📐 Lineární algebra a diskrétní mat</a>
+<div class="grid-predmety">
 
-</div>
+  <div class="karta">
+    <a href="algoritmizace_programovani_java_1/">💻 Programování Java 1</a>
+  </div>
 
-<div style="padding: 15px; background-color: #FCE4EC; border-radius: 10px; text-align: center;">
+  <div class="karta">
+    <a href="linearni_algerbra_diskretni_mat/">📐 Lineární algebra a diskrétní mat</a>
+  </div>
 
-<a href="matematika_1/">🔢 Matematika 1</a>
+  <div class="karta">
+    <a href="matematika_1/">🔢 Matematika 1</a>
+  </div>
 
-</div>
+  <div class="karta">
+    <a href="seminar/">📝 Matematika Seminář</a>
+  </div>
 
-<div style="padding: 15px; background-color: #E8F5E9; border-radius: 10px; text-align: center;">
+   <div class="karta">
+    <a href="shell_linux/">🐚 Shell / Linux</a>
+  </div>
 
-<a href="seminar/">📝 Matematika Seminář</a>
+   <div class="karta">
+    <a href="matlab/">📊 Matlab</a>
+  </div>   
+  
+  <div class="karta">
+    <a href="inzenyrstvi/">⚙️ Inženýrství</a>
+  </div>
 
-</div>
-
-<div style="padding: 15px; background-color: #FFFDE7; border-radius: 10px; text-align: center;">
-
-<a href="shell_linux/">🐚 Shell / Linux</a>
-
-</div>
-
-<div style="padding: 15px; background-color: #F3E5F5; border-radius: 10px; text-align: center;">
-
-<a href="matlab/">📊 Matlab</a>
-
-</div>
-
-<div style="padding: 15px; background-color: #E0F7FA; border-radius: 10px; text-align: center;">
-
-<a href="inzenyrstvi/">⚙️ Inženýrství</a>
-
-</div>
-
-<div style="padding: 15px; background-color: #FFEBEE; border-radius: 10px; text-align: center;">
-
-<a href="odkazy/">🔗 Odkazy </a>
-
-</div>
+  <div class="karta">
+   <a href="odkazy/">🔗 Odkazy </a>
+  </div>
 
 </div>
 
