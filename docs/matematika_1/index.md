@@ -47,12 +47,6 @@ Odkazy a vložené PDF:
 
 [Stáhnout Treti_prednaska.pdf](Treti_prednaska.pdf)
 
-### Cviceni3N.pdf
-
-<iframe src="Cviceni3N.pdf" width="100%" height="800px"></iframe>
-
-[Stáhnout Příklady_MA1.pdf](Cviceni3N.pdf)
-
 ### Příklady_MA1.pdf
 
 <iframe src="Příklady_MA1.pdf" width="100%" height="800px"></iframe>
@@ -63,6 +57,12 @@ Odkazy a vložené PDF:
 
 ![](IMG_2244.jpg)
 ![](IMG_2245.jpg)
+
+### Cviceni3N.pdf
+
+<iframe src="Cviceni3N.pdf" width="100%" height="800px"></iframe>
+
+[Stáhnout Příklady_MA1.pdf](Cviceni3N.pdf)
 
 ### Důležité fotky z přednašky
 
