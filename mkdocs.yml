@@ -12,6 +12,8 @@ theme:
     - toc.integrate
     - header.autohide
     - navigation.top
+    - navigation.toc.sticky
+    - navigation.sections.indicator
     - navigation.tracking
     - search.suggest
     - search.highlight
@@ -24,16 +26,24 @@ theme:
     - content.action.edit
     - content.action.view
     - content.footnote.tooltips
+    - content.footnote.poppers
     - content.tooltips
+    - content.toolbars
+    - content.copy.link
     - announce.dismiss
     - header.search
+    - header.buttons
   plugins:
     - search
     - glightbox
     - git-revision-date-localized
     - git-revision-date
+    - git-committers
+    - awesome-pages
+    - macros
     - minify:
         minify_html: true
+    - autorefs
     - offline
     - pwa:
         manifest:
@@ -42,13 +52,26 @@ theme:
           start_url: /
           display: standalone
           background_color: "#ffffff"
-          theme_color: "#2196f3"
+          theme_color: "#3949ab"
         update_popup: true
     - seo:
         site_name: TUL
         site_description: "Výukové materiály TUL – programování, matematika, Linux, Matlab a další."
         site_author: David
-        twitter: "@tul_example"
+        image: images/logo.png
+        locale: cs_CZ
+        type: website
+        canonical: true
+        structured_data: true
+        title_template: "%s | TUL"
+        twitter: true
+        facebook: true
+        og_locale: cs_CZ
+        og_type: website
+        og_site_name: TUL
+        og_image: images/logo.png
+        og_description: "Výukové materiály TUL – programování, matematika, Linux, Matlab a další."
+        google_plus: true
     - sitemap
     - robots
     - google-fonts:
@@ -58,13 +81,13 @@ theme:
   palette:
     - scheme: default
       primary: blue
-      accent: pink
+      accent: cyan
       toggle:
         icon: material/weather-night
         name: Přepnout do tmavého režimu
     - scheme: slate
-      primary: cyan
-      accent: lime
+      primary: teal
+      accent: pink
       toggle:
         icon: material/weather-sunny
         name: Přepnout do světlého režimu
@@ -89,6 +112,8 @@ extra:
       link: https://linkedin.com/
   logo: images/logo.png
   favicon: images/favicon.ico
+  meta:
+    description: "Výukové materiály TUL – moderní, přehledné a rychlé."
 
 markdown_extensions:
   - admonition
@@ -110,6 +135,9 @@ markdown_extensions:
   - pymdownx.b64
   - toc:
       permalink: true
+  - footnotes
+  - def_list
+  - attr_list
 
 extra_javascript:
   - https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js

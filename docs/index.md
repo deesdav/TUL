@@ -25,12 +25,13 @@ Struktura repozitáře je navržena pro **přehlednost, spolupráci a snadnou or
   padding: 15px;
   border-radius: 10px;
   text-align: center;
-  background-color: purple;
+  background-color: goldenrod;
 }
 
+
 .karta a {
-  color: white;
   font-weight: 400;
+  color: black;
 }
 
 </style>
