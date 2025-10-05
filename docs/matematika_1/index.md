@@ -49,6 +49,10 @@ Cílem předmětu je:
 
 [Stáhnout Treti_prednaska.pdf](Treti_prednaska.pdf)
 
+### Důležité fotky z přednašky
+
+![](IMG_2521.jpg)
+![](IMG_2532.jpg)
 
 ## Příklady_MA1.pdf z [KM.tul](https://kma.fp.tul.cz/)
 
@@ -68,8 +72,3 @@ Cílem předmětu je:
 <iframe src="Cviceni3N.pdf" width="100%" height="800px"></iframe>
 
 [Stáhnout Příklady_MA1.pdf](Cviceni3N.pdf)
-
-### Důležité fotky z přednašky
-
-![](IMG_2521.jpg)
-![](IMG_2532.jpg)
