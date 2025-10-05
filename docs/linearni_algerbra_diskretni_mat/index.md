@@ -48,6 +48,9 @@ Zkoumá objekty, které jsou **oddělené a nespojité**.
 
 ### Třetí přednáška
 
+
+### Čtvrtá přednáška
+
 ![](1.jpg)
 ![](2.jpg)
 ![](3.jpg)

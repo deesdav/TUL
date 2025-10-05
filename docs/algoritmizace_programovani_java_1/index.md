@@ -47,14 +47,14 @@ Typický postup:
 
 - [Přehled na Elearning](https://elearning.tul.cz/course/view.php?id=19200)
 
-### Důležíté obrázky
+## Důležíté obrázky informační
 
 ![](IMG_2239.jpg)
 ![](IMG_2240.jpg)
 ![](IMG_2241.jpg)
 ![](IMG_2242.jpg)
 
-### Úlohy v Javě
+## Úlohy v Javě
 
 ### alg1_ulohy01_zaciname.pdf
 

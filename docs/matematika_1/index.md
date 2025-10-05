@@ -23,13 +23,13 @@ Cílem předmětu je:
 
 - [Přehled na Elearning](https://elearning.tul.cz/course/view.php?id=20189)
 
-Odkazy a vložené PDF:
-
-### PrehledSS.pdf
+## Sředoškolský přehled
 
 <iframe src="PrehledSS.pdf" width="100%" height="800px"></iframe>
 
 [Stáhnout PrehledSS.pdf](PrehledSS.pdf)
+
+## Přednášky
 
 ### Prvni_prednaska.pdf
 
@@ -49,11 +49,14 @@ Odkazy a vložené PDF:
 
 [Stáhnout Treti_prednaska.pdf](Treti_prednaska.pdf)
 
-### Příklady_MA1.pdf
+
+## Příklady_MA1.pdf z [KM.tul](https://kma.fp.tul.cz/)
 
 <iframe src="Příklady_MA1.pdf" width="100%" height="800px"></iframe>
 
 [Stáhnout Příklady_MA1.pdf](Příklady_MA1.pdf)
+
+## Cvičení
 
 ### První cvičení
 
