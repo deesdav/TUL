@@ -20,6 +20,12 @@ Vítejte! Níže najdete rychlé odkazy na nejdůležitější služby TUL a sou
 - Kliknutím na odkaz se otevře stránka v nové záložce.
 - Tyto odkazy jsou hlavní pro každodenní práci a studium na TUL.
 
+### Můj Rozvrh
+
+<iframe src="rozvrh_student.pdf" width="100%" height="800px"></iframe>
+
+[Stáhnout Rozvrh](rozvrh_student.pdf)
+
 ### Mapa Fakult
 
 <iframe style="border:none" src="https://mapy.com/s/hehomumume" width="700" height="466" frameborder="0"></iframe>
