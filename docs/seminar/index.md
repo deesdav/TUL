@@ -11,16 +11,52 @@ Seminář je určen pro studenty, kteří chtějí zlepšit své schopnosti v ř
 
 ## Goniometrické funkce
 
-![](1.jpg)
-![](2.jpg)
-![](3.jpg)
-![](4.jpg)
+![](./goniometricke_funkce/1.jpg)
+![](./goniometricke_funkce/2.jpg)
+![](./goniometricke_funkce/3.jpg)
+![](./goniometricke_funkce/4.jpg)
 
 ## Kuželosečky
 
-![](kuželosečky 1.jpg)
-![](kuželosečky 2.jpg)
-![](kuželosečky 3.jpg)
-![](kuželosečky 4.jpg)
-![](kuželosečky 5.jpg)
-![](kuželosečky 6.jpg)
+![](./kuzelosecky/kuželosečky 1.jpg)
+![](./kuzelosecky/kuželosečky 2.jpg)
+![](./kuzelosecky/kuželosečky 3.jpg)
+![](./kuzelosecky/kuželosečky 4.jpg)
+![](./kuzelosecky/kuželosečky 5.jpg)
+![](./kuzelosecky/kuželosečky 6.jpg)
+
+## Polynomy
+
+![](./polynomy/1.jpg)
+![](./polynomy/2.jpg)
+![](./polynomy/3.jpg)
+![](./polynomy/4.jpg)
+
+### seminar_polynomy.m
+
+```matlab
+clear; clc;
+
+x=0:0.1:3;
+y=x.^2-3*x+2;
+plot(x, y);
+z=0*x;
+plot(x,[y;z]);
+y=2*y;
+plot(x,[y;z]);
+```
+
+### polynom.m
+
+```matlab
+function y = polynom(x, a)
+    n= length(a)-1;
+    y = 0;
+    for i = 1:n+1
+        y = y + a(i) * x.^(n-i-1);
+        
+    end
+end
+% y = polynom(x, [1, -3, 2]);
+% plot(x, [y; z]);
+```

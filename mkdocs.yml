@@ -80,14 +80,14 @@ theme:
           - Fira Code
   palette:
     - scheme: default
-      primary: blue
-      accent: cyan
+      primary: orange
+      accent: amber
       toggle:
         icon: material/weather-night
         name: Přepnout do tmavého režimu
     - scheme: slate
-      primary: teal
-      accent: pink
+      primary: deep purple
+      accent: purple
       toggle:
         icon: material/weather-sunny
         name: Přepnout do světlého režimu

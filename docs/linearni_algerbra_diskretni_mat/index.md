@@ -42,25 +42,48 @@ Zkoumá objekty, které jsou **oddělené a nespojité**.
 
 ### První a druhá přednáška
 
+### Zobrazení, Matemtická indukce a Kombinatorika
+
 <iframe src="KMA-PULA.pdf" width="100%" height="800px"></iframe>
 
 [Stáhnout pdf](KMA-PULA.pdf)
 
 ### Třetí přednáška
 
-![](treti_prednaska1.jpg)
-![](treti_prednaska2.jpg)
-![](treti_prednaska3.jpg)
+#### Vektory a vektorové prostory
+
+![](./treti_prednaska/treti_prednaska1.jpg)
+![](./treti_prednaska/treti_prednaska2.jpg)
+![](./treti_prednaska/treti_prednaska3.jpg)
 
 ### Čtvrtá přednáška
 
-![](1.jpg)
-![](2.jpg)
-![](3.jpg)
-![](4.jpg)
-![](5.jpg)
-![](6.jpg)
-![](7.jpg)
-![](8.jpg)
+#### Lineářní kombinace vektorů
+
+![](./ctvrta_prednaska/1.jpg)
+![](./ctvrta_prednaska/2.jpg)
+![](./ctvrta_prednaska/3.jpg)
+![](./ctvrta_prednaska/4.jpg)
+![](./ctvrta_prednaska/5.jpg)
+![](./ctvrta_prednaska/6.jpg)
+![](./ctvrta_prednaska/7.jpg)
+![](./ctvrta_prednaska/8.jpg)
 
 ### Pátá přednáška
+
+#### Kombinace a Kombinační čísla
+
+![](./pata_prednaska/1.jpg)
+![](./pata_prednaska/2.jpg)
+![](./pata_prednaska/3.jpg)
+![](./pata_prednaska/4.jpg)
+![](./pata_prednaska/5.jpg)
+
+#### Binomická Věta
+
+![](./pata_prednaska/6.jpg)
+![](./pata_prednaska/7.jpg)
+
+#### Multinomická Věta
+
+![](./pata_prednaska/8.jpg)
