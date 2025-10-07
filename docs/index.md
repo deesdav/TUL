@@ -15,6 +15,7 @@ Struktura repozitáře je navržena pro **přehlednost, spolupráci a snadnou or
   gap: 15px;
 }
 
+
 @media (max-width: 768px) {
   .grid-predmety {
     grid-template-columns: 1fr; /* 1 sloupec na mobilu */
@@ -26,12 +27,24 @@ Struktura repozitáře je navržena pro **přehlednost, spolupráci a snadnou or
   border-radius: 10px;
   text-align: center;
   background-color: goldenrod;
+  border: 2px solid transparent;
 }
 
 
 .karta a {
   font-weight: 400;
-  color: black;
+  color: white;
+  border: 2px solid transparent;
+}
+
+.karta a:hover {
+  color: white;
+  text-decoration: underline;
+  border: 2px solid black;
+}
+.karta:hover {
+  background-color: black;
+  border: 2px solid black;
 }
 
 </style>
