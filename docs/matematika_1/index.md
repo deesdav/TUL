@@ -25,29 +25,35 @@ Cílem předmětu je:
 
 ## Sředoškolský přehled
 
-<iframe src="PrehledSS.pdf" width="100%" height="800px"></iframe>
+<iframe src="./prednasky/PrehledSS.pdf" width="100%" height="800px"></iframe>
 
-[Stáhnout PrehledSS.pdf](PrehledSS.pdf)
+[Stáhnout PrehledSS.pdf](./prednasky/PrehledSS.pdf)
 
 ## Přednášky
 
 ### Prvni_prednaska.pdf
 
-<iframe src="Prvni_prednaska.pdf" width="100%" height="800px"></iframe>
+<iframe src="./prednasky/Prvni_prednaska.pdf" width="100%" height="800px"></iframe>
 
-[Stáhnout Prvni_prednaska.pdf](Prvni_prednaska.pdf)
+[Stáhnout Prvni_prednaska.pdf](./prednasky/Prvni_prednaska.pdf)
 
 ### Druha_prednaska.pdf
 
-<iframe src="Druha_prednaska.pdf" width="100%" height="800px"></iframe>
+<iframe src="./prednasky/Druha_prednaska.pdf" width="100%" height="800px"></iframe>
 
-[Stáhnout Druha_prednaska.pdf](Druha_prednaska.pdf)
+[Stáhnout Druha_prednaska.pdf](./prednasky/Druha_prednaska.pdf)
 
 ### Treti_prednaska.pdf
 
-<iframe src="Treti_prednaska.pdf" width="100%" height="800px"></iframe>
+<iframe src="./prednasky/Treti_prednaska.pdf" width="100%" height="800px"></iframe>
 
-[Stáhnout Treti_prednaska.pdf](Treti_prednaska.pdf)
+[Stáhnout Treti_prednaska.pdf](./prednasky/Treti_prednaska.pdf)
+
+### Ctvrta_prednaska.pdf
+
+<iframe src="./prednasky/Ctvrta_prednaska.pdf" width="100%" height="800px"></iframe>
+
+[Stáhnout Treti_prednaska.pdf](./prednasky/Ctvrta_prednaska.pdf)
 
 ### Důležité fotky z přednašky
 
@@ -69,12 +75,12 @@ Cílem předmětu je:
 
 ### Cviceni3N.pdf
 
-<iframe src="Cviceni3N.pdf" width="100%" height="800px"></iframe>
+<iframe src="./cviceni/Cviceni3N.pdf" width="100%" height="800px"></iframe>
 
-[Stáhnout Cviceni3N.pdf](Cviceni3N.pdf)
+[Stáhnout Cviceni3N.pdf](./cviceni/Cviceni3N.pdf)
 
 ### Cviceni4N.pdf
 
-<iframe src="Cviceni4N.pdf" width="100%" height="800px"></iframe>
+<iframe src="./cviceni/Cviceni4N.pdf" width="100%" height="800px"></iframe>
 
-[Stáhnout Cviceni4N.pdf](Cviceni4N.pdf)
+[Stáhnout Cviceni4N.pdf](./cviceni/Cviceni4N.pdf)
