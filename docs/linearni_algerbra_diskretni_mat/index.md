@@ -87,3 +87,12 @@ Zkoumá objekty, které jsou **oddělené a nespojité**.
 #### Multinomická Věta
 
 ![](./pata_prednaska/8.jpg)
+
+## Cvičení
+
+### Páté cvičení
+
+![](pate_cviceni/1.jpg)
+![](pate_cviceni/2.jpg)
+![](pate_cviceni/3.jpg)
+![](pate_cviceni/4.jpg)
