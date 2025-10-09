@@ -88,6 +88,20 @@ Zkoumá objekty, které jsou **oddělené a nespojité**.
 
 ![](./pata_prednaska/8.jpg)
 
+### Šestá přednáška
+
+#### Lineární závislost vektorů a související pojmy
+
+![](sesta_prednaska/1.jpg)
+![](sesta_prednaska/2.jpg)
+![](sesta_prednaska/3.jpg)
+![](sesta_prednaska/4.jpg)
+![](sesta_prednaska/5.jpg)
+![](sesta_prednaska/6.jpg)
+![](sesta_prednaska/7.jpg)
+
+
+
 ## Cvičení
 
 ### Páté cvičení
