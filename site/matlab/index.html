@@ -631,6 +631,75 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#zaklady-a-prikazy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Základy a příkazy
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Základy a příkazy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#zkratky" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zkratky
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#udelat-vzdy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Udělat vždy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#matice" class="md-nav__link">
+    <span class="md-ellipsis">
+      Matice
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#random" class="md-nav__link">
+    <span class="md-ellipsis">
+      Random
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#funkce" class="md-nav__link">
+    <span class="md-ellipsis">
+      Funkce
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#porovnani" class="md-nav__link">
+    <span class="md-ellipsis">
+      Porovnání
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#prehled-vyuky" class="md-nav__link">
     <span class="md-ellipsis">
       Přehled výuky
@@ -803,6 +872,57 @@
 <li>Grafy 2D a 3D (<code>plot</code>, <code>mesh</code>, <code>surf</code>)</li>
 <li>Přehledné zobrazení dat a výsledků</li>
 </ul>
+<h2 id="zaklady-a-prikazy">Základy a příkazy<a class="headerlink" href="#zaklady-a-prikazy" title="Permanent link">&para;</a></h2>
+<ul>
+<li>% - komentář</li>
+<li>; na konci zamezí vypsání do konzole</li>
+</ul>
+<h3 id="zkratky">Zkratky<a class="headerlink" href="#zkratky" title="Permanent link">&para;</a></h3>
+<ul>
+<li>ctrl R - koment</li>
+<li>ctrl T - zrusit koment</li>
+<li>F9 - spusti označenou cast kodu</li>
+</ul>
+<h3 id="udelat-vzdy">Udělat vždy<a class="headerlink" href="#udelat-vzdy" title="Permanent link">&para;</a></h3>
+<ul>
+<li>clc; - vymaže konzoli</li>
+<li>clear;</li>
+<li>close all; - zavře soubory</li>
+<li>disp(x) - vypíše do konzole x (disp = display)</li>
+<li>1:1:8 - generuje čísla od 1 do 8 po jednom</li>
+</ul>
+<h3 id="matice">Matice<a class="headerlink" href="#matice" title="Permanent link">&para;</a></h3>
+<ul>
+<li>ones(3) - 3x3 matice s jedničkama</li>
+<li>zeros(3,4) - 3x4 matice s nulama</li>
+<li>eye(3) - jedničky na diagonale</li>
+<li>inv(Matice) - inverce matice</li>
+<li>A*B - násobení matice</li>
+<li>
+<p>A.*B - násobení po prvcích</p>
+</li>
+<li>
+<p>squeeze(C(1,:,:)); - z 3D na 2D</p>
+</li>
+</ul>
+<h3 id="random">Random<a class="headerlink" href="#random" title="Permanent link">&para;</a></h3>
+<ul>
+<li>rand - nenáhodně</li>
+<li>randn - náhodně</li>
+<li>round zaokrouhlení</li>
+<li>mean - průměr</li>
+<li>numel - celkem prvku</li>
+<li>sum - součet</li>
+</ul>
+<h3 id="funkce">Funkce<a class="headerlink" href="#funkce" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">function</span><span class="w"> </span>result<span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nf">goniometricka_funkce</span><span class="p">(</span>x<span class="p">)</span>
+<span class="w">    </span><span class="n">result</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">(</span><span class="nb">sin</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">.^</span><span class="mi">2</span><span class="w"> </span><span class="o">.*</span><span class="w"> </span><span class="nb">cos</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="k">end</span>
+</code></pre></div>
+<h3 id="porovnani">Porovnání<a class="headerlink" href="#porovnani" title="Permanent link">&para;</a></h3>
+<ul>
+<li>lexikograficky - porovná první řádek dvou sloupcu, pokud jsou stejné porovná druhý řádek</li>
+</ul>
 <h2 id="prehled-vyuky">Přehled výuky<a class="headerlink" href="#prehled-vyuky" title="Permanent link">&para;</a></h2>
 <iframe src="https://elearning.tul.cz/course/view.php?id=20012" width="100%" height="800px"></iframe>
 
@@ -958,13 +1078,13 @@
 <span class="k">function</span><span class="w"> </span>cipher<span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nf">cipher_task</span><span class="p">(</span>text, key<span class="p">)</span>
 <span class="w">    </span><span class="c">% cipher = cipher_task(text, key)</span>
 <span class="w">    </span><span class="c">% text - libovolne dlouhy retezec (pole char, radkovy vektor)</span>
-<span class="w">    </span><span class="c">% key - libovolny retezec (pole char) kratsi/stejne dlouhy jako text: length(text)&gt;=length(key) </span>
+<span class="w">    </span><span class="c">% key - libovolny retezec (pole char) kratsi/stejne dlouhy jako text: length(text)&gt;=length(key)</span>
 <span class="w">    </span><span class="c">% cipher - vystupni retezec - sifra - radkovy vektor</span>
 
 <span class="w">    </span><span class="n">keyNums</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">double</span><span class="p">(</span><span class="n">key</span><span class="p">);</span><span class="w"> </span><span class="c">% prevod klíčů na ascii hodnoty</span>
-<span class="w">    </span><span class="p">[</span><span class="o">~</span><span class="p">,</span><span class="w"> </span><span class="n">numbers</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">sort</span><span class="p">(</span><span class="n">keyNums</span><span class="p">);</span><span class="w"> </span><span class="c">% ~ pro ignorovani, serazeni klíčů </span>
+<span class="w">    </span><span class="p">[</span><span class="o">~</span><span class="p">,</span><span class="w"> </span><span class="n">numbers</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">sort</span><span class="p">(</span><span class="n">keyNums</span><span class="p">);</span><span class="w"> </span><span class="c">% ~ pro ignorovani, serazeni klíčů</span>
 
-<span class="w">    </span><span class="n">numRows</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">ceil</span><span class="p">(</span><span class="nb">length</span><span class="p">(</span><span class="nb">text</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nb">length</span><span class="p">(</span><span class="n">key</span><span class="p">));</span><span class="w"> </span>
+<span class="w">    </span><span class="n">numRows</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">ceil</span><span class="p">(</span><span class="nb">length</span><span class="p">(</span><span class="nb">text</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nb">length</span><span class="p">(</span><span class="n">key</span><span class="p">));</span>
 <span class="w">    </span><span class="n">paddedText</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">pad</span><span class="p">(</span><span class="nb">text</span><span class="p">,</span><span class="w"> </span><span class="n">numRows</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nb">length</span><span class="p">(</span><span class="n">key</span><span class="p">));</span>
 <span class="w">    </span><span class="n">M</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">reshape</span><span class="p">(</span><span class="n">paddedText</span><span class="p">,</span><span class="w"> </span><span class="nb">length</span><span class="p">(</span><span class="n">key</span><span class="p">),</span><span class="w"> </span><span class="n">numRows</span><span class="p">)</span><span class="o">&#39;</span><span class="p">;</span>
 <span class="w">    </span><span class="n">M_cipher</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">M</span><span class="p">(:,</span><span class="w"> </span><span class="n">numbers</span><span class="p">);</span>
@@ -1027,8 +1147,8 @@
 
 <span class="w">    </span><span class="n">rows</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">length</span><span class="p">(</span><span class="n">cipher</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nb">length</span><span class="p">(</span><span class="n">key</span><span class="p">);</span>
 <span class="w">    </span><span class="n">M_cipher</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">reshape</span><span class="p">(</span><span class="n">cipher</span><span class="p">,</span><span class="w"> </span><span class="n">rows</span><span class="p">,</span><span class="w"> </span><span class="p">[]);</span>
-<span class="w">    </span><span class="n">M</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">M_cipher</span><span class="p">(:,</span><span class="w"> </span><span class="n">numbers</span><span class="p">);</span><span class="w"> </span>
-<span class="w">    </span><span class="nb">text</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">M</span><span class="o">&#39;</span><span class="p">;</span><span class="w">      </span>
+<span class="w">    </span><span class="n">M</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">M_cipher</span><span class="p">(:,</span><span class="w"> </span><span class="n">numbers</span><span class="p">);</span>
+<span class="w">    </span><span class="nb">text</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">M</span><span class="o">&#39;</span><span class="p">;</span>
 <span class="w">    </span><span class="nb">text</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">text</span><span class="p">(:)</span><span class="o">&#39;</span><span class="p">;</span>
 <span class="k">end</span>
 

@@ -18,6 +18,10 @@
 <iframe src="https://elearning.tul.cz/course/view.php?id=19038" width="100%" height="800px"></iframe>
 - [Přehled na Elearning](https://elearning.tul.cz/course/view.php?id=19038)
 
+## Přihlášení
+
+- ssh perun.nti.tul.cz
+
 ### Prikazy z prvni hodiny cviceni
 
 ```bash
@@ -57,3 +61,13 @@
 ### Skripty
 
 - Externí shell a skripty: [http://shell.nti.tul.cz/](http://shell.nti.tul.cz/)
+
+### Procesy
+
+- top ps ps aux ps ux
+- sleep
+- ; - příkaz do popředí
+- & - spustí příkaz na pozadí
+- fg1 z pozadi do popředí bg1 do pozadi
+- ctrl + Z - do stopped
+- kill PID - ukončen killall SIGTERM SIGKILL

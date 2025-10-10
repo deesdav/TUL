@@ -36,6 +36,57 @@ Cvičení jsou zaměřená na **práci se skripty v Matlabu**, procvičení zák
   - Grafy 2D a 3D (`plot`, `mesh`, `surf`)
   - Přehledné zobrazení dat a výsledků
 
+## Základy a příkazy
+
+- % - komentář
+- ; na konci zamezí vypsání do konzole
+
+### Zkratky
+
+- ctrl R - koment
+- ctrl T - zrusit koment
+- F9 - spusti označenou cast kodu
+
+### Udělat vždy
+
+- clc; - vymaže konzoli
+- clear;
+- close all; - zavře soubory
+- disp(x) - vypíše do konzole x (disp = display)
+- 1:1:8 - generuje čísla od 1 do 8 po jednom
+
+### Matice
+
+- ones(3) - 3x3 matice s jedničkama
+- zeros(3,4) - 3x4 matice s nulama
+- eye(3) - jedničky na diagonale
+- inv(Matice) - inverce matice
+- A\*B - násobení matice
+- A.\*B - násobení po prvcích
+
+- squeeze(C(1,:,:)); - z 3D na 2D
+
+### Random
+
+- rand - nenáhodně
+- randn - náhodně
+- round zaokrouhlení
+- mean - průměr
+- numel - celkem prvku
+- sum - součet
+
+### Funkce
+
+```matlab
+function result = goniometricka_funkce(x)
+    result = (sin(x)).^2 .* cos(x);
+end
+```
+
+### Porovnání
+
+- lexikograficky - porovná první řádek dvou sloupcu, pokud jsou stejné porovná druhý řádek
+
 ## Přehled výuky
 
 <iframe src="https://elearning.tul.cz/course/view.php?id=20012" width="100%" height="800px"></iframe>
@@ -175,8 +226,8 @@ function cipher = cipher_for(text,key)
 
     keyNums = double(key);
     [keySorted, numbers] = sort(keyNums);
-    
-    
+
+
     k = 1;
     l = 1;
     for i = 1:size(text, 2)
@@ -187,7 +238,7 @@ function cipher = cipher_for(text,key)
             l = 1;
         end
     end
-    
+
     for i = 1:ceil(length(text)/length(key))
         for j = 1:length(key)
             M_cipher(i,j) = M(i,numbers(j));
@@ -203,13 +254,13 @@ end
 function cipher = cipher_task(text, key)
     % cipher = cipher_task(text, key)
     % text - libovolne dlouhy retezec (pole char, radkovy vektor)
-    % key - libovolny retezec (pole char) kratsi/stejne dlouhy jako text: length(text)>=length(key) 
+    % key - libovolny retezec (pole char) kratsi/stejne dlouhy jako text: length(text)>=length(key)
     % cipher - vystupni retezec - sifra - radkovy vektor
-    
-    keyNums = double(key); % prevod klíčů na ascii hodnoty
-    [~, numbers] = sort(keyNums); % ~ pro ignorovani, serazeni klíčů 
 
-    numRows = ceil(length(text) / length(key)); 
+    keyNums = double(key); % prevod klíčů na ascii hodnoty
+    [~, numbers] = sort(keyNums); % ~ pro ignorovani, serazeni klíčů
+
+    numRows = ceil(length(text) / length(key));
     paddedText = pad(text, numRows * length(key));
     M = reshape(paddedText, length(key), numRows)';
     M_cipher = M(:, numbers);
@@ -239,7 +290,7 @@ function text = decipher_for(cipher,key)
 
     keyNums = double(key);
     [keySorted, numbers] = sort(keyNums);
-    
+
     k = 1;
     l = 1;
     for i = 1:size(cipher, 2)
@@ -250,7 +301,7 @@ function text = decipher_for(cipher,key)
             l = 1;
         end
     end
-    
+
     for i = 1:ceil(length(cipher)/length(key))
         for j = 1:length(key)
             M(i,j) = M_cipher(i,numbers(j));
@@ -275,8 +326,8 @@ function text = decipher_task(cipher,key)
 
     rows = length(cipher) / length(key);
     M_cipher = reshape(cipher, rows, []);
-    M = M_cipher(:, numbers); 
-    text = M';      
+    M = M_cipher(:, numbers);
+    text = M';
     text = text(:)';
 end
 

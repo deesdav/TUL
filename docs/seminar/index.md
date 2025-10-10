@@ -11,6 +11,11 @@ Seminář je určen pro studenty, kteří chtějí zlepšit své schopnosti v ř
 
 ## Goniometrické funkce
 
+- sin - protilehlá/přepona - a/c
+- cos - přilehlá / přepona - b/c
+- tg - přilehlá / protilehlý - a/b
+- tg = sin / cos
+
 ![](./goniometricke_funkce/1.jpg)
 ![](./goniometricke_funkce/2.jpg)
 ![](./goniometricke_funkce/3.jpg)
@@ -54,7 +59,7 @@ function y = polynom(x, a)
     y = 0;
     for i = 1:n+1
         y = y + a(i) * x.^(n-i-1);
-        
+
     end
 end
 % y = polynom(x, [1, -3, 2]);
