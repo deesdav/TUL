@@ -53,7 +53,7 @@ Cílem předmětu je:
 
 <iframe src="./prednasky/Ctvrta_prednaska.pdf" width="100%" height="800px"></iframe>
 
-[Stáhnout Treti_prednaska.pdf](./prednasky/Ctvrta_prednaska.pdf)
+[Stáhnout Ctvrta_prednaska.pdf](./prednasky/Ctvrta_prednaska.pdf)
 
 ### Důležité fotky z přednašky
 
@@ -84,3 +84,9 @@ Cílem předmětu je:
 <iframe src="./cviceni/Cviceni4N.pdf" width="100%" height="800px"></iframe>
 
 [Stáhnout Cviceni4N.pdf](./cviceni/Cviceni4N.pdf)
+
+### Cviceni5N.pdf
+
+<iframe src="./cviceni/Cviceni5N.pdf" width="100%" height="800px"></iframe>
+
+[Stáhnout Cviceni5N.pdf](./cviceni/Cviceni5N.pdf)
