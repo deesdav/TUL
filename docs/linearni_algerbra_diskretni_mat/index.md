@@ -100,7 +100,7 @@ Zkoumá objekty, které jsou **oddělené a nespojité**.
 ![](sesta_prednaska/6.jpg)
 ![](sesta_prednaska/7.jpg)
 
-### Pátá přednáška
+### Sedmá přednáška
 
 #### Báze vektorového prostoru
 
