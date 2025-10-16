@@ -55,6 +55,12 @@ Cílem předmětu je:
 
 [Stáhnout Ctvrta_prednaska.pdf](./prednasky/Ctvrta_prednaska.pdf)
 
+### Pata_prednaska.pdf
+
+<iframe src="./prednasky/Pata_prednaska.pdf" width="100%" height="800px"></iframe>
+
+[Stáhnout Pata_prednaska.pdf](./prednasky/Pata_prednaska.pdf)
+
 ### Důležité fotky z přednašky
 
 ![](IMG_2521.jpg)
