@@ -38,6 +38,12 @@ Zkoumá objekty, které jsou **oddělené a nespojité**.
 
 - [Přehled na Elearning](https://elearning.tul.cz/course/view.php?id=20460)
 
+## Příprava ke zkoušce
+
+<iframe src="priprava_ke_zkousce.pdf" width="100%" height="800px"></iframe>
+
+[Stáhnout pdf](priprava_ke_zkousce.pdf)
+
 ## Přednášky – rychlý přehled
 
 ### První a druhá přednáška
@@ -46,7 +52,7 @@ Zkoumá objekty, které jsou **oddělené a nespojité**.
 
 <iframe src="KMA-PULA.pdf" width="100%" height="800px"></iframe>
 
-[Stáhnout pdf](KMA-PULA.pdf)
+[Stáhnout.pdf](KMA-PULA.pdf)
 
 ### Třetí přednáška
 
