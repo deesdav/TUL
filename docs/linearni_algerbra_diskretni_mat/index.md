@@ -42,7 +42,7 @@ Zkoumá objekty, které jsou **oddělené a nespojité**.
 
 <iframe src="priprava_ke_zkousce.pdf" width="100%" height="800px"></iframe>
 
-[Stáhnout pdf](priprava_ke_zkousce.pdf)
+[Otevřít / Stáhnout priprava_ke_zkousce.pdf](priprava_ke_zkousce.pdf)
 
 ## Přednášky – rychlý přehled
 
@@ -52,7 +52,7 @@ Zkoumá objekty, které jsou **oddělené a nespojité**.
 
 <iframe src="KMA-PULA.pdf" width="100%" height="800px"></iframe>
 
-[Stáhnout.pdf](KMA-PULA.pdf)
+[Otevřít / Stáhnout KMA-PULA.pdf](KMA-PULA.pdf)
 
 ### Třetí přednáška
 

@@ -60,16 +60,16 @@ Typický postup:
 
 <iframe src="alg1_ulohy01_zaciname.pdf" width="100%" height="800px"></iframe>
 
-[Stáhnout soubor.pdf](alg1_ulohy01_zaciname.pdf)
+[Otevřít / Stáhnout soubor.pdf](alg1_ulohy01_zaciname.pdf)
 
 ### alg1_ulohy02_pocitame.pdf
 
 <iframe src="alg1_ulohy02_pocitame.pdf" width="100%" height="800px"></iframe>
 
-[Stáhnout soubor.pdf](alg1_ulohy02_pocitame.pdf)
+[Otevřít / Stáhnout soubor.pdf](alg1_ulohy02_pocitame.pdf)
 
 ### alg1_ulohy03_nejen_pocitame.pdf
 
 <iframe src="alg1_ulohy03_nejen_pocitame.pdf" width="100%" height="800px"></iframe>
 
-[Stáhnout soubor.pdf](alg1_ulohy03_nejen_pocitame.pdf)
+[Otevřít / Stáhnout soubor.pdf](alg1_ulohy03_nejen_pocitame.pdf)

@@ -101,7 +101,7 @@ end
 
 <iframe src="./zadaniCv/MATLB_cv1.pdf" width="100%" height="800px"></iframe>
 
-[Stáhnout MATLB_cv1.pdf](./zadaniCv/MATLB_cv1.pdf)
+[Otevřít / Stáhnout MATLB_cv1.pdf](./zadaniCv/MATLB_cv1.pdf)
 
 #### cv01.m
 
@@ -153,7 +153,7 @@ end
 
 <iframe src="./zadaniCv/MATLB_cv2.pdf" width="100%" height="800px"></iframe>
 
-[Stáhnout MATLB_cv2.pdf](./zadaniCv/MATLB_cv2.pdf)
+[Otevřít / Stáhnout MATLB_cv2.pdf](./zadaniCv/MATLB_cv2.pdf)
 
 #### cv02.m
 
@@ -370,7 +370,7 @@ disp(text)
 
 <iframe src="./zadaniCv/MATLB_cv5.pdf" width="100%" height="800px"></iframe>
 
-[Stáhnout MATLB_cv5.pdf](./zadaniCv/MATLB_cv5.pdf)
+[Otevřít / Stáhnout MATLB_cv5.pdf](./zadaniCv/MATLB_cv5.pdf)
 
 #### cv05.m
 

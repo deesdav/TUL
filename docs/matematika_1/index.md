@@ -27,7 +27,7 @@ Cílem předmětu je:
 
 <iframe src="./prednasky/PrehledSS.pdf" width="100%" height="800px"></iframe>
 
-[Stáhnout PrehledSS.pdf](./prednasky/PrehledSS.pdf)
+[Otevřít / Stáhnout PrehledSS.pdf](./prednasky/PrehledSS.pdf)
 
 ## Přednášky
 
@@ -35,31 +35,31 @@ Cílem předmětu je:
 
 <iframe src="./prednasky/Prvni_prednaska.pdf" width="100%" height="800px"></iframe>
 
-[Stáhnout Prvni_prednaska.pdf](./prednasky/Prvni_prednaska.pdf)
+[Otevřít / Stáhnout Prvni_prednaska.pdf](./prednasky/Prvni_prednaska.pdf)
 
 ### Druha_prednaska.pdf
 
 <iframe src="./prednasky/Druha_prednaska.pdf" width="100%" height="800px"></iframe>
 
-[Stáhnout Druha_prednaska.pdf](./prednasky/Druha_prednaska.pdf)
+[Otevřít / Stáhnout Druha_prednaska.pdf](./prednasky/Druha_prednaska.pdf)
 
 ### Treti_prednaska.pdf
 
 <iframe src="./prednasky/Treti_prednaska.pdf" width="100%" height="800px"></iframe>
 
-[Stáhnout Treti_prednaska.pdf](./prednasky/Treti_prednaska.pdf)
+[Otevřít / Stáhnout Treti_prednaska.pdf](./prednasky/Treti_prednaska.pdf)
 
 ### Ctvrta_prednaska.pdf
 
 <iframe src="./prednasky/Ctvrta_prednaska.pdf" width="100%" height="800px"></iframe>
 
-[Stáhnout Ctvrta_prednaska.pdf](./prednasky/Ctvrta_prednaska.pdf)
+[Otevřít / Stáhnout Ctvrta_prednaska.pdf](./prednasky/Ctvrta_prednaska.pdf)
 
 ### Pata_prednaska.pdf
 
 <iframe src="./prednasky/Pata_prednaska.pdf" width="100%" height="800px"></iframe>
 
-[Stáhnout Pata_prednaska.pdf](./prednasky/Pata_prednaska.pdf)
+[Otevřít / Stáhnout Pata_prednaska.pdf](./prednasky/Pata_prednaska.pdf)
 
 ### Důležité fotky z přednašky
 
@@ -70,7 +70,7 @@ Cílem předmětu je:
 
 <iframe src="Příklady_MA1.pdf" width="100%" height="800px"></iframe>
 
-[Stáhnout Příklady_MA1.pdf](Příklady_MA1.pdf)
+[Otevřít / Stáhnout Příklady_MA1.pdf](Příklady_MA1.pdf)
 
 ## Cvičení
 
@@ -83,22 +83,22 @@ Cílem předmětu je:
 
 <iframe src="./cviceni/Cviceni3N.pdf" width="100%" height="800px"></iframe>
 
-[Stáhnout Cviceni3N.pdf](./cviceni/Cviceni3N.pdf)
+[Otevřít / Stáhnout Cviceni3N.pdf](./cviceni/Cviceni3N.pdf)
 
 ### Cviceni4N.pdf
 
 <iframe src="./cviceni/Cviceni4N.pdf" width="100%" height="800px"></iframe>
 
-[Stáhnout Cviceni4N.pdf](./cviceni/Cviceni4N.pdf)
+[Otevřít / Stáhnout Cviceni4N.pdf](./cviceni/Cviceni4N.pdf)
 
 ### Cviceni5N.pdf
 
 <iframe src="./cviceni/Cviceni5N.pdf" width="100%" height="800px"></iframe>
 
-[Stáhnout Cviceni5N.pdf](./cviceni/Cviceni5N.pdf)
+[Otevřít / Stáhnout Cviceni5N.pdf](./cviceni/Cviceni5N.pdf)
 
 ### Cviceni6.pdf
 
 <iframe src="./cviceni/Cviceni6.pdf" width="100%" height="800px"></iframe>
 
-[Stáhnout Cviceni6.pdf](./cviceni/Cviceni6.pdf)
+[Otevřít / Stáhnout Cviceni6.pdf](./cviceni/Cviceni6.pdf)
