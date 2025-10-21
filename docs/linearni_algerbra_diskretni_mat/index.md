@@ -123,6 +123,9 @@ Zkoumá objekty, které jsou **oddělené a nespojité**.
 
 ![](osma_prednaska/1.jpg)
 ![](osma_prednaska/2.jpg)
+
+#### Vztahy mezi grafy a základní operace
+
 ![](osma_prednaska/3.jpg)
 ![](osma_prednaska/4.jpg)
 ![](osma_prednaska/5.jpg)
