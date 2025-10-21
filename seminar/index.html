@@ -652,6 +652,30 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#gaussova-eliminace" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gaussova eliminace
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gaussova eliminace">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#maticem" class="md-nav__link">
+    <span class="md-ellipsis">
+      matice.m
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -861,6 +885,27 @@
 <span class="n">sinus</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span>
 <span class="nb">sin</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span>
 <span class="n">sinus</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span>
+</code></pre></div>
+<h2 id="gaussova-eliminace">Gaussova eliminace<a class="headerlink" href="#gaussova-eliminace" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="gaussova_eliminace/1.jpg" />
+<img alt="" src="gaussova_eliminace/2.jpg" />
+<img alt="" src="gaussova_eliminace/3.jpg" />
+<img alt="" src="gaussova_eliminace/4.jpg" />
+<img alt="" src="gaussova_eliminace/5.jpg" /></p>
+<h3 id="maticem">matice.m<a class="headerlink" href="#maticem" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">;</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">];</span>
+<span class="n">B</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">;</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">;</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">];</span>
+
+<span class="nb">disp</span><span class="p">(</span><span class="n">A</span><span class="o">+</span><span class="n">B</span><span class="p">);</span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">A</span><span class="o">*</span><span class="n">B</span><span class="p">);</span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">B</span><span class="o">*</span><span class="n">A</span><span class="p">);</span>
+<span class="n">M</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">];</span>
+<span class="n">b</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">3</span><span class="p">;</span><span class="mi">4</span><span class="p">;</span><span class="mi">4</span><span class="p">;</span><span class="mi">3</span><span class="p">];</span>
+<span class="n">dips</span><span class="p">(</span><span class="nb">inv</span><span class="p">(</span><span class="n">M</span><span class="p">));</span>
+<span class="nb">disp</span><span class="p">(</span><span class="nb">inv</span><span class="p">(</span><span class="n">M</span><span class="p">)</span><span class="o">*</span><span class="n">M</span><span class="p">);</span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">M</span><span class="o">*</span><span class="nb">inv</span><span class="p">(</span><span class="n">M</span><span class="p">));</span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">M</span><span class="o">\</span><span class="n">b</span><span class="p">);</span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">M</span><span class="o">*</span><span class="p">[</span><span class="mi">1</span><span class="p">;</span><span class="mi">1</span><span class="p">;</span><span class="mi">1</span><span class="p">;</span><span class="mi">1</span><span class="p">]);</span>
 </code></pre></div>
 
 
