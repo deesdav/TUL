@@ -117,6 +117,21 @@ Zkoumá objekty, které jsou **oddělené a nespojité**.
 ![](sedma_prednaska/5.jpg)
 ![](sedma_prednaska/6.jpg)
 
+### Osmá přednáška
+
+#### Úvod do teorie grafů
+
+![](osma_prednaska/1.jpg)
+![](osma_prednaska/2.jpg)
+![](osma_prednaska/3.jpg)
+![](osma_prednaska/4.jpg)
+![](osma_prednaska/5.jpg)
+![](osma_prednaska/6.jpg)
+![](osma_prednaska/7.jpg)
+![](osma_prednaska/8.jpg)
+![](osma_prednaska/9.jpg)
+![](osma_prednaska/10.jpg)
+
 ## Cvičení
 
 ### Páté cvičení
