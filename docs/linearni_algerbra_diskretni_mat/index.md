@@ -135,6 +135,28 @@ Zkoumá objekty, které jsou **oddělené a nespojité**.
 ![](osma_prednaska/9.jpg)
 ![](osma_prednaska/10.jpg)
 
+### Devátá přednáška
+
+#### Lineární zobrazení na vektrových prostorech
+
+![](devata_prednaska/1.jpg)
+![](devata_prednaska/2.jpg)
+
+#### Test linearity zobrazeni
+
+![](devata_prednaska/3.jpg)
+
+#### Test aditivity a homogenity
+
+![](devata_prednaska/4.jpg)
+
+#### Základní vlastnosti lineárních zobrazení
+
+![](devata_prednaska/5.jpg)
+![](devata_prednaska/6.jpg)
+![](devata_prednaska/7.jpg)
+![](devata_prednaska/8.jpg)
+
 ## Cvičení
 
 ### Páté cvičení
