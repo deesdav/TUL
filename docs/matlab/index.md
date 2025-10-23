@@ -95,7 +95,7 @@ end
 
 ## Cvičení
 
-### Zadání
+### Zadání prvního cvičení
 
 #### MATLB_cv1.pdf
 
@@ -147,7 +147,7 @@ for i = 1:size(C,1)
 end
 ```
 
-### Zadání
+### Zadání druhého cvičení
 
 #### MATLB_cv2.pdf
 
@@ -196,7 +196,7 @@ function y = fce_sin2_cos(x)
 end
 ```
 
-### Zadání
+### Zadání třetího cvičení
 
 V MATLAB Grader
 
@@ -236,7 +236,7 @@ disp('seřazené pole')
 B_sorted
 ```
 
-### Zadání
+### Zadání čtvrtého cvičení
 
 V MATLAB Grader
 
@@ -364,7 +364,7 @@ text = decipher_task(cipher, key);
 disp(text)
 ```
 
-### Zadání
+### Zadání pátého cvičení
 
 #### MATLB_cv5.pdf
 
@@ -481,3 +481,19 @@ grid on;
 
 <iframe src="./filesCv5/plot.pdf" width="100%" height="800px"></iframe>
 
+### Zadání šestého cvičení
+
+#### MATLB_cv6.pdf
+
+<iframe src="./zadaniCv/MATLB_cv6.pdf" width="100%" height="800px"></iframe>
+
+[Otevřít / Stáhnout MATLB_cv6.pdf](./zadaniCv/MATLB_cv6.pdf)
+
+#### cv06.m
+
+```matlab
+clc; close;
+
+
+
+```
