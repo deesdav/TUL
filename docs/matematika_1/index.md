@@ -59,7 +59,13 @@ Cílem předmětu je:
 
 <iframe src="./prednasky/Pata_prednaska.pdf" width="100%" height="800px"></iframe>
 
-[Otevřít / Stáhnout Pata_prednaska.pdf](./prednasky/Pata_prednaska.pdf)
+[Otevřít / Stáhnout Pata_prednaska.pdf](./prednasky/SestaSedma_prednaska.pdf)
+
+### SestaSedma_prednaska.pdf
+
+<iframe src="./prednasky/SestaSedma_prednaska.pdf" width="100%" height="800px"></iframe>
+
+[Otevřít / Stáhnout SestaSedma_prednaska.pdf](./prednasky/SestaSedma_prednaska.pdf)
 
 ### Důležité fotky z přednašky
 

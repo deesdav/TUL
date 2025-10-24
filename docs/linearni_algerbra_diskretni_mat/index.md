@@ -142,7 +142,7 @@ Zkoumá objekty, které jsou **oddělené a nespojité**.
 ![](devata_prednaska/1.jpg)
 ![](devata_prednaska/2.jpg)
 
-#### Test linearity zobrazeni
+#### Test linearity zobrazení
 
 ![](devata_prednaska/3.jpg)
 
