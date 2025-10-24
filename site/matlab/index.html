@@ -911,6 +911,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#matlb_cv6_ukolpdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      MATLB_cv6_ukol.pdf
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1443,7 +1452,50 @@
 <p><a href="zadaniCv/MATLB_cv6.pdf">Otevřít / Stáhnout MATLB_cv6.pdf</a></p>
 <h4 id="cv06m">cv06.m<a class="headerlink" href="#cv06m" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span class="nb">clc</span><span class="p">;</span><span class="w"> </span><span class="nb">close</span><span class="p">;</span>
+
+<span class="n">f</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">@(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="nb">atan</span><span class="p">((</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">./</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">1</span><span class="p">));</span>
+<span class="n">g</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">@(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="n">x</span><span class="o">./</span><span class="nb">sqrt</span><span class="p">(</span><span class="n">x</span><span class="o">.^</span><span class="mi">2</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="n">h</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">@(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="n">x</span><span class="o">.^</span><span class="n">x</span><span class="p">;</span>
+
+<span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="o">-</span><span class="mi">10</span><span class="p">:</span><span class="mf">0.01</span><span class="p">:</span><span class="mi">10</span><span class="p">;</span>
+
+<span class="n">y1</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="n">y1</span><span class="p">(</span><span class="n">x</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">nan</span><span class="p">;</span>
+
+<span class="n">fig1</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">figure</span><span class="p">;</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y1</span><span class="p">);</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">);</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;f(x)&#39;</span><span class="p">);</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;Plot of f(x)&#39;</span><span class="p">);</span>
+
+<span class="n">y2</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">g</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="n">y2</span><span class="p">(</span><span class="nb">imag</span><span class="p">(</span><span class="n">y2</span><span class="p">)</span><span class="o">~=</span><span class="mi">0</span><span class="p">)=</span><span class="n">nan</span><span class="p">;</span>
+
+<span class="n">fig2</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">figure</span><span class="p">;</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y2</span><span class="p">);</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">);</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;g(x)&#39;</span><span class="p">);</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;Plot of g(x)&#39;</span><span class="p">);</span>
+
+<span class="n">y3</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">h</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="n">y3</span><span class="p">(</span><span class="nb">imag</span><span class="p">(</span><span class="n">y3</span><span class="p">)</span><span class="w"> </span><span class="o">~=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">nan</span><span class="p">;</span>
+<span class="n">y3</span><span class="p">(</span><span class="nb">isinf</span><span class="p">(</span><span class="n">y3</span><span class="p">))</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">nan</span><span class="p">;</span><span class="w"> </span>
+
+<span class="n">fig3</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">figure</span><span class="p">;</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y3</span><span class="p">);</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">);</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;h(x)&#39;</span><span class="p">);</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;Plot of h(x)&#39;</span><span class="p">);</span>
+
+
+<span class="nb">saveas</span><span class="p">(</span><span class="n">fig1</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;f.eps&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;epsc&#39;</span><span class="p">);</span>
+<span class="nb">saveas</span><span class="p">(</span><span class="n">fig2</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;g.eps&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;epsc&#39;</span><span class="p">);</span>
+<span class="nb">saveas</span><span class="p">(</span><span class="n">fig3</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;h.eps&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;epsc&#39;</span><span class="p">);</span>
 </code></pre></div>
+<h4 id="matlb_cv6_ukolpdf">MATLB_cv6_ukol.pdf<a class="headerlink" href="#matlb_cv6_ukolpdf" title="Permanent link">&para;</a></h4>
+<iframe src="./filesCv6/MATLB_cv6_ukol.pdf" width="100%" height="800px"></iframe>
+
+<p><a href="filesCv6/MATLB_cv6_ukol.pdf">Otevřít / Stáhnout MATLB_cv6_ukol.pdf</a></p>
 
 
 
