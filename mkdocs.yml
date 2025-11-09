@@ -142,6 +142,8 @@ markdown_extensions:
 extra_javascript:
   - https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js
 
+extra_css:
+  - css/extra.css
 nav:
   - Domovská stránka: index.md
   - Programování Java 1: algoritmizace_programovani_java_1/index.md

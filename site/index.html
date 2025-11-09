@@ -44,6 +44,8 @@
       
     
     
+      <link rel="stylesheet" href="css/extra.css">
+    
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -435,8 +437,6 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -469,14 +469,21 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
       Obsah
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tul-technicka-univerzita-v-liberci" class="md-nav__link">
+    <span class="md-ellipsis">
+      🏫 TUL – Technická univerzita v Liberci
+    </span>
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#prehled" class="md-nav__link">
@@ -497,9 +504,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#klicove-vlastnosti" class="md-nav__link">
+  <a href="#klicove-vlastnost" class="md-nav__link">
     <span class="md-ellipsis">
-      🌟 Klíčové vlastnosti
+      🌟 Klíčové vlastnost
     </span>
   </a>
   
@@ -732,115 +739,81 @@
 
 
 
-<h1 id="tul-technicka-univerzita-v-liberci">🏫 TUL – Technická univerzita v Liberci<a class="headerlink" href="#tul-technicka-univerzita-v-liberci" title="Permanent link">&para;</a></h1>
-<p>Vítejte v centrálním repozitáři TUL! Tento repozitář slouží jako úložiště zdrojů, kódu a dokumentace související s projekty a studiem.</p>
+  <h1>Domovská stránka</h1>
+
+<!-- Hero sekce s úvodem -->
+
+<h2 id="tul-technicka-univerzita-v-liberci">🏫 TUL – Technická univerzita v Liberci<a class="headerlink" href="#tul-technicka-univerzita-v-liberci" title="Permanent link">&para;</a></h2>
+<div class="hero">
+  Vítejte v centrálním repozitáři TUL! Tento repozitář slouží jako úložiště zdrojů, kódu a dokumentace související s projekty a studiem. 
+</div>
+
+<hr />
 <h2 id="prehled">📚 Přehled<a class="headerlink" href="#prehled" title="Permanent link">&para;</a></h2>
-<p>Struktura repozitáře je navržena pro <strong>přehlednost, spolupráci a snadnou orientaci</strong>. Najdeš tu vše od předmětů přes skripta až po užitečné odkazy.</p>
+<!-- Sekce Přehled -->
+<section class="info-box">
+  Struktura repozitáře je navržena pro <strong>přehlednost, spolupráci a snadnou orientaci</strong>.  
+  Najdeš tu vše od předmětů přes skripta až po užitečné odkazy. 
+</section>
+
 <h2 id="predmety">⚡ Předměty<a class="headerlink" href="#predmety" title="Permanent link">&para;</a></h2>
 <style>
-.grid-predmety {
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* 2 sloupce na desktopu */
-  gap: 15px;
-}
-
-
-@media (max-width: 768px) {
-  .grid-predmety {
-    grid-template-columns: 1fr; /* 1 sloupec na mobilu */
-  }
-}
-
-.karta {
-  padding: 15px;
-  border-radius: 10px;
-  text-align: center;
-  background-color: goldenrod;
-  border: 2px solid transparent;
-}
-
-
-.karta a {
-  font-weight: 400;
-  color: white;
-  border: 2px solid transparent;
-}
-
-.karta a:hover {
-  color: white;
-  text-decoration: underline;
-  border: 2px solid black;
-}
-.karta:hover {
-  background-color: black;
-  border: 2px solid black;
-}
 
 </style>
 
 <div class="grid-predmety">
-
-  <div class="karta">
-    <a href="algoritmizace_programovani_java_1/">💻 Programování Java 1</a>
-  </div>
-
-  <div class="karta">
-    <a href="linearni_algerbra_diskretni_mat/">📐 Lineární algebra a diskrétní mat</a>
-  </div>
-
-  <div class="karta">
-    <a href="matematika_1/">🔢 Matematika 1</a>
-  </div>
-
-  <div class="karta">
-    <a href="seminar/">📝 Matematika Seminář</a>
-  </div>
-
-   <div class="karta">
-    <a href="shell_linux/">🐚 Shell / Linux</a>
-  </div>
-
-   <div class="karta">
-    <a href="matlab/">📊 Matlab</a>
-  </div>   
-
-  <div class="karta">
-    <a href="inzenyrstvi/">⚙️ Inženýrství</a>
-  </div>
-
-  <div class="karta">
-   <a href="odkazy/">🔗 Odkazy </a>
-  </div>
-
+  <div class="karta"><a href="algoritmizace_programovani_java_1/">💻 Programování Java 1</a></div>
+  <div class="karta"><a href="linearni_algerbra_diskretni_mat/">📐 Lineární algebra a diskrétní mat</a></div>
+  <div class="karta"><a href="matematika_1/">🔢 Matematika 1</a></div>
+  <div class="karta"><a href="seminar/">📝 Matematika Seminář</a></div>
+  <div class="karta"><a href="shell_linux/">🐚 Shell / Linux</a></div>
+  <div class="karta"><a href="matlab/">📊 Matlab</a></div>
+  <div class="karta"><a href="inzenyrstvi/">⚙️ Inženýrství</a></div>
+  <div class="karta"><a href="odkazy/">🔗 Odkazy</a></div>
 </div>
 
-<h2 id="klicove-vlastnosti">🌟 Klíčové vlastnosti<a class="headerlink" href="#klicove-vlastnosti" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Organizovaná struktura složek a materiálů.</li>
-<li>Dokumentace pro snadné používání a sdílení.</li>
-<li>Kód připravený pro další rozvoj.</li>
-</ul>
+<hr />
+<h2 id="klicove-vlastnost">🌟 Klíčové vlastnost<a class="headerlink" href="#klicove-vlastnost" title="Permanent link">&para;</a></h2>
+<!-- Sekce Klíčové vlastnosti -->
+<section class="info-box">
+  <ul>
+    <li>Organizovaná struktura složek a materiálů</li>
+    <li>Dokumentace pro snadné používání a sdílení</li>
+    <li>Kód připravený pro další rozvoj</li>
+  </ul>
+</section>
+
 <hr />
 <h2 id="zaciname">🚀 Začínáme<a class="headerlink" href="#zaciname" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/deesdav/TUL.git
-<span class="nb">cd</span><span class="w"> </span>TUL
-</code></pre></div>
+<!-- Sekce Začínáme -->
+<section class="info-box">
+  <pre><code>git clone https://github.com/deesdav/TUL.git
+cd TUL
+  </code></pre>
+</section>
+
+<hr />
 <h2 id="spusteni-lokalniho-webu-s-mkdocs-material">🖥️ Spuštění lokálního webu s MkDocs (Material)<a class="headerlink" href="#spusteni-lokalniho-webu-s-mkdocs-material" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>py<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
-py<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>mkdocs<span class="w"> </span>mkdocs-material
-py<span class="w"> </span>-m<span class="w"> </span>mkdocs<span class="w"> </span>serve
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>Otevřete<span class="w"> </span>v<span class="w"> </span>prohlížeči:<span class="w"> </span>http://127.0.0.1:8000
-</code></pre></div>
-<ul>
-<li>Tip: Obrázky a ikony umístěte do složky docs/images, aby MkDocs správně načítal materiály.</li>
-</ul>
+<!-- Sekce Lokální web -->
+<section class="info-box">
+  <pre><code>py -m pip install --upgrade pip
+py -m pip install mkdocs mkdocs-material
+py -m mkdocs serve
+  </code></pre>
+  <p>Otevřete v prohlížeči: <strong>http://127.0.0.1:8000</strong></p>
+  <p>Tip: Obrázky a ikony dejte do složky <code>docs/images</code>, aby MkDocs správně načítal materiály.</p>
+</section>
+
+<hr />
 <h2 id="prispivani">🤝 Přispívání<a class="headerlink" href="#prispivani" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Forkněte repo.</li>
-<li>Vytvořte nový branch pro změny.</li>
-<li>Odešlete Pull Request s popisem změn.</li>
-</ol>
+<!-- Sekce Přispívání -->
+<section class="info-box">
+  <ol>
+    <li>Forkněte repo</li>
+    <li>Vytvořte nový branch pro změny</li>
+    <li>Odešlete Pull Request s popisem změn</li>
+  </ol>
+</section>
 
 
 

@@ -1,0 +1,74 @@
+.grid-predmety {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 sloupce na desktopu */
+  gap: 15px;
+}
+
+@media (max-width: 768px) {
+  .grid-predmety {
+    grid-template-columns: 1fr; /* 1 sloupec na mobilu */
+  }
+}
+
+.karta {
+  padding: 25px 15px;
+  border-radius: 16px;
+  text-align: center;
+  background: linear-gradient(145deg, #6a11cb, #2575fc);
+  color: white;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: all 0.4s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.karta:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(145deg, #2575fc, #6a11cb);
+}
+
+.karta a {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.karta a::before {
+  content: "";
+  display: inline-block;
+  margin-right: 8px;
+  transition: transform 0.3s ease;
+}
+
+.karta:hover a::before {
+  transform: rotate(20deg) scale(1.2);
+}
+
+.karta::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  transform: skewX(-25deg);
+  transition: all 0.5s ease;
+}
+
+.karta:hover::after {
+  left: 125%;
+}
+
+@media (max-width: 768px) {
+  .karta {
+    font-size: 1rem;
+    padding: 20px 10px;
+  }
+}
