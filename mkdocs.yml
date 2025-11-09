@@ -1,0 +1,154 @@
+site_name: TUL
+
+theme:
+  name: material
+  language: cs
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.footer
+    - toc.integrate
+    - header.autohide
+    - navigation.top
+    - navigation.toc.sticky
+    - navigation.sections.indicator
+    - navigation.tracking
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+    - content.code.select
+    - content.tabs.link
+    - content.tabs.persist
+    - content.action.edit
+    - content.action.view
+    - content.footnote.tooltips
+    - content.footnote.poppers
+    - content.tooltips
+    - content.toolbars
+    - content.copy.link
+    - announce.dismiss
+    - header.search
+    - header.buttons
+  plugins:
+    - search
+    - glightbox
+    - git-revision-date-localized
+    - git-revision-date
+    - git-committers
+    - awesome-pages
+    - macros
+    - minify:
+        minify_html: true
+    - autorefs
+    - offline
+    - pwa:
+        manifest:
+          name: TUL
+          short_name: TUL
+          start_url: /
+          display: standalone
+          background_color: "#ffffff"
+          theme_color: "#3949ab"
+        update_popup: true
+    - seo:
+        site_name: TUL
+        site_description: "Výukové materiály TUL – programování, matematika, Linux, Matlab a další."
+        site_author: David
+        image: images/logo.png
+        locale: cs_CZ
+        type: website
+        canonical: true
+        structured_data: true
+        title_template: "%s | TUL"
+        twitter: true
+        facebook: true
+        og_locale: cs_CZ
+        og_type: website
+        og_site_name: TUL
+        og_image: images/logo.png
+        og_description: "Výukové materiály TUL – programování, matematika, Linux, Matlab a další."
+        google_plus: true
+    - sitemap
+    - robots
+    - google-fonts:
+        families:
+          - Inter
+          - Fira Code
+  palette:
+    - scheme: default
+      primary: orange
+      accent: amber
+      toggle:
+        icon: material/weather-night
+        name: Přepnout do tmavého režimu
+    - scheme: slate
+      primary: deep purple
+      accent: purple
+      toggle:
+        icon: material/weather-sunny
+        name: Přepnout do světlého režimu
+  font:
+    text: "Inter"
+    code: "Fira Code"
+
+extra:
+  analytics:
+    provider: google
+    property: G-XXXXXXXXXX
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/
+    - icon: fontawesome/brands/discord
+      link: https://discord.com/
+    - icon: fontawesome/brands/youtube
+      link: https://youtube.com/
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/
+  logo: images/logo.png
+  favicon: images/favicon.ico
+  meta:
+    description: "Výukové materiály TUL – moderní, přehledné a rychlé."
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - pymdownx.superfences
+  - pymdownx.tabbed
+  - pymdownx.details
+  - pymdownx.mark
+  - pymdownx.keys
+  - pymdownx.progressbar
+  - pymdownx.tasklist
+  - pymdownx.emoji
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.highlight
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.tilde
+  - pymdownx.b64
+  - toc:
+      permalink: true
+  - footnotes
+  - def_list
+  - attr_list
+
+extra_javascript:
+  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js
+
+nav:
+  - Domovská stránka: index.md
+  - Programování Java 1: algoritmizace_programovani_java_1/index.md
+  - Lineární algebra a diskrétní mat: linearni_algerbra_diskretni_mat/index.md
+  - Matematika 1: matematika_1/index.md
+  - Matematika Seminář: seminar/index.md
+  - Shell: shell_linux/index.md
+  - Matlab: matlab/index.md
+  - Inženýrství: inzenyrstvi/index.md
+  - Odkazy: odkazy/index.md
