@@ -48,10 +48,24 @@ Zkoumá objekty, které jsou **oddělené a nespojité**.
 
 ### Páté cvičení
 
-![](pate_cviceni/1.jpg)
-![](pate_cviceni/2.jpg)
-![](pate_cviceni/3.jpg)
-![](pate_cviceni/4.jpg)
+![](cviceni/pate_cviceni/1.jpg)
+![](cviceni/pate_cviceni/2.jpg)
+![](cviceni/pate_cviceni/3.jpg)
+![](cviceni/pate_cviceni/4.jpg)
+
+### Přílady na inverzní matice
+
+#### Um3-1-1.ps.pdf
+
+<iframe src="cviceni/inverzni_matice/Um3-1-1.ps.pdf" width="100%" height="800px"></iframe>
+
+[Otevřít / Stáhnout Um3-1-1.ps.pdf](cviceni/inverzni_matice/Um3-1-1.ps.pdf)
+
+#### Um4-1-1.ps.pdf
+
+<iframe src="cviceni/inverzni_matice/Um4-1-1.ps.pdf" width="100%" height="800px"></iframe>
+
+[Otevřít / Stáhnout Um4-1-1.ps.pdf](cviceni/inverzni_matice/Um4-1-1.ps.pdf)
 
 ## Přednášky
 
