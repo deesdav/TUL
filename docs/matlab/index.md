@@ -119,6 +119,12 @@ end
 
 [Otevřít / Stáhnout Matlab_4.pdf](./prednasky/Matlab_4.pdf)
 
+### Pátá přednáška
+
+<iframe src="./prednasky/Matlab_5.pdf" width="100%" height="800px"></iframe>
+
+[Otevřít / Stáhnout Matlab_5.pdf](./prednasky/Matlab_5.pdf)
+
 ## Cvičení
 
 ### Zadání prvního cvičení
@@ -816,4 +822,19 @@ plot(x_lx2, f_det2(x_lx2), 'x', 'MarkerSize', 40);
 fprintf('\n=== Úloha 3 ===\n');
 disp(double(x_lx1));
 disp(double(x_lx2));
+```
+
+### Zadání devátého cvičení
+
+#### MATLB_cv9.pdf
+
+<iframe src="./zadaniCv/MATLB_cv9.pdf" width="100%" height="800px"></iframe>
+
+[Otevřít / Stáhnout MATLB_cv9.pdf](./zadaniCv/MATLB_cv9.pdf)
+
+#### cv09.m
+
+```matlab
+clc; clear;
+
 ```
