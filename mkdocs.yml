@@ -1,8 +1,30 @@
 site_name: TUL
+site_description: "Výukové materiály TUL – programování, matematika, Linux, Matlab a další."
+site_author: David
+repo_url: https://github.com/deesdav/TUL
+edit_uri: edit/main/docs/
+copyright: "© 2025 deesdav"
 
 theme:
   name: material
   language: cs
+  meta_generator: false
+  font:
+    text: "Inter"
+    code: "Fira Code"
+  palette:
+    - scheme: default
+      primary: orange
+      accent: amber
+      toggle:
+        icon: material/weather-night
+        name: Přepnout do tmavého režimu
+    - scheme: slate
+      primary: deep purple
+      accent: purple
+      toggle:
+        icon: material/weather-sunny
+        name: Přepnout do světlého režimu
   features:
     - navigation.instant
     - navigation.tabs
@@ -33,87 +55,35 @@ theme:
     - announce.dismiss
     - header.search
     - header.buttons
-  plugins:
-    - search
-    - glightbox
-    - git-revision-date-localized
-    - git-revision-date
-    - git-committers
-    - awesome-pages
-    - macros
-    - minify:
-        minify_html: true
-    - autorefs
-    - offline
-    - pwa:
-        manifest:
-          name: TUL
-          short_name: TUL
-          start_url: /
-          display: standalone
-          background_color: "#ffffff"
-          theme_color: "#3949ab"
-        update_popup: true
-    - seo:
-        site_name: TUL
-        site_description: "Výukové materiály TUL – programování, matematika, Linux, Matlab a další."
-        site_author: David
-        image: images/logo.png
-        locale: cs_CZ
-        type: website
-        canonical: true
-        structured_data: true
-        title_template: "%s | TUL"
-        twitter: true
-        facebook: true
-        og_locale: cs_CZ
-        og_type: website
-        og_site_name: TUL
-        og_image: images/logo.png
-        og_description: "Výukové materiály TUL – programování, matematika, Linux, Matlab a další."
-        google_plus: true
-    - sitemap
-    - robots
-    - google-fonts:
-        families:
-          - Inter
-          - Fira Code
-  palette:
-    - scheme: default
-      primary: orange
-      accent: amber
-      toggle:
-        icon: material/weather-night
-        name: Přepnout do tmavého režimu
-    - scheme: slate
-      primary: deep purple
-      accent: purple
-      toggle:
-        icon: material/weather-sunny
-        name: Přepnout do světlého režimu
-  font:
-    text: "Inter"
-    code: "Fira Code"
+
+plugins:
+  - search
+  - glightbox
+  - git-revision-date-localized
+  - git-revision-date
+  - git-committers
+  - awesome-pages
+  - macros
+  - autorefs
+  - offline
+  - minify:
+      minify_html: true
+      minify_js: true
+      minify_css: true
 
 extra:
   analytics:
     provider: google
-    property: G-XXXXXXXXXX
-  social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/
-    - icon: fontawesome/brands/discord
-      link: https://discord.com/
-    - icon: fontawesome/brands/youtube
-      link: https://youtube.com/
-    - icon: fontawesome/brands/twitter
-      link: https://twitter.com/
-    - icon: fontawesome/brands/linkedin
-      link: https://linkedin.com/
-  logo: images/logo.png
-  favicon: images/favicon.ico
+    property: G-XXXXXXXXXX # nahraď svým kódem
+  logo: images/logo.svg
+  favicon: images/favicon-32x32.png
   meta:
     description: "Výukové materiály TUL – moderní, přehledné a rychlé."
+    og_title: "TUL – výukové materiály"
+    og_description: "Programování, matematika, Linux, Matlab a další."
+    og_image: "images/logo.png"
+    og_type: website
+    twitter_card: summary_large_image
 
 markdown_extensions:
   - admonition
@@ -140,10 +110,13 @@ markdown_extensions:
   - attr_list
 
 extra_javascript:
+  - https://fonts.googleapis.com
+  - https://fonts.gstatic.com
   - https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js
 
 extra_css:
   - css/extra.css
+
 nav:
   - Domovská stránka: index.md
   - Programování Java 1: algoritmizace_programovani_java_1/index.md
