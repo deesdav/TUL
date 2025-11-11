@@ -61,7 +61,6 @@ plugins:
   - glightbox
   - git-revision-date-localized
   - git-revision-date
-  - git-committers
   - awesome-pages
   - macros
   - autorefs
