@@ -79,3 +79,9 @@ Typický postup:
 <iframe src="alg1_ulohy05_cleneni_kodu.pdf" width="100%" height="800px"></iframe>
 
 [Otevřít / Stáhnout soubor.pdf](alg1_ulohy05_cleneni_kodu.pdf)
+
+### alg1_ulohy06_vse_si_pamatuji.pdf
+
+<iframe src="alg1_ulohy06_vse_si_pamatuji.pdf" width="100%" height="800px"></iframe>
+
+[Otevřít / Stáhnout soubor.pdf](alg1_ulohy06_vse_si_pamatuji.pdf)

@@ -227,3 +227,23 @@ Zkoumá objekty, které jsou **oddělené a nespojité**.
 
 ![](dvanacta_prednaska/8.jpg)
 ![](dvanacta_prednaska/9.jpg)
+
+### Třináctá přednáška
+
+#### Mocniny a mnohočleny z lineárního zobrazení vektorového prostoru do sebe
+
+![](trinacta_prednaska/1.jpg)
+![](trinacta_prednaska/2.jpg)
+![](trinacta_prednaska/3.jpg)
+
+#### Vlastní vektory a vlastní čísla mnohočlenu z lineárního endomorfismu
+
+![](trinacta_prednaska/4.jpg)
+![](trinacta_prednaska/5.jpg)
+![](trinacta_prednaska/6.jpg)
+![](trinacta_prednaska/7.jpg)
+
+#### Určení charakteristického mnohočlenu
+
+![](trinacta_prednaska/8.jpg)
+![](trinacta_prednaska/9.jpg)
