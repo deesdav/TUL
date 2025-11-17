@@ -15,8 +15,8 @@ theme:
     code: "Fira Code"
   palette:
     - scheme: default
-      primary: orange
-      accent: amber
+      primary: deep orange
+      accent: orange
       toggle:
         icon: material/weather-night
         name: Přepnout do tmavého režimu
