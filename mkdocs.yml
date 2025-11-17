@@ -7,6 +7,7 @@ copyright: "© 2025 deesdav"
 
 theme:
   name: material
+  direction: ltr
   language: cs
   meta_generator: false
   font:
@@ -25,11 +26,13 @@ theme:
       toggle:
         icon: material/weather-sunny
         name: Přepnout do světlého režimu
+
   features:
     - navigation.instant
     - navigation.tabs
     - navigation.sections
     - navigation.expand
+    - navigation.path
     - navigation.footer
     - toc.integrate
     - header.autohide
@@ -37,6 +40,7 @@ theme:
     - navigation.toc.sticky
     - navigation.sections.indicator
     - navigation.tracking
+    - search
     - search.suggest
     - search.highlight
     - search.share
@@ -58,18 +62,19 @@ theme:
 
 plugins:
   - search
+  - privacy
   - glightbox
   - git-revision-date-localized
   - git-revision-date
   - awesome-pages
   - macros
+  - tags
   - autorefs
   - offline
   - minify:
       minify_html: true
       minify_js: true
       minify_css: true
-
 extra:
   analytics:
     provider: google
@@ -83,6 +88,13 @@ extra:
     og_image: "images/logo.png"
     og_type: website
     twitter_card: summary_large_image
+  consent:
+    title: Cookie consent
+    description: >-
+      Používáme soubory cookie k rozpoznání vašich opakovaných návštěv 
+      a preferencí a také k měření efektivity naší dokumentace a toho, 
+      zda uživatelé nacházejí to, co hledají. S vaším souhlasem nám 
+      pomáháte vylepšovat naši dokumentaci.
 
 markdown_extensions:
   - admonition
@@ -109,8 +121,6 @@ markdown_extensions:
   - attr_list
 
 extra_javascript:
-  - https://fonts.googleapis.com
-  - https://fonts.gstatic.com
   - https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js
 
 extra_css:

@@ -230,11 +230,11 @@ end
 
 ## Řešení nelineárních rovnic
 
-![](reseni_nelinearnich_rovnic/2.jpg)
+![](reseni_nelinearnich_rovnic/1.jpg)
 
 ### Metoda půlení intervalu
 
-![](reseni_nelinearnich_rovnic/1.jpg)
+![](reseni_nelinearnich_rovnic/2.jpg)
 
 ### main.m
 
