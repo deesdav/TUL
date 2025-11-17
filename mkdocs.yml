@@ -62,7 +62,6 @@ theme:
 
 plugins:
   - search
-  - privacy
   - glightbox
   - git-revision-date-localized
   - git-revision-date
