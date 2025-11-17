@@ -1,3 +1,44 @@
+[data-md-color-scheme="default"] .md-sidebar {
+  backdrop-filter: blur(6px);
+}
+
+[data-md-color-scheme="default"] .md-sidebar__inner {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+}
+
+[data-md-color-scheme="default"] .md-main {
+  background: url("../images/light-background.jpg") no-repeat center center
+    fixed;
+  background-size: cover;
+}
+
+[data-md-color-scheme="default"] .md-content {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 2rem;
+  border-radius: 12px;
+}
+/*
+[data-md-color-scheme="slate"] .md-sidebar {
+  backdrop-filter: blur(8px);
+}
+
+[data-md-color-scheme="slate"] .md-sidebar__inner {
+  background: #1e2129;
+  backdrop-filter: blur(12px);
+}
+[data-md-color-scheme="slate"] .md-main {
+  background: url("../images/dark-background.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+[data-md-color-scheme="slate"] .md-content {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 2rem;
+  border-radius: 12px;
+}
+*/
+
 .grid-predmety {
   display: grid;
   grid-template-columns: 1fr 1fr; /* 2 sloupce na desktopu */
