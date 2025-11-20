@@ -81,169 +81,205 @@ Zkoumá objekty, které jsou **oddělené a nespojité**.
 
 #### Vektory a vektorové prostory
 
-![](./treti_prednaska/treti_prednaska1.jpg)
-![](./treti_prednaska/treti_prednaska2.jpg)
-![](./treti_prednaska/treti_prednaska3.jpg)
+![](prednasky/treti_prednaska/treti_prednaska1.jpg)
+![](prednasky/treti_prednaska/treti_prednaska2.jpg)
+![](prednasky/treti_prednaska/treti_prednaska3.jpg)
 
 ### Čtvrtá přednáška
 
 #### Lineářní kombinace vektorů
 
-![](./ctvrta_prednaska/1.jpg)
-![](./ctvrta_prednaska/2.jpg)
-![](./ctvrta_prednaska/3.jpg)
-![](./ctvrta_prednaska/4.jpg)
-![](./ctvrta_prednaska/5.jpg)
-![](./ctvrta_prednaska/6.jpg)
-![](./ctvrta_prednaska/7.jpg)
-![](./ctvrta_prednaska/8.jpg)
+![](prednasky/ctvrta_prednaska/1.jpg)
+![](prednasky/ctvrta_prednaska/2.jpg)
+![](prednasky/ctvrta_prednaska/3.jpg)
+![](prednasky/ctvrta_prednaska/4.jpg)
+![](prednasky/ctvrta_prednaska/5.jpg)
+![](prednasky/ctvrta_prednaska/6.jpg)
+![](prednasky/ctvrta_prednaska/7.jpg)
+![](prednasky/ctvrta_prednaska/8.jpg)
 
 ### Pátá přednáška
 
 #### Kombinace a Kombinační čísla
 
-![](./pata_prednaska/1.jpg)
-![](./pata_prednaska/2.jpg)
-![](./pata_prednaska/3.jpg)
-![](./pata_prednaska/4.jpg)
-![](./pata_prednaska/5.jpg)
+![](prednasky/pata_prednaska/1.jpg)
+![](prednasky/pata_prednaska/2.jpg)
+![](prednasky/pata_prednaska/3.jpg)
+![](prednasky/pata_prednaska/4.jpg)
+![](prednasky/pata_prednaska/5.jpg)
 
 #### Binomická Věta
 
-![](./pata_prednaska/6.jpg)
-![](./pata_prednaska/7.jpg)
+![](prednasky/pata_prednaska/6.jpg)
+![](prednasky/pata_prednaska/7.jpg)
 
 #### Multinomická Věta
 
-![](./pata_prednaska/8.jpg)
+![](prednasky/pata_prednaska/8.jpg)
 
 ### Šestá přednáška
 
 #### Lineární závislost vektorů a související pojmy
 
-![](sesta_prednaska/1.jpg)
-![](sesta_prednaska/2.jpg)
-![](sesta_prednaska/3.jpg)
-![](sesta_prednaska/4.jpg)
-![](sesta_prednaska/5.jpg)
-![](sesta_prednaska/6.jpg)
-![](sesta_prednaska/7.jpg)
+![](prednasky/sesta_prednaska/1.jpg)
+![](prednasky/sesta_prednaska/2.jpg)
+![](prednasky/sesta_prednaska/3.jpg)
+![](prednasky/sesta_prednaska/4.jpg)
+![](prednasky/sesta_prednaska/5.jpg)
+![](prednasky/sesta_prednaska/6.jpg)
+![](prednasky/sesta_prednaska/7.jpg)
 
 ### Sedmá přednáška
 
 #### Báze vektorového prostoru
 
-![](sedma_prednaska/1.jpg)
-![](sedma_prednaska/2.jpg)
-![](sedma_prednaska/3.jpg)
-![](sedma_prednaska/4.jpg)
-![](sedma_prednaska/5.jpg)
-![](sedma_prednaska/6.jpg)
+![](prednasky/sedma_prednaska/1.jpg)
+![](prednasky/sedma_prednaska/2.jpg)
+![](prednasky/sedma_prednaska/3.jpg)
+![](prednasky/sedma_prednaska/4.jpg)
+![](prednasky/sedma_prednaska/5.jpg)
+![](prednasky/sedma_prednaska/6.jpg)
 
 ### Osmá přednáška
 
 #### Úvod do teorie grafů
 
-![](osma_prednaska/1.jpg)
-![](osma_prednaska/2.jpg)
+![](prednasky/osma_prednaska/1.jpg)
+![](prednasky/osma_prednaska/2.jpg)
 
 #### Vztahy mezi grafy a základní operace
 
-![](osma_prednaska/3.jpg)
-![](osma_prednaska/4.jpg)
-![](osma_prednaska/5.jpg)
-![](osma_prednaska/6.jpg)
-![](osma_prednaska/7.jpg)
-![](osma_prednaska/8.jpg)
-![](osma_prednaska/9.jpg)
-![](osma_prednaska/10.jpg)
+![](prednasky/osma_prednaska/3.jpg)
+![](prednasky/osma_prednaska/4.jpg)
+![](prednasky/osma_prednaska/5.jpg)
+![](prednasky/osma_prednaska/6.jpg)
+![](prednasky/osma_prednaska/7.jpg)
+![](prednasky/osma_prednaska/8.jpg)
+![](prednasky/osma_prednaska/9.jpg)
+![](prednasky/osma_prednaska/10.jpg)
 
 ### Devátá přednáška
 
 #### Lineární zobrazení na vektrových prostorech
 
-![](devata_prednaska/1.jpg)
-![](devata_prednaska/2.jpg)
+![](prednasky/devata_prednaska/1.jpg)
+![](prednasky/devata_prednaska/2.jpg)
 
 #### Test linearity zobrazení
 
-![](devata_prednaska/3.jpg)
+![](prednasky/devata_prednaska/3.jpg)
 
 #### Test aditivity a homogenity
 
-![](devata_prednaska/4.jpg)
+![](prednasky/devata_prednaska/4.jpg)
 
 #### Základní vlastnosti lineárních zobrazení
 
-![](devata_prednaska/5.jpg)
-![](devata_prednaska/6.jpg)
-![](devata_prednaska/7.jpg)
-![](devata_prednaska/8.jpg)
+![](prednasky/devata_prednaska/5.jpg)
+![](prednasky/devata_prednaska/6.jpg)
+![](prednasky/devata_prednaska/7.jpg)
+![](prednasky/devata_prednaska/8.jpg)
 
 ### Desátá přednáška
 
-![](desata_prednaska/1.jpg)
-![](desata_prednaska/2.jpg)
-![](desata_prednaska/3.jpg)
-![](desata_prednaska/4.jpg)
-![](desata_prednaska/5.jpg)
+![](prednasky/desata_prednaska/1.jpg)
+![](prednasky/desata_prednaska/2.jpg)
+![](prednasky/desata_prednaska/3.jpg)
+![](prednasky/desata_prednaska/4.jpg)
+![](prednasky/desata_prednaska/5.jpg)
 
 ### Jedenáctá přednáška
 
 #### Souvislé grafy
 
-![](jedenacta_prednaska/1.jpg)
-![](jedenacta_prednaska/2.jpg)
-![](jedenacta_prednaska/3.jpg)
-![](jedenacta_prednaska/4.jpg)
-![](jedenacta_prednaska/5.jpg)
+![](prednasky/jedenacta_prednaska/1.jpg)
+![](prednasky/jedenacta_prednaska/2.jpg)
+![](prednasky/jedenacta_prednaska/3.jpg)
+![](prednasky/jedenacta_prednaska/4.jpg)
+![](prednasky/jedenacta_prednaska/5.jpg)
 
 #### Úlohy pro souvislé grafy a jejich řešení
 
-![](jedenacta_prednaska/6.jpg)
+![](prednasky/jedenacta_prednaska/6.jpg)
 
 #### Nalezení nejkratší cesty mezi dvěma vrcholy
 
-![](jedenacta_prednaska/7.jpg)
-![](jedenacta_prednaska/8.jpg)
-![](jedenacta_prednaska/9.jpg)
+![](prednasky/jedenacta_prednaska/7.jpg)
+![](prednasky/jedenacta_prednaska/8.jpg)
+![](prednasky/jedenacta_prednaska/9.jpg)
 
 ### Dvanáctá přednáška
 
 #### Lineární zobrazení vektorového prostoru do sebe
 
-![](dvanacta_prednaska/1.jpg)
-![](dvanacta_prednaska/2.jpg)
-![](dvanacta_prednaska/3.jpg)
-![](dvanacta_prednaska/4.jpg)
-![](dvanacta_prednaska/5.jpg)
+![](prednasky/dvanacta_prednaska/1.jpg)
+![](prednasky/dvanacta_prednaska/2.jpg)
+![](prednasky/dvanacta_prednaska/3.jpg)
+![](prednasky/dvanacta_prednaska/4.jpg)
+![](prednasky/dvanacta_prednaska/5.jpg)
 
 #### Vlastnosti vlastních vektorů
 
-![](dvanacta_prednaska/6.jpg)
-![](dvanacta_prednaska/7.jpg)
+![](prednasky/dvanacta_prednaska/6.jpg)
+![](prednasky/dvanacta_prednaska/7.jpg)
 
 #### Technika hledání vlastních vektorů a čísel
 
-![](dvanacta_prednaska/8.jpg)
-![](dvanacta_prednaska/9.jpg)
+![](prednasky/dvanacta_prednaska/8.jpg)
+![](prednasky/dvanacta_prednaska/9.jpg)
 
 ### Třináctá přednáška
 
 #### Mocniny a mnohočleny z lineárního zobrazení vektorového prostoru do sebe
 
-![](trinacta_prednaska/1.jpg)
-![](trinacta_prednaska/2.jpg)
-![](trinacta_prednaska/3.jpg)
+![](prednasky/trinacta_prednaska/1.jpg)
+![](prednasky/trinacta_prednaska/2.jpg)
+![](prednasky/trinacta_prednaska/3.jpg)
 
 #### Vlastní vektory a vlastní čísla mnohočlenu z lineárního endomorfismu
 
-![](trinacta_prednaska/4.jpg)
-![](trinacta_prednaska/5.jpg)
-![](trinacta_prednaska/6.jpg)
-![](trinacta_prednaska/7.jpg)
+![](prednasky/trinacta_prednaska/4.jpg)
+![](prednasky/trinacta_prednaska/5.jpg)
+![](prednasky/trinacta_prednaska/6.jpg)
+![](prednasky/trinacta_prednaska/7.jpg)
 
 #### Určení charakteristického mnohočlenu
 
-![](trinacta_prednaska/8.jpg)
-![](trinacta_prednaska/9.jpg)
+![](prednasky/trinacta_prednaska/8.jpg)
+![](prednasky/trinacta_prednaska/9.jpg)
+
+### Čtrnáctá přednáška
+
+#### Kostra grafu
+
+![](prednasky/ctrnacta_prednaska/1.jpg)
+![](prednasky/ctrnacta_prednaska/2.jpg)
+![](prednasky/ctrnacta_prednaska/3.jpg)
+
+#### Posloupnosti
+
+![](prednasky/ctrnacta_prednaska/4.jpg)
+![](prednasky/ctrnacta_prednaska/5.jpg)
+![](prednasky/ctrnacta_prednaska/6.jpg)
+![](prednasky/ctrnacta_prednaska/7.jpg)
+
+#### Absolutně definovaná posloupnost
+
+![](prednasky/ctrnacta_prednaska/8.jpg)
+![](prednasky/ctrnacta_prednaska/9.jpg)
+
+### Patnáctá přednáška
+
+#### Linearni kombinace vektrorů
+
+![](prednasky/patnacta_prednaska/1.jpg)
+![](prednasky/patnacta_prednaska/2.jpg)
+![](prednasky/patnacta_prednaska/3.jpg)
+![](prednasky/patnacta_prednaska/4.jpg)
+![](prednasky/patnacta_prednaska/5.jpg)
+![](prednasky/patnacta_prednaska/6.jpg)
+![](prednasky/patnacta_prednaska/7.jpg)
+![](prednasky/patnacta_prednaska/8.jpg)
+![](prednasky/patnacta_prednaska/9.jpg)
+![](prednasky/patnacta_prednaska/10.jpg)
+![](prednasky/patnacta_prednaska/11.jpg)
