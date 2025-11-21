@@ -63,9 +63,15 @@ Zkoumá objekty, které jsou **oddělené a nespojité**.
 
 #### Um4-1-1.ps.pdf
 
-<iframe src="cviceni/inverzni_matice/Um4-1-1.ps.pdf" width="100%" height="800px"></iframe>
+<iframe src="cviceni/vsechny_symetricke_celociselne_matice_s_celociselnymi_vlastnimi_cisly/Um4-1-1.ps.pdf" width="100%" height="800px"></iframe>
 
-[Otevřít / Stáhnout Um4-1-1.ps.pdf](cviceni/inverzni_matice/Um4-1-1.ps.pdf)
+[Otevřít / Stáhnout Um4-1-1.ps.pdf](cviceni/vsechny_symetricke_celociselne_matice_s_celociselnymi_vlastnimi_cisly/Um4-1-1.ps.pdf)
+
+### Všechny symetrické celočíselné matice s celočíselnými vlastními čísly
+
+<iframe src="cviceni/vsechny_symetricke_celociselne_matice_s_celociselnymi_vlastnimi_cisly/eigpbs_symmetric_9" width="100%" height="800px"></iframe>
+
+[Otevřít / Stáhnout eigpbs_symmetric_9.pdf](cviceni/vsechny_symetricke_celociselne_matice_s_celociselnymi_vlastnimi_cisly/eigpbs_symmetric_9.pdf)
 
 ## Přednášky
 
