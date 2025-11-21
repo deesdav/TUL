@@ -930,3 +930,11 @@ x = [x1; x2; x3;];
 F5s = simplify(1/2*(x.')*H*x+f.'*x);
 Hs = hessian(F5s);
 ```
+
+### Zadání desátého cvičení
+
+#### MATLB_cv10.pdf
+
+<iframe src="./zadaniCv/MATLB_cv10.pdf" width="100%" height="800px"></iframe>
+
+[Otevřít / Stáhnout MATLB_cv10.pdf](./zadaniCv/MATLB_cv10.pdf)
