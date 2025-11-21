@@ -69,7 +69,9 @@ Zkoumá objekty, které jsou **oddělené a nespojité**.
 
 ### Všechny symetrické celočíselné matice s celočíselnými vlastními čísly
 
-<iframe src="cviceni/vsechny_symetricke_celociselne_matice_s_celociselnymi_vlastnimi_cisly/eigpbs_symmetric_9" width="100%" height="800px"></iframe>
+#### eigpbs_symmetric_9.pdf
+
+<iframe src="cviceni/vsechny_symetricke_celociselne_matice_s_celociselnymi_vlastnimi_cisly/eigpbs_symmetric_9.pdf" width="100%" height="800px"></iframe>
 
 [Otevřít / Stáhnout eigpbs_symmetric_9.pdf](cviceni/vsechny_symetricke_celociselne_matice_s_celociselnymi_vlastnimi_cisly/eigpbs_symmetric_9.pdf)
 
