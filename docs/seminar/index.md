@@ -322,3 +322,19 @@ end
 
 end
 ```
+
+## Numerick0 integrování
+
+![](numericke_integrovani/1.jpg)
+![](numericke_integrovani/2.jpg)
+
+### Obdélníková metoda a lichoběžníková metoda
+![](numericke_integrovani/3.jpg)
+
+### main.m
+
+```matlab
+clc; close all; clear;
+
+
+```
