@@ -85,3 +85,9 @@ Typický postup:
 <iframe src="alg1_ulohy06_vse_si_pamatuji.pdf" width="100%" height="800px"></iframe>
 
 [Otevřít / Stáhnout soubor.pdf](alg1_ulohy06_vse_si_pamatuji.pdf)
+
+### alg1_ulohy07_dalsi_dimenze.pdf
+
+<iframe src="alg1_ulohy07_dalsi_dimenze.pdf" width="100%" height="800px"></iframe>
+
+[Otevřít / Stáhnout soubor.pdf](alg1_ulohy07_dalsi_dimenze.pdf)

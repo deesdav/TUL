@@ -291,3 +291,32 @@ Zkoumá objekty, které jsou **oddělené a nespojité**.
 ![](prednasky/patnacta_prednaska/9.jpg)
 ![](prednasky/patnacta_prednaska/10.jpg)
 ![](prednasky/patnacta_prednaska/11.jpg)
+
+### Šestnáctá přednáška
+
+#### Skalární součin
+
+![](prednasky/sestnacta_prednaska/1.jpg)
+
+##### Zobecnění na libovolný vektorový prostor
+
+![](prednasky/sestnacta_prednaska/2.jpg)
+![](prednasky/sestnacta_prednaska/3.jpg)
+
+##### Skalární součiny na dalších vektorových prostorech
+
+![](prednasky/sestnacta_prednaska/4.jpg)
+
+##### Funkční prostory konečné dimenze n
+
+![](prednasky/sestnacta_prednaska/5.jpg)
+
+##### Protory nekonečné dimenze
+
+![](prednasky/sestnacta_prednaska/6.jpg)
+
+##### Geometrické interpretace skalárního součinu
+
+![](prednasky/sestnacta_prednaska/7.jpg)
+![](prednasky/sestnacta_prednaska/8.jpg)
+![](prednasky/sestnacta_prednaska/9.jpg)
