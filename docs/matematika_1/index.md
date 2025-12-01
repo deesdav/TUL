@@ -138,3 +138,9 @@ Cílem předmětu je:
 <iframe src="./cviceni/Cviceni11N.pdf" width="100%" height="800px"></iframe>
 
 [Otevřít / Stáhnout Cviceni11N.pdf](./cviceni/Cviceni11N.pdf)
+
+### Cviceni12N.pdf
+
+<iframe src="./cviceni/Cviceni12N.pdf" width="100%" height="800px"></iframe>
+
+[Otevřít / Stáhnout Cviceni12N.pdf](./cviceni/Cviceni12N.pdf)
