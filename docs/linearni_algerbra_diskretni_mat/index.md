@@ -320,3 +320,17 @@ Zkoumá objekty, které jsou **oddělené a nespojité**.
 ![](prednasky/sestnacta_prednaska/7.jpg)
 ![](prednasky/sestnacta_prednaska/8.jpg)
 ![](prednasky/sestnacta_prednaska/9.jpg)
+
+### Sedmnáctá přednáška
+
+![](prednasky/sedmnacta_prednaska/1.jpg)
+![](prednasky/sedmnacta_prednaska/2.jpg)
+![](prednasky/sedmnacta_prednaska/3.jpg)
+![](prednasky/sedmnacta_prednaska/4.jpg)
+![](prednasky/sedmnacta_prednaska/5.jpg)
+![](prednasky/sedmnacta_prednaska/6.jpg)
+![](prednasky/sedmnacta_prednaska/7.jpg)
+![](prednasky/sedmnacta_prednaska/8.jpg)
+![](prednasky/sedmnacta_prednaska/9.jpg)
+![](prednasky/sedmnacta_prednaska/10.jpg)
+![](prednasky/sedmnacta_prednaska/11.jpg)

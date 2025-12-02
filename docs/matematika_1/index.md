@@ -73,6 +73,12 @@ Cílem předmětu je:
 
 [Otevřít / Stáhnout OsmaDevata_prednaska.pdf](./prednasky/OsmaDevata_prednaska.pdf)
 
+### DesataJedenacta_prednaska.pdf
+
+<iframe src="./prednasky/DesataJedenacta_prednaska.pdf" width="100%" height="800px"></iframe>
+
+[Otevřít / Stáhnout DesataJedenacta_prednaska.pdf](./prednasky/DesataJedenacta_prednaska.pdf)
+
 ### Důležité fotky z přednašky
 
 ![](IMG_2521.jpg)

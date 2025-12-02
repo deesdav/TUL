@@ -323,7 +323,7 @@ end
 end
 ```
 
-## Numerick0 integrování
+## Numerické integrování
 
 ![](numericke_integrovani/1.jpg)
 ![](numericke_integrovani/2.jpg)
@@ -402,4 +402,70 @@ end
 end
 
 
+```
+
+## Matice jako zobrazení
+
+![](matice_jako_zobrazeni/1.jpg)
+![](matice_jako_zobrazeni/2.jpg)
+![](matice_jako_zobrazeni/3.jpg)
+
+### main.m
+
+```matlab
+clc; close all; clear;
+
+x = [0,1,0.9,1,0.9];
+y = [0,0,0.1,0,-0.1];
+plot(x, y);
+axis equal;
+
+% Tohle jsme psali do command line
+
+zobraz(zvetsi(jednanula,2))
+zobraz(zvetsi(jednanula,2))
+hold on
+zobraz(jednanula)
+hold on
+zobraz(posun(jednanula,[1;0.5]))
+zobraz(posun(jednanula,[1;0.5]))
+zobraz(posun(zvetsi(jednanula,2),[1;0.5]))
+zobraz(zvetsi(posun(jednanula,[1;0.5]),2))
+```
+
+### jednanula.m
+
+```matlab
+function X = jednanula
+    X = [0,1,0.9,1,0.9 ; 0,0,0.1,0,-0.1];
+end
+```
+
+### zobraz.m
+
+```matlab
+function zobraz(X)
+    x = X(1,:);
+    y = X(2,:);
+    plot(x, y);
+    axis equal;
+end
+```
+
+### zvetsi.m
+
+```matlab
+function Y = zvetsi(X,k)
+    Y = X * k;
+end
+```
+
+### posun.m
+
+```matlab
+function Y = posun(X,x0)
+    % Y(1,:) = X(1,:) + x0(1);
+    % Y(2,:) = X(2,:) + x0(2);
+    Y = X+x0;
+end
 ```
