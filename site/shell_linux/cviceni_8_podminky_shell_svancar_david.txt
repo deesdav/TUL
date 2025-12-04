@@ -1,0 +1,60 @@
+------------------------------------ obsah skriptu
+
+#!/bin/bash
+
+echo "kolik si das piv?"
+
+read number
+
+if [ $number -eq 0 ]
+then
+        echo "dam si zadne pivo"
+elif [ $number -eq 1 ]
+then
+        echo "dam si $number pivo"
+elif [ $number -ge 2 ] && [ $number -le 4 ]
+then
+        echo "dam si $number piva"
+elif [ $number -ge 5 ]
+then
+        echo "dam si $number piv"
+fi
+
+
+------------------------------------ vytvoření skriptu, přidělení práv a spuštění skriptu
+
+[david.svancar@perun ~]$ vim pivo.sh
+[david.svancar@perun ~]$ chmod 755 pivo.sh
+[david.svancar@perun ~]$ ./pivo.sh
+kolik si das piv?
+0
+dam si zadne pivo
+[david.svancar@perun ~]$ ./pivo.sh
+kolik si das piv?
+1
+dam si 1 pivo
+[david.svancar@perun ~]$ ./pivo.sh
+kolik si das piv?
+2
+dam si 2 piva
+[david.svancar@perun ~]$ ./pivo.sh
+kolik si das piv?
+3
+dam si 3 piva
+[david.svancar@perun ~]$ ./pivo.sh
+kolik si das piv?
+4
+dam si 4 piva
+[david.svancar@perun ~]$ ./pivo.sh
+kolik si das piv?
+5
+dam si 5 piv
+[david.svancar@perun ~]$ ./pivo.sh
+kolik si das piv?
+6
+dam si 6 piv
+[david.svancar@perun ~]$ ./pivo.sh
+kolik si das piv?
+7
+dam si 7 piv
+[david.svancar@perun ~]$

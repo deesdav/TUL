@@ -10,14 +10,53 @@ public class SemestralWork {
 
     private static final Scanner sc = new Scanner(System.in);
 
+    // VANOCNI ULOHA
     /**
-     *
+     * 
+     * @param height
+     * @param width
+     */
+    public static void leaves(int height, int width) {
+
+        for (int i = 1; i <= height; i++) {
+            for (int j = 1; j <= (width - i); j++) {
+                System.out.print(" ");
+            }
+            for (int j = 1; j <= (2 * i - 1); j++) {
+                System.out.print("*");
+            }
+            System.out.println("");
+        }
+    }
+
+    /**
+     * 
+     * @param width
+     * @param height
+     */
+    public static void stick(int width, int height) {
+
+        for (int i = 1; i <= height; i++) {
+            for (int j = 1; j <= width - 2; j++) {
+                System.out.print(" ");
+            }
+            System.out.print("***");
+            System.out.println("");
+        }
+    }
+
+    // VYLOSOVANA ULOHA 24
+
+    /**
+     * Metoda, ktera nacita hodnoty do matice
+     * 
      * @param n
      * @return
      */
     public static int[][] loadMatrix(int n) {
         int[][] matrix = new int[n][n];
         System.out.println("Zadej matici");
+
         // nacteni hodnot do matice
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
@@ -28,7 +67,9 @@ public class SemestralWork {
     }
 
     /**
-     *
+     * Nejdulezitejsi metoda, ktera resi redukci matice a vuziva pomocne metody:
+     * isOnlyRow, isOnlyCol, removeRowAndCol
+     * 
      * @param matrix
      * @return
      */
@@ -61,9 +102,8 @@ public class SemestralWork {
         return matrix;
     }
 
-    // POMOCNE METODY
-    // testovani: je jediny radek?
     /**
+     * Pomocna metoda, ktera resi jestli je na radku jen jedno nenulove cislo.
      * 
      * @param matrix
      * @param row
@@ -80,8 +120,8 @@ public class SemestralWork {
         return true;
     }
 
-    // testovani: je jediny sloupec?
     /**
+     * Pomocna metoda, ktera resi jestli je ve sloupci jen jedno nenulove cislo.
      * 
      * @param matrix
      * @param row
@@ -97,8 +137,9 @@ public class SemestralWork {
         return true;
     }
 
-    // odebrani radku a sloupce
     /**
+     * Pomocna metoda, ktera odebira radky sloupce pokud v nich bude stejne jedno
+     * nenulove cislo a zbytek same nuly.
      * 
      * @param matrix
      * @param removedRow
@@ -107,7 +148,7 @@ public class SemestralWork {
      */
     private static int[][] removeRowAndCol(int[][] matrix, int removedRow, int removedColumn) {
         int matrixLength = matrix.length;
-        // pomocna nova matice o jeden radek a sloupec mensi
+        // pomocna promenna - nova matice o jeden radek a sloupec mensi
         int[][] newMatrix = new int[matrixLength - 1][matrixLength - 1];
 
         int rowIndexNewMatrix = 0; // index radku v nove matici
@@ -129,7 +170,8 @@ public class SemestralWork {
     }
 
     /**
-     *
+     * Metoda, ktera vypisuje matici
+     * 
      * @param matrix
      */
     public static void printMatrix(int[][] matrix) {
@@ -147,23 +189,98 @@ public class SemestralWork {
      * @param args
      */
     public static void main(String[] args) {
-        while (true) {
-            System.out.println("Rozmer matice");
-            int n = sc.nextInt();
-            if (n <= 0) {
-                break;
+        System.out.println("SEMESTRAL WORK");
+        int userChoice;
+        do {
+            System.out.println("Zadejte cisla 1 - Vanocni uloha, 2 - Vylosovana uloha, 0 - pro ukonceni programu.");
+            userChoice = sc.nextInt();
+            switch (userChoice) {
+                // VANOCNI ULOHA
+                case 1:
+                    System.out.println("Zadejte velikost koruny (treeTop) a vysku kmene (treeTrunk):");
+                    int treeTop = sc.nextInt();
+                    int treeTrunk = sc.nextInt();
+
+                    if (treeTop < 0 || treeTrunk < 0) {
+                        System.out.println("Rozmery nemohou byt zaporne.");
+                        break;
+                    }
+
+                    int maxWidth = treeTop + 1; // zarovnani na stred
+                    leaves(treeTop, maxWidth);
+                    leaves(treeTop + 1, maxWidth);
+                    stick(maxWidth, treeTrunk);
+                    break;
+                // VYLOSOVANA ULOHA (REDUKOVANA MATICE)
+                case 2:
+                    System.out.println("Rozmer matice");
+                    int matrixN = sc.nextInt();
+                    if (matrixN <= 1) {
+                        System.out.println("Pro redukci musi byt matice alespon 2x2.");
+                        break;
+                    }
+
+                    int[][] loadedMatrix = loadMatrix(matrixN);
+                    System.out.println("Puvodni matice: ");
+                    printMatrix(loadedMatrix);
+
+                    int[][] reducedMatrix = reductionMatrix(loadedMatrix);
+                    System.out
+                            .println("Redukovana matice (" + reducedMatrix.length + " x " + reducedMatrix.length + ")");
+                    printMatrix(reducedMatrix);
+                    System.out.println("");
+                case 0:
+                    System.out.println("Ukončuji program.");
+                    break;
+
+                default:
+                    System.out.println("Neplatná volba, zkuste to znovu.");
+                    break;
             }
+            switch (userChoice) {
+                // VANOCNI ULOHA
+                case 1:
+                    System.out.println("Zadejte velikost koruny (treeTop) a vysku kmene (treeTrunk):");
+                    int treeTop = sc.nextInt();
+                    int treeTrunk = sc.nextInt();
 
-            int[][] loadedMatrix = loadMatrix(n);
-            printMatrix(loadedMatrix);
+                    if (treeTop < 0 || treeTrunk < 0) {
+                        System.out.println("Rozmery nemohou byt zaporne.");
+                        break;
+                    }
 
-            int[][] reducedMatrix = reductionMatrix(loadedMatrix);
-            System.out.println("Redukovana matice (" + reducedMatrix.length + " x " + reducedMatrix.length + ")");
+                    int maxWidth = treeTop + 1; // zarovnani na stred
+                    leaves(treeTop, maxWidth);
+                    leaves(treeTop + 1, maxWidth);
+                    stick(maxWidth, treeTrunk);
+                    break;
+                // VYLOSOVANA ULOHA (REDUKOVANA MATICE)
+                case 2:
+                    System.out.println("Rozmer matice");
+                    int matrixN = sc.nextInt();
+                    if (matrixN <= 1) {
+                        System.out.println("Pro redukci musi byt matice alespon 2x2.");
+                        break;
+                    }
 
-            printMatrix(reducedMatrix);
-            System.out.println("");
-            // int[][] test = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
-            // printMatrix(test);
-        }
+                    int[][] loadedMatrix = loadMatrix(matrixN);
+                    System.out.println("Puvodni matice: ");
+                    printMatrix(loadedMatrix);
+
+                    int[][] reducedMatrix = reductionMatrix(loadedMatrix);
+                    System.out
+                            .println("Redukovana matice (" + reducedMatrix.length + " x " + reducedMatrix.length + ")");
+                    printMatrix(reducedMatrix);
+                    System.out.println("");
+                    break;
+                case 0:
+                    System.out.println("Ukončuji program.");
+                    break;
+
+                default:
+                    System.out.println("Neplatná volba, zkuste to znovu.");
+                    break;
+            }
+        } while (userChoice != 0);
     }
 }

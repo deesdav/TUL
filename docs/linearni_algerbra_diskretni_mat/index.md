@@ -323,6 +323,10 @@ Zkoumá objekty, které jsou **oddělené a nespojité**.
 
 ### Sedmnáctá přednáška
 
+#### Příklady řešení lineárních rekurentních vztahů
+
+##### Fibonacciho úloha
+
 ![](prednasky/sedmnacta_prednaska/1.jpg)
 ![](prednasky/sedmnacta_prednaska/2.jpg)
 ![](prednasky/sedmnacta_prednaska/3.jpg)
@@ -334,3 +338,7 @@ Zkoumá objekty, které jsou **oddělené a nespojité**.
 ![](prednasky/sedmnacta_prednaska/9.jpg)
 ![](prednasky/sedmnacta_prednaska/10.jpg)
 ![](prednasky/sedmnacta_prednaska/11.jpg)
+
+### Osmnáctá přednáška
+
+
