@@ -74,6 +74,12 @@ Typický postup:
 
 [Otevřít / Stáhnout soubor.pdf](alg1_ulohy03_nejen_pocitame.pdf)
 
+### alg1_ulohy04_primitiva_sekvence.pdf
+
+<iframe src="alg1_ulohy04_primitiva_sekvence.pdf" width="100%" height="800px"></iframe>
+
+[Otevřít / Stáhnout soubor.pdf](alg1_ulohy04_primitiva_sekvence.pdf)
+
 ### alg1_ulohy05_cleneni_kodu.pdf
 
 <iframe src="alg1_ulohy05_cleneni_kodu.pdf" width="100%" height="800px"></iframe>
@@ -91,3 +97,9 @@ Typický postup:
 <iframe src="alg1_ulohy07_dalsi_dimenze.pdf" width="100%" height="800px"></iframe>
 
 [Otevřít / Stáhnout soubor.pdf](alg1_ulohy07_dalsi_dimenze.pdf)
+
+### alg1_ulohy08_data_pole_struktury.pdf
+
+<iframe src="alg1_ulohy08_data_pole_struktury.pdf" width="100%" height="800px"></iframe>
+
+[Otevřít / Stáhnout soubor.pdf](alg1_ulohy08_data_pole_struktury.pdf)
