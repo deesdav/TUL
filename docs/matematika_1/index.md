@@ -31,11 +31,11 @@ Cílem předmětu je:
 
 ## Přednášky
 
-### Nekonečno_intervaly_a_komplexní_čísla.pdf
+### Nekonečno_intervaly_a_komplexni_cisla.pdf
 
-<iframe src="./prednasky/Nekonečno_intervaly_a_komplexní_čísla.pdf" width="100%" height="800px"></iframe>
+<iframe src="./prednasky/Nekonečno_intervaly_a_komplexni_cisla.pdf" width="100%" height="800px"></iframe>
 
-[Otevřít / Stáhnout Nekonečno_intervaly_a_komplexní_čísla.pdf](./prednasky/Nekonečno_intervaly_a_komplexní_čísla.pdf)
+[Otevřít / Stáhnout Nekonečno_intervaly_a_komplexni_cisla.pdf](./prednasky/Nekonečno_intervaly_a_komplexni_cisla.pdf)
 
 ### Funkce.pdf
 
