@@ -25,59 +25,65 @@ Cílem předmětu je:
 
 ## Sředoškolský přehled
 
-<iframe src="./prednasky/PrehledSS.pdf" width="100%" height="800px"></iframe>
+<iframe src="./prednasky/Přehled_SŠ.pdf" width="100%" height="800px"></iframe>
 
-[Otevřít / Stáhnout PrehledSS.pdf](./prednasky/PrehledSS.pdf)
+[Otevřít / Stáhnout Přehled_SŠ.pdf](./prednasky/Přehled_SŠ.pdf)
 
 ## Přednášky
 
-### Prvni_prednaska.pdf
+### Nekonečno_intervaly_a_komplexní_čísla.pdf
 
-<iframe src="./prednasky/Prvni_prednaska.pdf" width="100%" height="800px"></iframe>
+<iframe src="./prednasky/Nekonečno_intervaly_a_komplexní_čísla.pdf" width="100%" height="800px"></iframe>
 
-[Otevřít / Stáhnout Prvni_prednaska.pdf](./prednasky/Prvni_prednaska.pdf)
+[Otevřít / Stáhnout Nekonečno_intervaly_a_komplexní_čísla.pdf](./prednasky/Nekonečno_intervaly_a_komplexní_čísla.pdf)
 
-### Druha_prednaska.pdf
+### Funkce.pdf
 
-<iframe src="./prednasky/Druha_prednaska.pdf" width="100%" height="800px"></iframe>
+<iframe src="./prednasky/Funkce.pdf" width="100%" height="800px"></iframe>
 
-[Otevřít / Stáhnout Druha_prednaska.pdf](./prednasky/Druha_prednaska.pdf)
+[Otevřít / Stáhnout Funkce.pdf](./prednasky/Funkce.pdf)
 
-### Treti_prednaska.pdf
+### Posloupnosti.pdf
 
-<iframe src="./prednasky/Treti_prednaska.pdf" width="100%" height="800px"></iframe>
+<iframe src="./prednasky/Posloupnosti.pdf" width="100%" height="800px"></iframe>
 
-[Otevřít / Stáhnout Treti_prednaska.pdf](./prednasky/Treti_prednaska.pdf)
+[Otevřít / Stáhnout Posloupnosti.pdf](./prednasky/Posloupnosti.pdf)
 
-### Ctvrta_prednaska.pdf
+### Spojitost_a_limita_funkce.pdf
 
-<iframe src="./prednasky/Ctvrta_prednaska.pdf" width="100%" height="800px"></iframe>
+<iframe src="./prednasky/Spojitost_a_limita_funkce.pdf" width="100%" height="800px"></iframe>
 
-[Otevřít / Stáhnout Ctvrta_prednaska.pdf](./prednasky/Ctvrta_prednaska.pdf)
+[Otevřít / Stáhnout Spojitost_a_limita_funkce.pdf](./prednasky/Spojitost_a_limita_funkce.pdf)
 
-### Pata_prednaska.pdf
+### Derivace.pdf
 
-<iframe src="./prednasky/Pata_prednaska.pdf" width="100%" height="800px"></iframe>
+<iframe src="./prednasky/Derivace.pdf" width="100%" height="800px"></iframe>
 
-[Otevřít / Stáhnout Pata_prednaska.pdf](./prednasky/Pata_prednaska.pdf)
+[Otevřít / Stáhnout Derivace.pdf](./prednasky/Derivace.pdf)
 
-### SestaSedma_prednaska.pdf
+### Průběh_funkce.pdf
 
-<iframe src="./prednasky/SestaSedma_prednaska.pdf" width="100%" height="800px"></iframe>
+<iframe src="./prednasky/Průběh_funkce.pdf" width="100%" height="800px"></iframe>
 
-[Otevřít / Stáhnout SestaSedma_prednaska.pdf](./prednasky/SestaSedma_prednaska.pdf)
+[Otevřít / Stáhnout Průběh_funkce.pdf](./prednasky/Průběh_funkce.pdf)
 
-### OsmaDevata_prednaska.pdf
+### Primitivní_funkce.pdf
 
-<iframe src="./prednasky/OsmaDevata_prednaska.pdf" width="100%" height="800px"></iframe>
+<iframe src="./prednasky/Primitivní_funkce.pdf" width="100%" height="800px"></iframe>
 
-[Otevřít / Stáhnout OsmaDevata_prednaska.pdf](./prednasky/OsmaDevata_prednaska.pdf)
+[Otevřít / Stáhnout Primitivní_funkce.pdf](./prednasky/Primitivní_funkce.pdf)
 
-### DesataJedenacta_prednaska.pdf
+### Rozklad_na_parciální_zlomky.pdf
 
-<iframe src="./prednasky/DesataJedenacta_prednaska.pdf" width="100%" height="800px"></iframe>
+<iframe src="./prednasky/Rozklad_na_parciální_zlomky.pdf" width="100%" height="800px"></iframe>
 
-[Otevřít / Stáhnout DesataJedenacta_prednaska.pdf](./prednasky/DesataJedenacta_prednaska.pdf)
+[Otevřít / Stáhnout Rozklad_na_parciální_zlomky.pdf](./prednasky/Rozklad_na_parciální_zlomky.pdf)
+
+### Obsah_a_zobecněný_integrál.pdf
+
+<iframe src="./prednasky/Obsah_a_zobecněný_integrál.pdf" width="100%" height="800px"></iframe>
+
+[Otevřít / Stáhnout Obsah_a_zobecněný_integrál.pdf](./prednasky/Obsah_a_zobecněný_integrál.pdf)
 
 ### Důležité fotky z přednašky
 
