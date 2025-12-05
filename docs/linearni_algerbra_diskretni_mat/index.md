@@ -341,4 +341,19 @@ Zkoumá objekty, které jsou **oddělené a nespojité**.
 
 ### Osmnáctá přednáška
 
+#### Úhel vektorů, kolmost
 
+![](prednasky/osmnacta_prednaska/1.jpg)
+![](prednasky/osmnacta_prednaska/2.jpg)
+![](prednasky/osmnacta_prednaska/3.jpg)
+![](prednasky/osmnacta_prednaska/4.jpg)
+![](prednasky/osmnacta_prednaska/5.jpg)
+![](prednasky/osmnacta_prednaska/6.jpg)
+![](prednasky/osmnacta_prednaska/7.jpg)
+![](prednasky/osmnacta_prednaska/8.jpg)
+
+#### Modifikace Gramovy-Schmidtovy ortogonalizace
+
+![](prednasky/osmnacta_prednaska/9.jpg)
+![](prednasky/osmnacta_prednaska/10.jpg)
+![](prednasky/osmnacta_prednaska/11.jpg)
