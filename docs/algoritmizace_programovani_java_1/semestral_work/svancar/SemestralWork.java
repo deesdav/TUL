@@ -12,24 +12,38 @@ public class SemestralWork {
 
     // VANOCNI ULOHA
     /**
+     * Metoda pro vykresleni koruny stromu s nahodnym ozdobenim
      * 
+     * @param start
      * @param height
      * @param width
      */
-    public static void leaves(int height, int width) {
+    public static void leaves(int start, int end, int width) {
 
-        for (int i = 1; i <= height; i++) {
+        for (int i = start; i <= end; i++) {
             for (int j = 1; j <= (width - i); j++) {
                 System.out.print(" ");
             }
+
             for (int j = 1; j <= (2 * i - 1); j++) {
-                System.out.print("*");
+                double chance = Math.random();
+
+                if (chance < 0.10) {
+                    System.out.print("o");
+                } else if (chance < 0.20) {
+                    System.out.print("/");
+                } else if (chance < 0.30) {
+                    System.out.print("-");
+                } else {
+                    System.out.print("*");
+                }
             }
             System.out.println("");
         }
     }
 
     /**
+     * Metoda pro vykresleni kmene stromu s koreny
      * 
      * @param width
      * @param height
@@ -37,10 +51,17 @@ public class SemestralWork {
     public static void stick(int width, int height) {
 
         for (int i = 1; i <= height; i++) {
-            for (int j = 1; j <= width - 2; j++) {
-                System.out.print(" ");
+            if (i == height) {
+                for (int j = 1; j <= width - 3; j++) {
+                    System.out.print(" ");
+                }
+                System.out.print("/###\\");
+            } else {
+                for (int j = 1; j <= width - 2; j++) {
+                    System.out.print(" ");
+                }
+                System.out.print("|#|");
             }
-            System.out.print("***");
             System.out.println("");
         }
     }
@@ -207,51 +228,8 @@ public class SemestralWork {
                     }
 
                     int maxWidth = treeTop + 1; // zarovnani na stred
-                    leaves(treeTop, maxWidth);
-                    leaves(treeTop + 1, maxWidth);
-                    stick(maxWidth, treeTrunk);
-                    break;
-                // VYLOSOVANA ULOHA (REDUKOVANA MATICE)
-                case 2:
-                    System.out.println("Rozmer matice");
-                    int matrixN = sc.nextInt();
-                    if (matrixN <= 1) {
-                        System.out.println("Pro redukci musi byt matice alespon 2x2.");
-                        break;
-                    }
-
-                    int[][] loadedMatrix = loadMatrix(matrixN);
-                    System.out.println("Puvodni matice: ");
-                    printMatrix(loadedMatrix);
-
-                    int[][] reducedMatrix = reductionMatrix(loadedMatrix);
-                    System.out
-                            .println("Redukovana matice (" + reducedMatrix.length + " x " + reducedMatrix.length + ")");
-                    printMatrix(reducedMatrix);
-                    System.out.println("");
-                case 0:
-                    System.out.println("Ukončuji program.");
-                    break;
-
-                default:
-                    System.out.println("Neplatná volba, zkuste to znovu.");
-                    break;
-            }
-            switch (userChoice) {
-                // VANOCNI ULOHA
-                case 1:
-                    System.out.println("Zadejte velikost koruny (treeTop) a vysku kmene (treeTrunk):");
-                    int treeTop = sc.nextInt();
-                    int treeTrunk = sc.nextInt();
-
-                    if (treeTop < 0 || treeTrunk < 0) {
-                        System.out.println("Rozmery nemohou byt zaporne.");
-                        break;
-                    }
-
-                    int maxWidth = treeTop + 1; // zarovnani na stred
-                    leaves(treeTop, maxWidth);
-                    leaves(treeTop + 1, maxWidth);
+                    leaves(1, treeTop, maxWidth);
+                    leaves(2, treeTop + 1, maxWidth);
                     stick(maxWidth, treeTrunk);
                     break;
                 // VYLOSOVANA ULOHA (REDUKOVANA MATICE)
@@ -276,7 +254,6 @@ public class SemestralWork {
                 case 0:
                     System.out.println("Ukončuji program.");
                     break;
-
                 default:
                     System.out.println("Neplatná volba, zkuste to znovu.");
                     break;
