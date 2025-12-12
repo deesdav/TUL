@@ -431,6 +431,48 @@ zobraz(posun(jednanula,[1;0.5]))
 zobraz(posun(jednanula,[1;0.5]))
 zobraz(posun(zvetsi(jednanula,2),[1;0.5]))
 zobraz(zvetsi(posun(jednanula,[1;0.5]),2))
+zobraz(otoc(jednanula, pi/3))
+zobraz(vektorrofi(5, pi/2))
+zobraz(domecek)
+format compact
+D= [2,0;0,3];
+hold on
+zobraz(D*domecek)
+E=[1,0;0,1];
+row1 = [1, -1];
+row2 = [1,  1];
+S45 = 1/sqrt(2) * [row1; row2];
+zobraz(E*domecek)
+zobraz(S45*domecek)
+zobraz(D*S45*domecek)
+zobraz(S45*D*domecek)
+F=[3,1;1,3];
+zobraz(domecek)
+hold on
+zobraz(F*domecek)
+zobraz(domecek)
+zobraz(vektor([-1;1]))
+zobraz(vektor(F*[-1;1]))
+[V,G] = eig(F);
+[V,G] = eig(D);
+[V,G] = eig(E);
+H = [-3,1;1,3];
+[V,G] = eig(H);
+zobraz(domecek)
+hold on
+zobraz(H*domecek)
+x=V(:,1);
+zobraz(vektor(x))
+zobraz(vektor(H*x))
+xx=V(:,2);
+zobraz(vektor(xx))
+zobraz(vektor(H*xx))
+zobraz(domecekk)
+hold on
+zobraz(H*domecekk)
+Dd = [2,0;0,0];
+[V,G] = eig(Dd);
+zobraz(Dd*domecekk)
 ```
 
 ### jednanula.m
@@ -467,5 +509,51 @@ function Y = posun(X,x0)
     % Y(1,:) = X(1,:) + x0(1);
     % Y(2,:) = X(2,:) + x0(2);
     Y = X+x0;
+end
+```
+
+### otoc.m
+
+```matlab
+function Y = otoc(X, alfa)
+    S=[cos(alfa), -sin(alfa); sin(alfa), cos(alfa)];
+    Y=S*X;
+end
+```
+
+### vektor.m
+
+```matlab
+function Y = vektor(x)
+    ro = sqrt(x(1)^2+x(2)^2);
+    fi = atan(x(2)/x(1));
+    if x(1) < 0
+        fi= fi+pi;
+    end
+    Y = vektorrofi(ro,fi);
+end
+```
+
+### vektorrofi.m
+
+```matlab
+function Y = vektorrofi(ro,fi)
+    Y = otoc(zvetsi(jednanula, ro), fi);
+end
+```
+
+### domecek.m
+
+```matlab
+function Y = domecek
+    Y = [0,1,0,1,0,0,0.5,1,1;0,0,1,1,0,1,1.5,1,0];
+end
+```
+
+### domecekk.m
+
+```matlab
+function Y = domecekk
+    Y = [0,1,0,1,0,0,0.5,1,1,1;0,0,1,1,0,1,1.5,1.5,1,0];
 end
 ```

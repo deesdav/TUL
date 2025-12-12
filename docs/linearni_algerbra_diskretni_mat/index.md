@@ -357,3 +357,21 @@ Zkoumá objekty, které jsou **oddělené a nespojité**.
 ![](prednasky/osmnacta_prednaska/9.jpg)
 ![](prednasky/osmnacta_prednaska/10.jpg)
 ![](prednasky/osmnacta_prednaska/11.jpg)
+
+### Devatenáctá přednáška
+
+#### Aproximace vektorů
+
+![](prednasky/devatenacta_prednaska/1.jpg)
+![](prednasky/devatenacta_prednaska/2.jpg)
+![](prednasky/devatenacta_prednaska/3.jpg)
+
+![](prednasky/devatenacta_prednaska/4.jpg)
+![](prednasky/devatenacta_prednaska/5.jpg)
+![](prednasky/devatenacta_prednaska/6.jpg)
+
+#### Metoda nejmenších čtverců
+
+![](prednasky/devatenacta_prednaska/7.jpg)
+![](prednasky/devatenacta_prednaska/8.jpg)
+![](prednasky/devatenacta_prednaska/9.jpg)
