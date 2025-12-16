@@ -98,61 +98,79 @@ Cílem předmětu je:
 
 ## Cvičení
 
-### První cvičení
+### První a druhé cvičení
 
 ![](IMG_2244.jpg)
 ![](IMG_2245.jpg)
 
-### Cviceni3N.pdf
+### Rovnice, Funkce, Inverzní funkce, Limity, Derivace
+
+#### Cviceni3N.pdf
 
 <iframe src="./cviceni/Cviceni3N.pdf" width="100%" height="800px"></iframe>
 
 [Otevřít / Stáhnout Cviceni3N.pdf](./cviceni/Cviceni3N.pdf)
 
-### Cviceni4N.pdf
+#### Cviceni4N.pdf
 
 <iframe src="./cviceni/Cviceni4N.pdf" width="100%" height="800px"></iframe>
 
 [Otevřít / Stáhnout Cviceni4N.pdf](./cviceni/Cviceni4N.pdf)
 
-### Cviceni5N.pdf
+#### Cviceni5N.pdf
 
 <iframe src="./cviceni/Cviceni5N.pdf" width="100%" height="800px"></iframe>
 
 [Otevřít / Stáhnout Cviceni5N.pdf](./cviceni/Cviceni5N.pdf)
 
-### Cviceni6N.pdf
+#### Cviceni6N.pdf
 
 <iframe src="./cviceni/Cviceni6N.pdf" width="100%" height="800px"></iframe>
 
 [Otevřít / Stáhnout Cviceni6N.pdf](./cviceni/Cviceni6N.pdf)
 
-### Cviceni7N.pdf
+#### Cviceni7N.pdf
 
 <iframe src="./cviceni/Cviceni7N.pdf" width="100%" height="800px"></iframe>
 
 [Otevřít / Stáhnout Cviceni7N.pdf](./cviceni/Cviceni7N.pdf)
 
-### Cviceni8a9N.pdf
+### Průběh funkce
+
+#### Cviceni8a9N.pdf
 
 <iframe src="./cviceni/Cviceni8a9N.pdf" width="100%" height="800px"></iframe>
 
 [Otevřít / Stáhnout Cviceni8a9N.pdf](./cviceni/Cviceni8a9N.pdf)
 
-### Cviceni10N.pdf
+### Integrály
+
+#### Cviceni10N.pdf
 
 <iframe src="./cviceni/Cviceni10N.pdf" width="100%" height="800px"></iframe>
 
 [Otevřít / Stáhnout Cviceni10N.pdf](./cviceni/Cviceni10N.pdf)
 
-### Cviceni11N.pdf
+#### Cviceni11N.pdf
 
 <iframe src="./cviceni/Cviceni11N.pdf" width="100%" height="800px"></iframe>
 
 [Otevřít / Stáhnout Cviceni11N.pdf](./cviceni/Cviceni11N.pdf)
 
-### Cviceni12N.pdf
+#### Cviceni12N.pdf
 
 <iframe src="./cviceni/Cviceni12N.pdf" width="100%" height="800px"></iframe>
 
 [Otevřít / Stáhnout Cviceni12N.pdf](./cviceni/Cviceni12N.pdf)
+
+#### Cviceni13N.pdf
+
+<iframe src="./cviceni/Cviceni123N.pdf" width="100%" height="800px"></iframe>
+
+[Otevřít / Stáhnout Cviceni13N.pdf](./cviceni/Cviceni13N.pdf)
+
+#### Cviceni14N.pdf
+
+<iframe src="./cviceni/Cviceni14N.pdf" width="100%" height="800px"></iframe>
+
+[Otevřít / Stáhnout Cviceni14N.pdf](./cviceni/Cviceni14N.pdf)
