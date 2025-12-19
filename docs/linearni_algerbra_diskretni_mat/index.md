@@ -375,3 +375,30 @@ Zkoumá objekty, které jsou **oddělené a nespojité**.
 ![](prednasky/devatenacta_prednaska/7.jpg)
 ![](prednasky/devatenacta_prednaska/8.jpg)
 ![](prednasky/devatenacta_prednaska/9.jpg)
+
+### Dvacátá přednáška
+
+#### Složitost algoritmů (linearní algebry)
+
+![](prednasky/dvacata_prednaska/1.jpg)
+![](prednasky/dvacata_prednaska/2.jpg)
+
+#### Blokové matice, Strassenův algoritmus pro matice 4x4
+
+![](prednasky/dvacata_prednaska/3.jpg)
+
+#### Strassenův algoritmus
+
+![](prednasky/dvacata_prednaska/4.jpg)
+
+#### Skalarni součty Gram-Schmidtova ortogonalizace
+
+![](prednasky/dvacata_prednaska/5.jpg)
+![](prednasky/dvacata_prednaska/6.jpg)
+
+#### Výpočet determinantu
+
+![](prednasky/dvacata_prednaska/7.jpg)
+![](prednasky/dvacata_prednaska/8.jpg)
+
+### Dvacátáprvní přednáška 🤷‍♂️

@@ -125,6 +125,12 @@ end
 
 [Otevřít / Stáhnout Matlab_5.pdf](./prednasky/Matlab_5.pdf)
 
+### Šestá přednáška
+
+<iframe src="./prednasky/Matlab_6.pdf" width="100%" height="800px"></iframe>
+
+[Otevřít / Stáhnout Matlab_6.pdf](./prednasky/Matlab_6.pdf)
+
 ## Cvičení
 
 ### Zadání prvního cvičení
