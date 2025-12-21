@@ -72,7 +72,6 @@ Relativní cesta začíná vždy v aktuálním wd (working directory)
 - ctrl + Z - do stopped
 - kill PID - ukončen killall SIGTERM SIGKILL
 
-```bash
 ## Témata ke zkoušce
 
 ### 1. Typy souborů v Linuxu
@@ -239,19 +238,32 @@ Systémové: $USER (uživatel), $HOME (domov), $PATH (cesty), $PWD (kde jsem).
 
 ### 14. Podmínky v bashi
 
-    Exit status: Návratová hodnota posledního příkazu ($?). 0 = OK, 1-255 = Chyba.
+Exit status: Návratová hodnota posledního příkazu ($?). 0 = OK, 1-255 = Chyba.
 
 Podmíněný příkaz: && (spusť další, jen když první prošel), || (spusť další, když první selhal).
 
 if:
 
+```bash
 if [ "$a" -eq 1 ]; then
 echo "Je to jedna"
 fi
+```
 
 ### 15. Cykly v bashi
 
 Druhy: for (pro seznam prvků), while (dokud platí podmínka).
+
+```bash
+for (( i=1; i<=9; i++ ))
+do
+    for (( j=1; j <=i; j++ ))
+        do
+            echo -n "$i"
+        done
+        echo ""
+done
+```
 
 Nekonečný cyklus: while true; do ... done.
 
@@ -302,4 +314,3 @@ Arch: Rolling release, pro pokročilé.
 Vhodné pro: Servery (web, databáze), superpočítače, embedded zařízení (routery, Raspberry Pi).
 
 Proč: Stabilita, bezpečnost, možnost automatizace (skripty), nulová cena licencí, běh bez grafiky (headless), otevřený kód.
-```
