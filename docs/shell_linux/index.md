@@ -152,6 +152,8 @@ jana@drak ~ $ tree -L 1 /
 
 **Relativní**: Nezačíná **/**. Vztahuje se k PWD. Používá **.** (aktuální) a **..** (nadřazený).
 
+**Příklad**: Jsem-li v adresáři /home/jana (zde psána absolutní cesta), pak relativní cesta k tomuto adresáři může být třeba ., ../jana, ../../home/jana nebo ./././.././jana/./../jana
+
 ### 4. Filesystem, metadata, inode
 
 **Filesystem**: Způsob organizace dat na fyzickém disku (formátování).
