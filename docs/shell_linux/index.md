@@ -162,9 +162,9 @@ Příklady: ext4, xfs, btrfs.
 
 **Metadata**: Data o datech (vlastník, oprávnění, čas změny, velikost). Neobsahují jméno souboru ani samotný obsah.
 
-**Inode**: Datová struktura (číslo). Obsahuje metadata: Vlastník, práva, časy (změna, přístup), velikost, pozice dat na disku. NEobsahuje jméno souboru (to je v adresáři). Práva (chmod):
+**Inode**: Datová struktura (číslo). Obsahuje metadata: Vlastník, práva, časy (změna, přístup), velikost, pozice dat na disku. NEobsahuje jméno souboru (to je v adresáři). 
 
-Práva:
+**Práva (chmod)**:
 
 **r**=4, **w**=2, **x**=1.
 
