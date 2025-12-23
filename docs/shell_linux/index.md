@@ -195,7 +195,7 @@ Soubory:
 **/etc/passwd**: Login, UID, GID, home, shell. (Hesla tu nejsou, je tu x).
 
 **/etc/shadow**: Zašifrovaná hesla, expirace hesel (čte jen root).
-Typy:
+
 
 ### 6. Skupiny (Grupy)
 
