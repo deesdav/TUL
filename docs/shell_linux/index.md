@@ -118,6 +118,34 @@ Kořen: **/** (Root). Stromová struktura (bez cyklů). Signifikantní adresář
 
 **/tmp**: Dočasné soubory.
 
+![adresarovy_strom](adresarovy_strom.png)
+
+```bash
+jana@drak ~ $ tree -L 1 /
+/
+├── bin
+├── boot
+├── dev
+├── etc
+├── home
+├── lib
+├── lib32
+├── lib64
+├── lost+found
+├── media
+├── mnt
+├── opt
+├── proc
+├── root
+├── run
+├── sbin
+├── srv
+├── sys
+├── tmp
+├── usr
+└── var
+```
+
 ### 3. Cesty adresářovým stromem
 
 **Absolutní**: Začíná **/**. Neměnná. Bezpečná do skriptů.
