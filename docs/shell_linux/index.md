@@ -154,13 +154,15 @@ jana@drak ~ $ tree -L 1 /
 
 ### 4. Filesystem, metadata, inode
 
-Filesystem: Způsob organizace dat na fyzickém disku (formátování).
+**Filesystem**: Způsob organizace dat na fyzickém disku (formátování).
 
 Příklady: ext4, xfs, btrfs.
 
-Metadata: Data o datech (vlastník, oprávnění, čas změny, velikost). Neobsahují jméno souboru ani samotný obsah.
+**Metadata**: Data o datech (vlastník, oprávnění, čas změny, velikost). Neobsahují jméno souboru ani samotný obsah.
 
-Inode: Datová struktura (číslo). Obsahuje metadata: Vlastník, práva, časy (změna, přístup), velikost, pozice dat na disku. NEobsahuje jméno souboru (to je v adresáři). Práva (chmod):
+**Inode**: Datová struktura (číslo). Obsahuje metadata: Vlastník, práva, časy (změna, přístup), velikost, pozice dat na disku. NEobsahuje jméno souboru (to je v adresáři). Práva (chmod):
+
+Práva:
 
 **r**=4, **w**=2, **x**=1.
 
@@ -168,7 +170,7 @@ Speciální bity:
 
 SUID (**s** u vlastníka): Spouští se s právy vlastníka souboru (ne toho, kdo ho spustil).
 
-\*SGID (**s** u skupiny): Dědí skupinu adresáře.
+SGID (**s** u skupiny): Dědí skupinu adresáře.
 
 Sticky bit (**t**): V **/tmp** – mazat může jen vlastník, i když mají zápis všichni.
 
