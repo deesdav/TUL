@@ -186,9 +186,13 @@ jana@drak ~ $ tree -L 1 /
 
 ### 5. Uživatelé
 
-**Root** (UID 0): Správce, může vše, **Systémoví uživatelé** (nízká UID): Pro běh služeb (www-data, mail), nemají login shell, **Běžní uživatelé** (UID 1000+): Omezená práva.
+**Root** (UID 0): Správce, může vše
 
-**S**oubory\*\*:
+**Systémoví uživatelé** (nízká UID): Pro běh služeb (www-data, mail), nemají login shell
+
+**Běžní uživatelé** (UID 1000+): Omezená práva.
+
+**Soubory**:
 
 **/etc/passwd**: Login, UID, GID, home, shell. (Hesla tu nejsou, je tu x).
 
