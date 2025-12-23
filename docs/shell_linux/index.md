@@ -76,51 +76,53 @@ Relativní cesta začíná vždy v aktuálním wd (working directory)
 
 ### 1. Typy souborů v Linuxu
 
-Specifikace: V Linuxu rozlišujeme soubory podle prvního znaku ve výpisu ls -l.
+Specifikace: První znak ve výpisu **ls -l**.
 
-Jak je poznám & Příklady:
+**-** Obyčejný soubor: Text, binárka, obrázek.
 
-- Obyčejný soubor: Text, obrázek, program (např. /etc/passwd).
+**d** Adresář: Soubor obsahující seznam inodů a jmen.
 
-d Adresář: Seznam odkazů na jiné soubory (např. /home).
+**l** Symbolický odkaz: Cesta k jinému souboru.
 
-l Symbolický odkaz: Zástupce ukazující jinam (např. /bin/sh -> bash).
+**b** Blokové zařízení: Disk, CD-ROM (přenáší data po blocích/bufferech).
 
-b / c Zařízení: Blokové (disk sda) nebo znakové (terminál tty, /dev/null).
+**c** Znakové zařízení: Terminál, klávesnice, /dev/null (přenáší po znacích).
 
-Použití: Ukládání dat (obyčejné), organizace (adresáře), přístup k HW (zařízení).
+**p** Pojmenovaná roura (FIFO): Pro komunikaci procesů.
+
+**s** Socket: Pro komunikaci (i síťovou).
+
+**Hard Link vs. Soft Link**:
+
+**Hard link** (Pevný): Stejný inode, stejná data. Smazání originálu data nezničí (pokud existuje link). Omezení: Musí být na stejném disku (partition) a nelze na adresář.
+
+**Soft link** (Symbolický): Jen textový soubor s cestou ("zástupce"). Má vlastní inode. Smazání originálu = nefunkční odkaz (broken link).
+
+![hard_link_vs_soft_link](hard_link_vs_soft_link.png)
 
 ### 2. Adresářový strom
 
-Struktura: Jediný strom začínající kořenem / (Root).
+Kořen: **/** (Root). Stromová struktura (bez cyklů). Signifikantní adresáře:
 
-Signifikantní adresáře:
+**/bin, /sbin, /usr/bin**: Spustitelné programy.
 
-/bin, /usr/bin – Příkazy pro uživatele (ls, cp).
+**/etc**: Konfigurace (textové, čitelné).
 
-/etc – Konfigurační soubory.
+**/home**: Data uživatelů.
 
-/home – Domovské adresáře uživatelů.
+**/proc**: Virtuální FS (info o procesech v RAM).
 
-/var – Proměnná data (logy, e-maily).
+**/dev**: Soubory zařízení (/dev/null = černá díra, /dev/zero = generátor nul).
 
-/tmp – Dočasné soubory (mazány při restartu).
+**/var**: Logy, proměnná data.
 
-/dev – Soubory zařízení.
+**/tmp**: Dočasné soubory.
 
 ### 3. Cesty adresářovým stromem
 
-Absolutní cesta: Začíná vždy /. Cesta od kořene. Nemění se podle toho, kde jsi.
+**Absolutní**: Začíná **/**. Neměnná. Bezpečná do skriptů.
 
-Příklad: /home/student/dokumenty/text.txt
-
-Použití: Ve skriptech (bezpečnost, jistota).
-
-Relativní cesta: Nezačíná /. Cesta od aktuálního adresáře (pwd).
-
-Příklad: dokumenty/text.txt nebo ../data
-
-Použití: Pro rychlý pohyb v terminálu.
+**Relativní**: Nezačíná **/**. Vztahuje se k PWD. Používá **.** (aktuální) a **..** (nadřazený).
 
 ### 4. Filesystem, metadata, inode
 
@@ -130,83 +132,122 @@ Příklady: ext4, xfs, btrfs.
 
 Metadata: Data o datech (vlastník, oprávnění, čas změny, velikost). Neobsahují jméno souboru ani samotný obsah.
 
-Inode: Datová struktura (tabulka) na disku uchovávající metadata konkrétního souboru. Každý soubor má své číslo inodu (lze vidět přes ls -li).
+Inode: Datová struktura (číslo). Obsahuje metadata: Vlastník, práva, časy (změna, přístup), velikost, pozice dat na disku. NEobsahuje jméno souboru (to je v adresáři). Práva (chmod):
+
+**r**=4, **w**=2, **x**=1.
+
+Speciální bity:
+
+SUID (**s** u vlastníka): Spouští se s právy vlastníka souboru (ne toho, kdo ho spustil).
+
+\*SGID (**s** u skupiny): Dědí skupinu adresáře.
+
+Sticky bit (**t**): V **/tmp** – mazat může jen vlastník, i když mají zápis všichni.
+
+Příklad: chmod 755 soubor znamená:
+
+Vlastník (7 = 4+2+1): Čte, píše, spouští.
+
+Skupina (5 = 4+0+1): Čte, spouští.
+
+Ostatní (5 = 4+0+1): Čte, spouští.
+
+Umask: Výchozí nastavení práv pro nově vytvořené soubory (odečítá se od základu).
 
 ### 5. Uživatelé
 
+**Root** (UID 0): Správce, může vše, **Systémoví uživatelé** (nízká UID): Pro běh služeb (www-data, mail), nemají login shell, **Běžní uživatelé** (UID 1000+): Omezená práva.
+
+Soubory:
+
+**/etc/passwd**: Login, UID, GID, home, shell. (Hesla tu nejsou, je tu x).
+
+**/etc/shadow**: Zašifrovaná hesla, expirace hesel (čte jen root).
 Typy:
-
-Root (UID 0): Správce, může vše.
-
-Systémoví uživatelé: Pro běh služeb (www-data, mail), nemají login shell.
-
-Běžní uživatelé (UID 1000+): Omezená práva.
-
-Soubor s informacemi: /etc/passwd (obsahuje login, UID, GID, home adresář, shell). Hesla jsou (zašifrovaná) v /etc/shadow.
 
 ### 6. Skupiny (Grupy)
 
-Definice: V souboru /etc/group. Slouží ke sdílení práv mezi více uživateli.
+Definice: V souboru **/etc/group**. Slouží ke sdílení práv mezi více uživateli.
 
-Jeden uživatel ve více skupinách? ANO. Má jednu primární (v /etc/passwd) a může mít více sekundárních.
-
-Jeden soubor více skupinám? NE. Soubor patří vždy jen jednomu uživateli a jedné skupině.
+Princip: Uživatel má jednu primární skupinu (v passwd) a může být v mnoha sekundárních. Příkaz **chgrp** mění skupinu souboru.
 
 ### 7. Stavy procesu
 
-Hlavní stavy:
+Stavy:
 
-R (Running): Běží nebo čeká na CPU.
+**R** (Running): Běží.
 
-S (Sleeping): Čeká na data/disk/klávesnici.
+**S** (Sleeping): Čeká (na disk, klávesnici).
 
-Z (Zombie): Skončil, ale rodič si nepřečetl výsledek.
+**T** (Stopped): Pozastaven (např. přes CTRL+Z).
 
-T (Stopped): Pozastaven (např. přes CTRL+Z).
+**Z** (Zombie): Mrtvý, rodič si nepřečetl exit status.
 
-Změna stavu: Signálem (příkaz kill), uspáním, probuzením, dokončením I/O operace.
+Signály (kill):
+
+**SIGINT** (Ctrl+C): Ukonči se slušně (exit code 130).
+
+**SIGTSTP** (Ctrl+Z): Pozastav se (Stopped).
+
+**SIGTERM** (kill PID): Ukonči se (default).
+
+**SIGKILL** (kill -9 PID): Okamžitá vražda (nejde ignorovat).
+
+![Životní cyklus procesu (Zombie)](zivotni_cyklus_procesu.png)
 
 ### 8. Monitorování procesů
 
-Interaktivní: top, htop (neustále se aktualizuje).
+**Interaktivní**: top, htop (vidím vytížení, neustále se aktualizuje, q pro konec).
 
-Neinteraktivní: ps (výpis aktuálního stavu). Časté: ps aux nebo ps -ef.
+**Neinteraktivní**: ps (výpis aktuálního stavu). Časté: ps aux nebo ps -ef.
 
-Vlastnosti: PID (ID procesu), PPID (ID rodiče), USER (vlastník), %CPU, %MEM, NI (priorita), TIME, COMMAND.
+**V terminálu**: jobs (úlohy na pozadí), bg (hodit na pozadí), fg (vrátit do popředí).
 
 ### 9. Závislosti mezi procesy
 
-Rodičovství: Rodič spouští potomka (fork). Rodič čeká na návratový kód potomka. Pokud rodič umře dřív, potomka se ujme systemd (init).
+**Rodič** (Parent) -> Potomek (Child). Potomek dědí proměnné označené **export**.
 
-Kdo byl první: Proces s PID 1 (init/systemd).
-
-Komunikace proměnnými: Proces dědí proměnné od rodiče (export). Potomek nemůže změnit proměnnou rodiči (jen sobě).
+**Zombie**: Nejde zabít (je mrtvý). Musíš zabít jeho rodiče -> Zombie adoptuje **init** (PID 1) a ten ho uklidí.
 
 ### 10. Spuštění příkazu
 
 Jak shell pozná příkaz:
 
-Je to absolutní/relativní cesta? (./skript.sh) -> Spustí to.
+Je to absolutní/relativní cesta? (**./skript.sh**) -> Spustí to.
 
-Je to alias nebo funkce? -> Spustí to.
+Je to alias (zkratka v **.bashrc**) nebo funkce (definovaná ve skriptu)? -> Spustí to.
 
-Je to interní příkaz (built-in)? (cd, echo) -> Provede ho přímo shell.
+Je to interní příkaz (built-in)? (**cd**, **echo**, **let**) -> Provede ho přímo shell.
 
-Je to externí program? -> Hledá ho v adresářích uvedených v proměnné $PATH.
+Je to externí program? -> Hledá ho v adresářích uvedených v proměnné **$PATH**.
 
-### 11. stdin, stdout, stderr
+### 11. Textové Proudy a Roury
 
-Proudy:
+**Proudy**:
 
-stdin (0): Vstup (klávesnice).
+**stdin** (0): Vstup (klávesnice).
 
-stdout (1): Výstup (obrazovka).
+**stdout** (1): Výstup (obrazovka).
 
-stderr (2): Chybový výstup (obrazovka).
+**stderr** (2): Chybový výstup (obrazovka).
 
-Přesměrování: > (do souboru), >> (připojit), 2> (chyby), < (číst ze souboru).
+Přesměrování:
 
-Roura |: Vezme stdout prvního příkazu a pošle ho jako stdin druhému.
+**>** (přepsat)
+
+**>>** (připojit)
+
+**2>** (přesměrovat chyby)
+
+**2> /dev/null** (zahodit chyby)
+
+**<** (číst ze souboru)
+
+**&>** (přesměrovat vše).
+
+Roura |: Výstup prvního je vstupem druhého.
+
+![roura](roura.png)
 
 Příklad: cat soubor.txt | grep "slovo" (Vyhledá slovo v obsahu souboru).
 
@@ -216,43 +257,72 @@ Co to je: Textový soubor s příkazy.
 
 Vlastnosti:
 
-Musí mít právo spustitelnosti (chmod +x soubor).
+**Spuštění**: **./skript.sh** (musí mít právo spustitelnosti **chmod +x** soubor).
 
-Hlavička (Shebang): #!/bin/bash na prvním řádku (určuje interpret).
+**Hlavička (Shebang)**: #!/bin/bash na prvním řádku (určuje interpret).
 
-Použití: Automatizace opakovaných úloh.
+**Vstup**: Příkaz read proměnná (načte vstup od uživatele).
+
+**Použití**: Automatizace opakovaných úloh.
 
 ### 13. Proměnné v bashi
 
-Typ: Vše je řetězec (string).
+**Typ**: Vše je řetězec (string).
 
-Naplnění: JMENO=hodnota (bez mezer!).
+**Naplnění**: JMENO=hodnota (bez mezer!).
 
-Volání: $JMENO nebo ${JMENO}.
+**Volání**: $JMENO nebo ${JMENO}.
 
-Vlastní vs. Systémové:
+**Argumenty**: $0 - jméno skriptu, $1 - první parametr, $# - počet parametrů.
 
-Vlastní: pocet=5 (platí jen v aktuálním shellu, pokud nedám export).
+**Úpravy řetězců (z materiálů)**:
 
-Systémové: $USER (uživatel), $HOME (domov), $PATH (cesty), $PWD (kde jsem).
+**Výřez**: promenna:odkud:kolik - např. ${cislo:2:3}
+
+**Vlastní vs. Systémové**:
+
+**Vlastní**: pocet=5 (platí jen v aktuálním shellu, pokud nedám export).
+
+**Systémové**: $USER (uživatel), $HOME (domov), $PATH (cesty), $PWD (kde jsem).
 
 ### 14. Podmínky v bashi
 
-Exit status: Návratová hodnota posledního příkazu ($?). 0 = OK, 1-255 = Chyba.
+**Exit status**: Návratová hodnota posledního příkazu ($?). **0** = OK, **1-255** = Chyba.
 
-Podmíněný příkaz: && (spusť další, jen když první prošel), || (spusť další, když první selhal).
+**Testování [ ... ]**:
 
-if:
+**-e** (existuje), **-f** (soubor), **-d** (adresář).
+
+**-z** (prázdný string), **-n** (neprázdný).
+
+**-eq** (rovná se číslo), **==** (rovná se text).
+
+**Podmíněný příkaz**: **&&** (spusť další, jen když první prošel), **||** (spusť další, když první selhal).
+
+**if**:
 
 ```bash
 if [ "$a" -eq 1 ]; then
 echo "Je to jedna"
 fi
+
+case "$promenna" in
+  start) echo "Spouštím";;
+  *) echo "Neznám";;
+esac
 ```
 
 ### 15. Cykly v bashi
 
-Druhy: for (pro seznam prvků), while (dokud platí podmínka).
+**While**: Dokud je podmínka pravda (while [ $i -lt 5 ]).
+
+**Until**: Dokud podmínka NENÍ pravda (opak while).
+
+**For**: for i in {1..10}; do ... done.
+
+**Řízení**: break (vyskoč ven), continue (přeskoč zbytek a jdi na další kolo).
+
+**Nekonečný cyklus**: while true; do ... done.
 
 ```bash
 for (( i=1; i<=9; i++ ))
@@ -265,17 +335,13 @@ do
 done
 ```
 
-Nekonečný cyklus: while true; do ... done.
-
-Přerušení: break (konec cyklu), continue (další iterace).
-
 ### 16. Soubory k nastavení bashe
 
-Kde: V domovském adresáři (~) nebo v /etc.
+**~/.bashrc**: Pro interaktivní shell (aliasy, prompt).
 
-Soubory: .bashrc (pro interaktivní práci, aliasy), .profile / .bash_profile (při přihlášení).
+**/etc/profile**: Pro celý systém.
 
-Co v nich je: Nastavení promptu (PS1), aliasy (alias ll='ls -l'), úprava $PATH.
+**Proměnné prostředí**: env (výpis), export (zveřejnění pro potomky).
 
 ### 17. Terminál a shell
 
@@ -287,9 +353,9 @@ Druhy: sh, bash, zsh, csh, fish. Seznam dostupných je v /etc/shells.
 
 ### 18. OS Linux (Historie, modularita)
 
-Historie: 1991 Linus Torvalds, inspirován Minixem/Unixem.
+Historie: 1969 UNIX (Bell Labs), 1991 Linus Torvalds, inspirován Minixem/Unixem.
 
-Modularita: Linux je skládačka.
+Modularita: Kernel + Shell + GNU Tools + GUI (vše vyměnitelné).
 
 Jádro (Kernel) řeší HW.
 
@@ -303,14 +369,34 @@ Desktop environment (GNOME/KDE) řeší grafiku. Vše lze vyměnit.
 
 Proč vznikají: Linux je jen jádro. Distribuce přidává instalátor, balíčkovací systém a výběr SW.
 
-Příklady:
+**RPM**: RedHat (RHEL), Fedora, CentOS, SUSE.
 
-Debian/Ubuntu: Stabilní, uživatelské (apt, .deb).
-Red Hat (RHEL)/Fedora/CentOS: Serverové standardy (dnf/yum, .rpm).
-Arch: Rolling release, pro pokročilé.
+**DEB**: Debian, Ubuntu, Mint.
+
+**Jiné**: Arch (pacman), Gentoo (kompiluje se), Slackware.
+
+**Proč**: Jádro je stejné, liší se balíčkovací systém, verze knihoven a instalátor.
 
 ### 20. Use Case (Kde použít Linux)
 
-Vhodné pro: Servery (web, databáze), superpočítače, embedded zařízení (routery, Raspberry Pi).
+**Server**: Bez grafiky, SSH, stabilita, skripty (cron).
 
-Proč: Stabilita, bezpečnost, možnost automatizace (skripty), nulová cena licencí, běh bez grafiky (headless), otevřený kód.
+**Embedded**: Routery, Raspberry Pi (malá velikost).
+
+**Superpočítače**: Výkon, správa zdrojů.
+
+**Proč**: Stabilita, bezpečnost, možnost automatizace (skripty), nulová cena licencí, běh bez grafiky (headless), otevřený kód.
+
+### Bonus: Užitečné textové nástroje (Nutné pro praxi!)
+
+**grep**: Hledá řádky s textem. (grep "chyba" log.txt)
+
+**cut**: Vybírá sloupce. (cut -d: -f1 /etc/passwd = vypíše jen loginy)
+
+**sort**: Seřadí řádky (-n číselně, -r pozpátku).
+
+**uniq**: Odstraní duplicity (musí být seřazeno!). (sort | uniq)
+
+**tr**: Mění znaky. (tr "a-z" "A-Z" = zvětší písmena)
+
+**wc**: Počítá. (wc -l = počet řádků).
