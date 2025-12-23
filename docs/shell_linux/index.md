@@ -166,7 +166,7 @@ jana@drak ~ $ tree -L 1 /
 
 **r**=4, **w**=2, **x**=1.
 
-Speciální bity:
+**Speciální bity**:
 
 **SUID** (**s** u vlastníka): Spouští se s právy vlastníka souboru (ne toho, kdo ho spustil).
 
