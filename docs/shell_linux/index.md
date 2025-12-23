@@ -76,7 +76,7 @@ Relativní cesta začíná vždy v aktuálním wd (working directory)
 
 ### 1. Typy souborů v Linuxu
 
-Specifikace: První znak ve výpisu **ls -l**.
+**Specifikace**: První znak ve výpisu **ls -l**.
 
 **-** Obyčejný soubor: Text, binárka, obrázek.
 
@@ -102,7 +102,7 @@ Specifikace: První znak ve výpisu **ls -l**.
 
 ### 2. Adresářový strom
 
-Kořen: **/** (Root). Stromová struktura (bez cyklů). Signifikantní adresáře:
+**Kořen**: **/** (Root). Stromová struktura (bez cyklů). Signifikantní adresáře:
 
 **/bin, /sbin, /usr/bin**: Spustitelné programy.
 
@@ -156,13 +156,11 @@ jana@drak ~ $ tree -L 1 /
 
 ### 4. Filesystem, metadata, inode
 
-**Filesystem**: Způsob organizace dat na fyzickém disku (formátování).
-
-Příklady: ext4, xfs, btrfs.
+**Filesystem**: Způsob organizace dat na fyzickém disku (formátování). **Příklady**: ext4, xfs, btrfs.
 
 **Metadata**: Data o datech (vlastník, oprávnění, čas změny, velikost). Neobsahují jméno souboru ani samotný obsah.
 
-**Inode**: Datová struktura (číslo). Obsahuje metadata: Vlastník, práva, časy (změna, přístup), velikost, pozice dat na disku. NEobsahuje jméno souboru (to je v adresáři). 
+**Inode**: Datová struktura (číslo). Obsahuje metadata: Vlastník, práva, časy (změna, přístup), velikost, pozice dat na disku. NEobsahuje jméno souboru (to je v adresáři).
 
 **Práva (chmod)**:
 
@@ -170,42 +168,41 @@ Příklady: ext4, xfs, btrfs.
 
 Speciální bity:
 
-SUID (**s** u vlastníka): Spouští se s právy vlastníka souboru (ne toho, kdo ho spustil).
+**SUID** (**s** u vlastníka): Spouští se s právy vlastníka souboru (ne toho, kdo ho spustil).
 
-SGID (**s** u skupiny): Dědí skupinu adresáře.
+**SGID** (**s** u skupiny): Dědí skupinu adresáře.
 
-Sticky bit (**t**): V **/tmp** – mazat může jen vlastník, i když mají zápis všichni.
+**Sticky bit** (**t**): V **/tmp** – mazat může jen vlastník, i když mají zápis všichni.
 
-Příklad: chmod 755 soubor znamená:
+**Příklad**: chmod 755 soubor znamená:
 
-Vlastník (7 = 4+2+1): Čte, píše, spouští.
+**Vlastník** (7 = 4+2+1): Čte, píše, spouští.
 
-Skupina (5 = 4+0+1): Čte, spouští.
+**Skupina** (5 = 4+0+1): Čte, spouští.
 
-Ostatní (5 = 4+0+1): Čte, spouští.
+**Ostatní** (5 = 4+0+1): Čte, spouští.
 
-Umask: Výchozí nastavení práv pro nově vytvořené soubory (odečítá se od základu).
+**Umask**: Výchozí nastavení práv pro nově vytvořené soubory (odečítá se od základu).
 
 ### 5. Uživatelé
 
 **Root** (UID 0): Správce, může vše, **Systémoví uživatelé** (nízká UID): Pro běh služeb (www-data, mail), nemají login shell, **Běžní uživatelé** (UID 1000+): Omezená práva.
 
-Soubory:
+**S**oubory\*\*:
 
 **/etc/passwd**: Login, UID, GID, home, shell. (Hesla tu nejsou, je tu x).
 
 **/etc/shadow**: Zašifrovaná hesla, expirace hesel (čte jen root).
 
-
 ### 6. Skupiny (Grupy)
 
-Definice: V souboru **/etc/group**. Slouží ke sdílení práv mezi více uživateli.
+**Definice**: V souboru **/etc/group**. Slouží ke sdílení práv mezi více uživateli.
 
-Princip: Uživatel má jednu primární skupinu (v passwd) a může být v mnoha sekundárních. Příkaz **chgrp** mění skupinu souboru.
+**Princip**: Uživatel má jednu primární skupinu (v passwd) a může být v mnoha sekundárních. Příkaz **chgrp** mění skupinu souboru.
 
 ### 7. Stavy procesu
 
-Stavy:
+**Stavy**:
 
 **R** (Running): Běží.
 
@@ -215,7 +212,7 @@ Stavy:
 
 **Z** (Zombie): Mrtvý, rodič si nepřečetl exit status.
 
-Signály (kill):
+**Signály (kill)**:
 
 **SIGINT** (Ctrl+C): Ukonči se slušně (exit code 130).
 
@@ -243,15 +240,15 @@ Signály (kill):
 
 ### 10. Spuštění příkazu
 
-Jak shell pozná příkaz:
+**Jak shell pozná příkaz**:
 
-Je to absolutní/relativní cesta? (**./skript.sh**) -> Spustí to.
+**Je to absolutní/relativní cesta?** (**./skript.sh**) -> Spustí to.
 
-Je to alias (zkratka v **.bashrc**) nebo funkce (definovaná ve skriptu)? -> Spustí to.
+**Je to alias (zkratka v .bashrc)** nebo funkce (definovaná ve skriptu)? -> Spustí to.
 
-Je to interní příkaz (built-in)? (**cd**, **echo**, **let**) -> Provede ho přímo shell.
+**Je to interní příkaz (built-in)?** (**cd**, **echo**, **let**) -> Provede ho přímo shell.
 
-Je to externí program? -> Hledá ho v adresářích uvedených v proměnné **$PATH**.
+**Je to externí program?** -> Hledá ho v adresářích uvedených v proměnné **$PATH**.
 
 ### 11. Textové Proudy a Roury
 
@@ -263,7 +260,7 @@ Je to externí program? -> Hledá ho v adresářích uvedených v proměnné **$
 
 **stderr** (2): Chybový výstup (obrazovka).
 
-Přesměrování:
+**Přesměrování**:
 
 **>** (přepsat)
 
@@ -277,17 +274,17 @@ Přesměrování:
 
 **&>** (přesměrovat vše).
 
-Roura |: Výstup prvního je vstupem druhého.
+**Roura |**: Výstup prvního je vstupem druhého.
 
 ![roura](roura.png)
 
-Příklad: cat soubor.txt | grep "slovo" (Vyhledá slovo v obsahu souboru).
+**Příklad**: cat soubor.txt | grep "slovo" (Vyhledá slovo v obsahu souboru).
 
 ### 12. Skripty v bashi
 
-Co to je: Textový soubor s příkazy.
+**Co to je**: Textový soubor s příkazy.
 
-Vlastnosti:
+**Vlastnosti**:
 
 **Spuštění**: **./skript.sh** (musí mít právo spustitelnosti **chmod +x** soubor).
 
@@ -377,29 +374,29 @@ done
 
 ### 17. Terminál a shell
 
-Terminál: Okno/HW, které zobrazuje znaky a posílá vstupy (např. Putty, xterm).
+**Terminál**: Okno/HW, které zobrazuje znaky a posílá vstupy (např. Putty, xterm).
 
-Shell: Program běžící na serveru, interpretuje příkazy (např. bash, sh, zsh).
+**Shell**: Program běžící na serveru, interpretuje příkazy (např. bash, sh, zsh).
 
-Druhy: sh, bash, zsh, csh, fish. Seznam dostupných je v /etc/shells.
+**Druhy**: sh, bash, zsh, csh, fish. Seznam dostupných je v /etc/shells.
 
 ### 18. OS Linux (Historie, modularita)
 
-Historie: 1969 UNIX (Bell Labs), 1991 Linus Torvalds, inspirován Minixem/Unixem.
+**Historie**: 1969 UNIX (Bell Labs), 1991 Linus Torvalds, inspirován Minixem/Unixem.
 
-Modularita: Kernel + Shell + GNU Tools + GUI (vše vyměnitelné).
+**Modularita**: Kernel + Shell + GNU Tools + GUI (vše vyměnitelné).
 
-Jádro (Kernel) řeší HW.
+**Jádro (Kernel)** řeší HW.
 
-Shell řeší komunikaci s uživatelem.
+**Shell** řeší komunikaci s uživatelem.
 
-GNU nástroje řeší příkazy.
+**GNU nástroje** řeší příkazy.
 
-Desktop environment (GNOME/KDE) řeší grafiku. Vše lze vyměnit.
+**Desktop environment** (GNOME/KDE) řeší grafiku. Vše lze vyměnit.
 
 ### 19. Linuxové distribuce
 
-Proč vznikají: Linux je jen jádro. Distribuce přidává instalátor, balíčkovací systém a výběr SW.
+**Proč vznikají**: Linux je jen jádro. Distribuce přidává instalátor, balíčkovací systém a výběr SW.
 
 **RPM**: RedHat (RHEL), Fedora, CentOS, SUSE.
 
