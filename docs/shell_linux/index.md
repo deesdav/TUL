@@ -102,7 +102,9 @@ Relativní cesta začíná vždy v aktuálním wd (working directory)
 
 ### 2. Adresářový strom
 
-**Kořen**: **/** (Root). Stromová struktura (bez cyklů). Signifikantní adresáře:
+**Kořen**: **/** (Root). Stromová struktura (bez cyklů).
+
+**Signifikantní adresáře**:
 
 **/bin, /sbin, /usr/bin**: Spustitelné programy.
 
