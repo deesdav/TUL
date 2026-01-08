@@ -1,7 +1,7 @@
-function a=regrese(x,y)
-V=x.^0;
-for i = 1:length(x)-1
-    V = [x.^i, V];
-end
-a = V\y;
+function a = regrese(x, y, s)
+    V= x.^0;
+    for i = 1:s
+        V = [x.^i, V];
+    end
+    a = V\y;
 end
