@@ -78,25 +78,25 @@ Relativní cesta začíná vždy v aktuálním wd (working directory)
 
 **Specifikace**: První znak ve výpisu **ls -l**.
 
-**-** Obyčejný soubor: Text, binárka, obrázek.
+- **-** Obyčejný soubor: Text, binárka, obrázek.
 
-**d** Adresář: Soubor obsahující seznam inodů a jmen.
+- **d** Adresář: Soubor obsahující seznam inodů a jmen.
 
-**l** Symbolický odkaz: Cesta k jinému souboru.
+- **l** Symbolický odkaz: Cesta k jinému souboru.
 
-**b** Blokové zařízení: Disk, CD-ROM (přenáší data po blocích/bufferech).
+- **b** Blokové zařízení: Disk, CD-ROM (přenáší data po blocích/bufferech).
 
-**c** Znakové zařízení: Terminál, klávesnice, /dev/null (přenáší po znacích).
+- **c** Znakové zařízení: Terminál, klávesnice, /dev/null (přenáší po znacích).
 
-**p** Pojmenovaná roura (FIFO): Pro komunikaci procesů.
+- **p** Pojmenovaná roura (FIFO): Pro komunikaci procesů.
 
-**s** Socket: Pro komunikaci (i síťovou).
+- **s** Socket: Pro komunikaci (i síťovou).
 
 **Hard Link vs. Soft Link**:
 
-**Hard link** (Pevný): Stejný inode, stejná data. Smazání originálu data nezničí (pokud existuje link). Omezení: Musí být na stejném disku (partition) a nelze na adresář.
+- **Hard link** (Pevný): Stejný inode = stejná data. Smazání "originálu" data nezničí (pokud existuje link). Omezení: Musí být na stejném disku (partition) a nelze na adresář.
 
-**Soft link** (Symbolický): Jen textový soubor s cestou ("zástupce"). Má vlastní inode. Smazání originálu = nefunkční odkaz (broken link).
+- **Soft link** (Symbolický): Jen zástupce (cesta). Má vlastní inode. Smazání originálu = nefunkční odkaz (broken link).
 
 ![hard_link_vs_soft_link](hard_link_vs_soft_link.png)
 
@@ -152,7 +152,7 @@ jana@drak ~ $ tree -L 1 /
 
 **Absolutní**: Začíná **/**. Neměnná. Bezpečná do skriptů.
 
-**Relativní**: Nezačíná **/**. Vztahuje se k PWD. Používá **.** (aktuální) a **..** (nadřazený).
+**Relativní**: Nezačíná **/**. Vztahuje se k PWD (Print Working Directory). Používá **.** (aktuální) a **..** (nadřazený).
 
 **Příklad**: Jsem-li v adresáři /home/jana (zde psána absolutní cesta), pak relativní cesta k tomuto adresáři může být třeba ., ../jana, ../../home/jana nebo ./././.././jana/./../jana
 
@@ -162,19 +162,11 @@ jana@drak ~ $ tree -L 1 /
 
 **Metadata**: Data o datech (vlastník, oprávnění, čas změny, velikost). Neobsahují jméno souboru ani samotný obsah.
 
-**Inode**: Datová struktura (číslo). Obsahuje metadata: Vlastník, práva, časy (změna, přístup), velikost, pozice dat na disku. NEobsahuje jméno souboru (to je v adresáři).
+**Inode**: Datová struktura (číslo). Obsahuje metadata: Vlastník, práva, časy (změna, přístup), velikost, pozice dat na disku. Neobsahuje jméno souboru (to je v adresáři).
 
 **Práva (chmod)**:
 
 **r**=4, **w**=2, **x**=1.
-
-**Speciální bity**:
-
-**SUID** (**s** u vlastníka): Spouští se s právy vlastníka souboru (ne toho, kdo ho spustil).
-
-**SGID** (**s** u skupiny): Dědí skupinu adresáře.
-
-**Sticky bit** (**t**): V **/tmp** – mazat může jen vlastník, i když mají zápis všichni.
 
 **Příklad**: chmod 755 soubor znamená:
 
@@ -185,6 +177,14 @@ jana@drak ~ $ tree -L 1 /
 **Ostatní** (5 = 4+0+1): Čte, spouští.
 
 **Umask**: Výchozí nastavení práv pro nově vytvořené soubory (odečítá se od základu).
+
+**Speciální bity**:
+
+**SUID** (**s** u vlastníka): Spouští se s právy vlastníka souboru (ne toho, kdo ho spustil (ne uživatel)).
+
+**SGID** (**s** u skupiny): Dědí skupinu adresáře.
+
+**Sticky bit** (**t**): V **/tmp** – mazat může jen vlastník, i když mají zápis všichni.
 
 ### 5. Uživatelé
 
@@ -204,7 +204,7 @@ jana@drak ~ $ tree -L 1 /
 
 **Definice**: V souboru **/etc/group**. Slouží ke sdílení práv mezi více uživateli.
 
-**Princip**: Uživatel má jednu primární skupinu (v passwd) a může být v mnoha sekundárních. Příkaz **chgrp** mění skupinu souboru.
+**Princip**: Uživatel má 1 primární skupinu (v passwd) a může být v mnoha sekundárních. Příkaz **chgrp** mění skupinu souboru.
 
 ### 7. Stavy procesu
 
@@ -212,7 +212,7 @@ jana@drak ~ $ tree -L 1 /
 
 **R** (Running): Běží.
 
-**S** (Sleeping): Čeká (na disk, klávesnici).
+**S** (Sleeping): Čeká (na disk, klávesnice).
 
 **T** (Stopped): Pozastaven (např. přes CTRL+Z).
 
@@ -232,11 +232,11 @@ jana@drak ~ $ tree -L 1 /
 
 ### 8. Monitorování procesů
 
-**Interaktivní**: top, htop (vidím vytížení, neustále se aktualizuje, q pro konec).
+**Interaktivní**: `top`,`htop` (vidím vytížení, neustále se aktualizuje, q pro konec).
 
-**Neinteraktivní**: ps (výpis aktuálního stavu). Časté: ps aux nebo ps -ef.
+**Neinteraktivní**: `ps` (výpis aktuálního stavu). Časté: ps aux nebo ps -ef.
 
-**V terminálu**: jobs (úlohy na pozadí), bg (hodit na pozadí), fg (vrátit do popředí).
+**V terminálu**: `jobs` (úlohy na pozadí),`bg` (hodit na pozadí), `fg` (vrátit do popředí).
 
 ### 9. Závislosti mezi procesy
 
@@ -292,7 +292,7 @@ jana@drak ~ $ tree -L 1 /
 
 **Vlastnosti**:
 
-**Spuštění**: **./skript.sh** (musí mít právo spustitelnosti **chmod +x** soubor).
+**Spuštění**: **./skript.sh** (musí mít právo spustitelnosti **chmod +x nebo chmod 755** soubor).
 
 **Hlavička (Shebang)**: #!/bin/bash na prvním řádku (určuje interpret).
 
@@ -334,16 +334,20 @@ jana@drak ~ $ tree -L 1 /
 
 **Podmíněný příkaz**: **&&** (spusť další, jen když první prošel), **||** (spusť další, když první selhal).
 
-**if**:
+**Syntaxe if**:
 
 ```bash
 if [ "$a" -eq 1 ]; then
-echo "Je to jedna"
+    echo "Je to jedna"
 fi
+```
 
+**Syntaxe case**:
+
+```bash
 case "$promenna" in
-  start) echo "Spouštím";;
-  *) echo "Neznám";;
+    start) echo "Spouštím";;
+    *) echo "Neznám";;
 esac
 ```
 
@@ -359,15 +363,48 @@ esac
 
 **Nekonečný cyklus**: while true; do ... done.
 
+**Syntaxe for**:
+
 ```bash
 for (( i=1; i<=9; i++ ))
 do
     for (( j=1; j <=i; j++ ))
-        do
-            echo -n "$i"
-        done
-        echo ""
+    do
+        echo -n "$i"
+    done
+    echo ""
 done
+```
+
+**Syntaxe while**:
+
+```bash
+i=1
+while [ $i -le 5 ]
+do
+    echo "Číslo: $i"
+    ((i++))
+done
+```
+
+**Syntaxe while (nekonečná smyčka)**:
+
+```bash
+while true; do
+    echo "Běžím..."
+    sleep 1
+done
+```
+
+**Syntaxe until**:
+
+```bash
+voda=3
+until [ $voda -eq 0 ]; do
+    echo "Míchám, pořád je tam voda..."
+    ((voda--))
+done
+echo "Hotovo, konečně sucho!"
 ```
 
 ### 16. Soubory k nastavení bashe
