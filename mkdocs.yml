@@ -3,7 +3,7 @@ site_description: "Výukové materiály TUL – programování, matematika, Linu
 site_author: David
 repo_url: https://github.com/deesdav/TUL
 edit_uri: edit/main/docs/
-copyright: "© 2025 deesdav"
+copyright: "© 2026 deesdav"
 
 theme:
   name: material
@@ -77,7 +77,7 @@ plugins:
 extra:
   analytics:
     provider: google
-    property: G-XXXXXXXXXX # nahraď svým kódem
+    property: G-XXXXXXXXXX 
   logo: images/logo.svg
   favicon: images/favicon-32x32.png
   meta:
@@ -87,14 +87,7 @@ extra:
     og_image: "images/logo.png"
     og_type: website
     twitter_card: summary_large_image
-  consent:
-    title: Cookie consent
-    description: >-
-      Používáme soubory cookie k rozpoznání vašich opakovaných návštěv 
-      a preferencí a také k měření efektivity naší dokumentace a toho, 
-      zda uživatelé nacházejí to, co hledají. S vaším souhlasem nám 
-      pomáháte vylepšovat naši dokumentaci.
-
+  
 markdown_extensions:
   - admonition
   - codehilite
