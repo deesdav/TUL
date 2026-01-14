@@ -3,7 +3,6 @@ Ssh perun.nti.tul.cz
 who
 Yes
 Heslo je sh
-Passwd MUJJack3
 Whoami
 Ls
 Ls -a
