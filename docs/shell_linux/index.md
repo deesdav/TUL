@@ -247,13 +247,15 @@ jana@drak ~ $ tree -L 1 /
 
 **Jak shell pozná příkaz**:
 
-**Je to absolutní/relativní cesta?** (**./skript.sh**) -> Spustí to.
+1. **Je to absolutní/relativní cesta?** (**./skript.sh**) -> Spustí to.
 
-**Je to alias (zkratka v .bashrc)** nebo funkce (definovaná ve skriptu)? -> Spustí to.
+2. **Je to alias (zkratka v .bashrc)** -> Spustí to.
 
-**Je to interní příkaz (built-in)?** (**cd**, **echo**, **let**) -> Provede ho přímo shell.
+3. **Je to funkce (definovaná ve skriptu)?** -> Spustí to.
 
-**Je to externí program?** -> Hledá ho v adresářích uvedených v proměnné **$PATH**.
+4. **Je to interní příkaz (built-in)?** (**cd**, **echo**, **let**) -> Provede ho přímo shell.
+
+5. **Je to externí program?** -> Hledá ho v adresářích uvedených v proměnné **$PATH**.
 
 ### 11. Textové Proudy a Roury
 
