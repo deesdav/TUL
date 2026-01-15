@@ -16,7 +16,7 @@
 ## Přehled výuky
 
 <iframe src="https://elearning.tul.cz/course/view.php?id=19038" width="100%" height="800px"></iframe>
-- [Přehled na Elearning](https://elearning.tul.cz/course/view.php?id=19038)
+- [Přehled na Elearning](SUhttps://elearning.tul.cz/course/view.php?id=19038)
 
 ## Přihlášení
 
@@ -221,7 +221,7 @@ jana@drak ~ $ tree -L 1 /
 
 **SIGINT** (Ctrl+C): Ukonči se slušně (exit code 130).
 
-**SIGTSTP** (Ctrl+Z): Pozastav se (Stopped).
+**SIGSTP** (Ctrl+Z): Pozastav se (Stopped).
 
 **SIGTERM** (kill PID): Ukonči se (default).
 
