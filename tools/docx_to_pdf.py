@@ -1,8 +1,8 @@
 """Simple script to extract text from all .docx files under docs/ and
-write corresponding .txt files next to them.
+write corresponding .pdf files next to them.
 
 Usage:
-    py tools\docx_to_txt.py
+    py tools\docx_to_pdf.py
 
 This uses python-docx (pip package name: python-docx).
 """
@@ -42,9 +42,9 @@ def main():
 
     for f in docx_files:
         try:
-            txt = docx_to_text(f)
-            out = f.with_suffix('.txt')
-            out.write_text(txt, encoding='utf-8')
+            pdf = docx_to_text(f)
+            out = f.with_suffix('.pdf')
+            out.write_text(pdf, encoding='utf-8')
             print(f"Wrote: {out}")
         except Exception as e:
             print(f"Failed to process {f}: {e}")

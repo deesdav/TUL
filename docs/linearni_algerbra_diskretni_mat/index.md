@@ -400,5 +400,3 @@ Zkoumá objekty, které jsou **oddělené a nespojité**.
 
 ![](prednasky/dvacata_prednaska/7.jpg)
 ![](prednasky/dvacata_prednaska/8.jpg)
-
-### Dvacátáprvní přednáška 🤷‍♂️

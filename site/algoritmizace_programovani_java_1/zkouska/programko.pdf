@@ -1,0 +1,6 @@
+1a. Udělej metodu, která vrací true/false, zda je posloupnost int[] je střídavá podle znamének.
+(např. {1, -2, 2, -3, 5} je střídavá, {-1, -2, 2, 2} není střídavá)
+1c. Udělej metodu, do které načteš posloupnost. Metoda poté určí, jaká dvojice z posloupnosti má nejvíce společných dělitelů (jednička se nepočítá). Metoda vrátí {první číslo dvojice, druhé číslo dvojice, kolik mají společných dělitelů}
+(např. posloupnost (3, 2, 8, 16), tak čísla 8 a 16 mají nejvíce společných dělitelů, a to 2,4,8)
+2. Udělej program, kde načteš matici reálných čísel jakékoliv velikosti, a urči přes metodu, zda je matice stochastická (= jestliže všechny prvky v matici jsou kladné a zároveň součet prvků v řádků dává velikost 1.0). Metoda bude vracet true/false.
+3. Udělej program, kde sekvenčně načteš souřadnice kružnice a její průměr. Poté ji zpracuje a určí, jak je daleko od bodu [0, 0]. Program se neustále bude ptát, dokud nezadáš zápornou hodnotu u průměru. Po ukončení program vypíše, jaká kružnice byla nejblíž bodu [0, 0] a kolik kružnic bylo celkem zpracováno.
