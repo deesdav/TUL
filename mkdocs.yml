@@ -74,12 +74,18 @@ plugins:
       minify_html: true
       minify_js: true
       minify_css: true
+
 extra:
   analytics:
     provider: google
-    property: G-XXXXXXXXXX 
+    property: G-XXXXXXXXXX
   logo: images/logo.svg
   favicon: images/favicon-32x32.png
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/deesdav
+    - icon: fontawesome/solid/globe
+      link: https://www.tul.cz
   meta:
     description: "Výukové materiály TUL – moderní, přehledné a rychlé."
     og_title: "TUL – výukové materiály"
@@ -87,8 +93,14 @@ extra:
     og_image: "images/logo.png"
     og_type: website
     twitter_card: summary_large_image
-  
+
 markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
   - admonition
   - codehilite
   - pymdownx.superfences
@@ -99,9 +111,6 @@ markdown_extensions:
   - pymdownx.progressbar
   - pymdownx.tasklist
   - pymdownx.emoji
-  - pymdownx.inlinehilite
-  - pymdownx.snippets
-  - pymdownx.highlight
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.tilde
