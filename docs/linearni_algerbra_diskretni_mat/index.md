@@ -44,6 +44,12 @@ Zkoumá objekty, které jsou **oddělené a nespojité**.
 
 [Otevřít / Stáhnout priprava_ke_zkousce.pdf](priprava_ke_zkousce.pdf)
 
+## Algebra_ÚSTNÍ.pdf
+
+<iframe src="Algebra_ÚSTNÍ.pdf" width="100%" height="800px"></iframe>
+
+[Otevřít / Stáhnout Algebra_ÚSTNÍ.pdf](Algebra_ÚSTNÍ.pdf)
+
 ## Cvičení
 
 ### Páté cvičení
