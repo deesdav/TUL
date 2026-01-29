@@ -1,43 +1,45 @@
-<!-- Hero sekce s úvodem -->
-
-## 🏫 TUL – Technická univerzita v Liberci
+# TUL – Technická univerzita v Liberci
 
 <div class="hero">
-  Vítejte v centrálním repozitáři TUL! Tento repozitář slouží jako úložiště zdrojů, kódu a dokumentace související s projekty a studiem. 
+  Vítejte v centrálním repozitáři TUL! Tento repozitář slouží jako úložiště zdrojů, kódu a dokumentace související s projekty a studiem.
 </div>
 
 ---
 
-## 📚 Přehled
+## Přehled
 
-<!-- Sekce Přehled -->
 <section class="info-box">
-  Struktura repozitáře je navržena pro <strong>přehlednost, spolupráci a snadnou orientaci</strong>.  
-  Najdeš tu vše od předmětů přes skripta až po užitečné odkazy. 
+  Struktura repozitáře je navržena pro <strong>přehlednost, spolupráci a snadnou orientaci</strong>.
+  Najdeš tu vše od předmětů přes skripta až po užitečné odkazy.
 </section>
 
-## ⚡ Předměty
-
-<style>
-
-</style>
+## Předměty prvního semestru
 
 <div class="grid-predmety">
-  <div class="karta"><a href="algoritmizace_programovani_java_1/">💻 Programování Java 1</a></div>
-  <div class="karta"><a href="linearni_algerbra_diskretni_mat/">📐 Lineární algebra a diskrétní mat</a></div>
-  <div class="karta"><a href="matematika_1/">🔢 Matematika 1</a></div>
-  <div class="karta"><a href="seminar/">📝 Matematika Seminář</a></div>
-  <div class="karta"><a href="shell_linux/">🐚 Shell / Linux</a></div>
-  <div class="karta"><a href="matlab/">📊 Matlab</a></div>
-  <div class="karta"><a href="inzenyrstvi/">⚙️ Inženýrství</a></div>
-  <div class="karta"><a href="odkazy/">🔗 Odkazy</a></div>
+  <div class="karta"><a href="prvni_semestr/algoritmizace_programovani_java_1/">💻 Programování Java 1</a></div>
+  <div class="karta"><a href="prvni_semestr/linearni_algerbra_diskretni_mat/">📐 Lineární algebra</a></div>
+  <div class="karta"><a href="prvni_semestr/matematika_1/">🔢 Matematika 1</a></div>
+  <div class="karta"><a href="prvni_semestr/mat_seminar_1/">📝 Matematika Seminář</a></div>
+  <div class="karta"><a href="prvni_semestr/shell_linux/">🐚 Shell / Linux</a></div>
+  <div class="karta"><a href="prvni_semestr/matlab/">📊 Matlab</a></div>
+  <div class="karta"><a href="prvni_semestr/inzenyrstvi/">⚙️ Inženýrství</a></div>
+</div>
+
+## Předměty druhého semestru
+
+<div class="grid-predmety">
+  <div class="karta"><a href="druhy_semestr/algoritmizace_programovani_java_2/">💻 Programování Java 2</a></div>
+  <div class="karta"><a href="druhy_semestr/matematika_2/">🔢 Matematika 2</a></div>
+  <div class="karta"><a href="druhy_semestr/mat_seminar_2/">📝 Matematika Seminář 2</a></div>
+  <div class="karta"><a href="druhy_semestr/pocitacove_site/">🌐 Počítačové sítě</a></div>
+  <div class="karta"><a href="druhy_semestr/cislicova_technika/">📟 Číslicová technika</a></div>
+  <div class="karta"><a href="druhy_semestr/elektronicka_dokumentace/">📄 Elektronická dok.</a></div>
 </div>
 
 ---
 
-## 🌟 Klíčové vlastnost
+## Klíčové vlastnosti
 
-<!-- Sekce Klíčové vlastnosti -->
 <section class="info-box">
   <ul>
     <li>Organizovaná struktura složek a materiálů</li>
@@ -48,34 +50,28 @@
 
 ---
 
-## 🚀 Začínáme
+## Začínáme
 
-<!-- Sekce Začínáme -->
 <section class="info-box">
   <pre><code>git clone https://github.com/deesdav/TUL.git
-cd TUL
-  </code></pre>
+cd TUL</code></pre>
 </section>
 
 ---
 
-## 🖥️ Spuštění lokálního webu s MkDocs (Material)
+## Spuštění lokálního webu
 
-<!-- Sekce Lokální web -->
 <section class="info-box">
   <pre><code>py -m pip install --upgrade pip
 py -m pip install mkdocs mkdocs-material
-py -m mkdocs serve
-  </code></pre>
+py -m mkdocs serve</code></pre>
   <p>Otevřete v prohlížeči: <strong>http://127.0.0.1:8000</strong></p>
-  <p>Tip: Obrázky a ikony dejte do složky <code>docs/images</code>, aby MkDocs správně načítal materiály.</p>
 </section>
 
 ---
 
-## 🤝 Přispívání
+## Přispívání
 
-<!-- Sekce Přispívání -->
 <section class="info-box">
   <ol>
     <li>Forkněte repo</li>

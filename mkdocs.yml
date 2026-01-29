@@ -28,14 +28,14 @@ theme:
         name: Přepnout do světlého režimu
 
   features:
+    - toc.integrate
+    - header.autohide
     - navigation.instant
     - navigation.tabs
     - navigation.sections
     - navigation.expand
     - navigation.path
     - navigation.footer
-    - toc.integrate
-    - header.autohide
     - navigation.top
     - navigation.toc.sticky
     - navigation.sections.indicator
@@ -129,11 +129,13 @@ extra_css:
 
 nav:
   - Domovská stránka: index.md
-  - Programování Java 1: algoritmizace_programovani_java_1/index.md
-  - Lineární algebra a diskrétní mat: linearni_algerbra_diskretni_mat/index.md
-  - Matematika 1: matematika_1/index.md
-  - Matematika Seminář: seminar/index.md
-  - Shell: shell_linux/index.md
-  - Matlab: matlab/index.md
-  - Inženýrství: inzenyrstvi/index.md
+
+  - Programování Java 1: prvni_semestr/algoritmizace_programovani_java_1/index.md
+  - Shell: prvni_semestr/shell_linux/index.md
+  - Matlab: prvni_semestr/matlab/index.md
+  - Matematika 1: prvni_semestr/matematika_1/index.md
+  - Lineární algebra: prvni_semestr/linearni_algerbra_diskretni_mat/index.md
+  - Matematika Seminář 1: prvni_semestr/mat_seminar_1/index.md
+  - Inženýrství: prvni_semestr/inzenyrstvi/index.md
+  
   - Odkazy: odkazy/index.md
