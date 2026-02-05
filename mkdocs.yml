@@ -130,12 +130,19 @@ extra_css:
 nav:
   - Domovská stránka: index.md
 
+  # - Číslicová technika: druhy_semestr/cislicova_technika/index.md
+  # - Matematika 2: druhy_semestr/matematika_2/index.md
+  # - Programování Java 2: druhy_semestr/algoritmizace_programovani_java_2/index.md
+  # - Počítačové sítě: druhy_semestr/pocitacove_site/index.md
+  # - Mat. Seminář 2: druhy_semestr/mat_seminar_2/index.md
+  # - Elektronická dok.: druhy_semestr/elektronicka_dokumentace/index.md
+
   - Programování Java 1: prvni_semestr/algoritmizace_programovani_java_1/index.md
   - Shell: prvni_semestr/shell_linux/index.md
   - Matlab: prvni_semestr/matlab/index.md
   - Matematika 1: prvni_semestr/matematika_1/index.md
   - Lineární algebra: prvni_semestr/linearni_algerbra_diskretni_mat/index.md
-  - Matematika Seminář 1: prvni_semestr/mat_seminar_1/index.md
+  - Mat. Seminář 1: prvni_semestr/mat_seminar_1/index.md
   - Inženýrství: prvni_semestr/inzenyrstvi/index.md
-  
+
   - Odkazy: odkazy/index.md
