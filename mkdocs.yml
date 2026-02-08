@@ -99,6 +99,8 @@ markdown_extensions:
       anchor_linenums: true
       line_spans: __span
       pygments_lang_class: true
+  - smarty
+  - sane_lists
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - admonition
