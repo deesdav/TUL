@@ -49,3 +49,41 @@ Zkouška prověřuje schopnost navrhnout konkrétní digitální zařízení:
 <iframe src="https://elearning.tul.cz/course/view.php?id=20683" width="100%" height="800px"></iframe>
 
 - [Přehled na Elearning](https://elearning.tul.cz/course/view.php?id=20683)
+
+## Skripta
+
+<iframe src="skripta_21_03_12.pdf" width="100%" height="800px"></iframe>
+
+- [Otevřít / Stáhnout na Skripta](skripta_21_03_12.pdf)
+
+## Přednášky
+
+### Hradla
+
+<iframe src="./prednasky/P01_hradla.pdf" width="100%" height="800px"></iframe>
+
+- [Otevřít / Stáhnout na P01_hradla.pdf](./prednasky/P01_hradla.pdf)
+
+### Booleova algebra
+
+<iframe src="./prednasky/P02_booleova_algebra.pdf" width="100%" height="800px"></iframe>
+
+- [Otevřít / Stáhnout na P02_booleova_algebra.pdf](./prednasky/P02_booleova_algebra.pdf)
+
+## Cvičení
+
+### Hradla
+
+<iframe src="./cviceni/LAB01.pdf" width="100%" height="800px"></iframe>
+
+- [Otevřít / Stáhnout na LAB01.pdf](./cviceni/LAB01.pdf)
+
+### Booleova algebra
+
+<iframe src="./cviceni/LAB02b-Zakony_Bool.pdf" width="100%" height="800px"></iframe>
+
+- [Otevřít / Stáhnout na LAB02b-Zakony_Bool.pdf](./cviceni/LAB02b-Zakony_Bool.pdf)
+
+<iframe src="./cviceni/LAB02c-Upravy_log_vyrazu.pdf" width="100%" height="800px"></iframe>
+
+- [Otevřít / Stáhnout na LAB02c-Upravy_log_vyrazu.pdf](./cviceni/LAB02c-Upravy_log_vyrazu.pdf)
