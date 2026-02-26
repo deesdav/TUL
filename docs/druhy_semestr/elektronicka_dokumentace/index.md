@@ -40,3 +40,15 @@ Předmět je obvykle zakončen vypracováním několika praktických úloh:
 <iframe src="https://elearning.tul.cz/course/view.php?id=20001" width="100%" height="800px"></iframe>
 
 - [Přehled na Elearning](https://elearning.tul.cz/course/view.php?id=20001)
+
+## Cvičení
+
+### Cv.1
+
+- [Otevřít / Stáhnout na 1_Sloupce_UTF-8.odt](./1_Sloupce_UTF-8.odt)
+
+- [Otevřít / Stáhnout na 2_Capek_UTF-8.odt](./2_Capek_UTF-8.odt)
+
+### Cv.2
+
+- [Otevřít / Stáhnout na 3_komplexni.odt](./3_komplexni.odt)

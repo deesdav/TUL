@@ -49,3 +49,50 @@ Zkouška bývá dvoukolová:
 <iframe src="https://elearning.tul.cz/course/view.php?id=19201" width="100%" height="800px"></iframe>
 
 - [Přehled na Elearning](https://elearning.tul.cz/course/view.php?id=19201)
+
+## Úlohy pro procvičení
+
+### Text řetezce
+
+<iframe src="./ulohy_pro_procviceni/alg2_u011_TextRetezce.pdf" width="100%" height="800px"></iframe>
+
+- [Otevřít / Stáhnout na Limity.pdf](./ulohy_pro_procviceni/alg2_u011_TextRetezce.pdf)
+
+### Pole bodu
+
+<iframe src="./ulohy_pro_procviceni/alg2_u012_PoleBodu.pdf" width="100%" height="800px"></iframe>
+
+- [Otevřít / Stáhnout na Limity.pdf](./ulohy_pro_procviceni/alg2_u012_PoleBodu.pdf)
+
+### Hra hadani čísla
+
+<iframe src="./ulohy_pro_procviceni/alg2_u022_HraHadaniCisla.pdf" width="100%" height="800px"></iframe>
+
+- [Otevřít / Stáhnout na Limity.pdf](./ulohy_pro_procviceni/alg2_u022_HraHadaniCisla.pdf)
+
+### Závodník
+
+<iframe src="./ulohy_pro_procviceni/alg2_u031_Zavodnik.pdf" width="100%" height="800px"></iframe>
+
+- [Otevřít / Stáhnout na Limity.pdf](./ulohy_pro_procviceni/alg2_u031_Zavodnik.pdf)
+
+### Zlomky
+
+<iframe src="./ulohy_pro_procviceni/alg2_u032_Zlomky.pdf" width="100%" height="800px"></iframe>
+
+- [Otevřít / Stáhnout na Limity.pdf](./ulohy_pro_procviceni/alg2_u032_Zlomky.pdf)
+
+### Komplexní čísla
+
+<iframe src="./ulohy_pro_procviceni/alg2_u033_KomplexniCisla.pdf" width="100%" height="800px"></iframe>
+
+- [Otevřít / Stáhnout na Limity.pdf](./ulohy_pro_procviceni/alg2_u033_KomplexniCisla.pdf)
+
+### Vektory
+
+<iframe src="./ulohy_pro_procviceni/alg2_u034_Vektory.pdf" width="100%" height="800px"></iframe>
+
+- [Otevřít / Stáhnout na Limity.pdf](./ulohy_pro_procviceni/alg2_u034_Vektory.pdf)
+
+  [text](ulohy_pro_procviceni/alg2_u033_KomplexniCisla.pdf)
+  [text](ulohy_pro_procviceni/alg2_u034_Vektory.pdf)

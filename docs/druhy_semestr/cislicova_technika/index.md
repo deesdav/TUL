@@ -58,17 +58,23 @@ Zkouška prověřuje schopnost navrhnout konkrétní digitální zařízení:
 
 ## Přednášky
 
-### Hradla
+### 1. Hradla
 
 <iframe src="./prednasky/P01_hradla.pdf" width="100%" height="800px"></iframe>
 
 - [Otevřít / Stáhnout na P01_hradla.pdf](./prednasky/P01_hradla.pdf)
 
-### Booleova algebra
+### 2. Booleova algebra
 
 <iframe src="./prednasky/P02_booleova_algebra.pdf" width="100%" height="800px"></iframe>
 
 - [Otevřít / Stáhnout na P02_booleova_algebra.pdf](./prednasky/P02_booleova_algebra.pdf)
+
+### 3. Používané logické funkce a jejich popis ve VHDL
+
+<iframe src="./prednasky/CIE_3.pdf" width="100%" height="800px"></iframe>
+
+- [Otevřít / Stáhnout na CIE_3.pdf](./prednasky/CIE_3.pdf)
 
 ## Cvičení
 

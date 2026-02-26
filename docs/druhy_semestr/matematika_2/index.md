@@ -47,3 +47,19 @@ Zkouška je složena z výpočetní a teoretické části:
 <iframe src="https://elearning.tul.cz/course/view.php?id=21376" width="100%" height="800px"></iframe>
 
 - [Přehled na Elearning](https://elearning.tul.cz/course/view.php?id=21376)
+
+## Přednášky
+
+### Nekonečné řady
+
+[text](prednasky/Limity.pdf)
+
+<iframe src="./prednasky/Nekonecne_rady.pdf" width="100%" height="800px"></iframe>
+
+- [Otevřít / Stáhnout na Nekonecne_rady.pdf](./prednasky/Nekonecne_rady.pdf)
+
+### Limity
+
+<iframe src="./prednasky/Limity.pdf" width="100%" height="800px"></iframe>
+
+- [Otevřít / Stáhnout na Limity.pdf](./prednasky/Limity.pdf)

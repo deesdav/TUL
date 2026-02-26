@@ -48,3 +48,21 @@ Zkouška prověřuje komplexní znalost fungování sítí:
 <iframe src="https://elearning.tul.cz/course/view.php?id=19982" width="100%" height="800px"></iframe>
 
 - [Přehled na Elearning](https://elearning.tul.cz/course/view.php?id=19982)
+
+## Šablona elaborátu
+
+- [Otevřít / Stáhnout na elaborat-sablona.dot](./elaborat-sablona.dot)
+
+## Úlohy
+
+### Úloha 1 - síťové příkazy
+
+<iframe src="./ulohy/svancar_uloha1.pdf" width="100%" height="800px"></iframe>
+
+- [Otevřít / Stáhnout na svancar_uloha1.pdf](./ulohy/svancar_uloha1.pdf)
+
+### Úloha 2 - kabeláž UTP
+
+<iframe src="./ulohy/svancar-vala-02.pdf" width="100%" height="800px"></iframe>
+
+- [Otevřít / Stáhnout na svancar-vala-02.pdf](./ulohy/svancar-vala-02.pdf)
