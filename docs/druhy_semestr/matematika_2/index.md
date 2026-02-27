@@ -63,3 +63,9 @@ Zkouška je složena z výpočetní a teoretické části:
 <iframe src="./prednasky/Limity.pdf" width="100%" height="800px"></iframe>
 
 - [Otevřít / Stáhnout na Limity.pdf](./prednasky/Limity.pdf)
+
+### Parcialni derivace
+
+<iframe src="./prednasky/Parcialni_derivace.pdf" width="100%" height="800px"></iframe>
+
+- [Otevřít / Stáhnout na Parcialni_derivace.pdf](./prednasky/Parcialni_derivace.pdf)
