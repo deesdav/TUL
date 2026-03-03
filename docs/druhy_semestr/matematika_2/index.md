@@ -48,6 +48,11 @@ Zkouška je složena z výpočetní a teoretické části:
 
 - [Přehled na Elearning](https://elearning.tul.cz/course/view.php?id=21376)
 
+## Příklady k procvičení Matematika 2 z [KM.tul](https://kma.fp.tul.cz/)
+
+<iframe src="https://kma.fp.tul.cz/images/stories/vyuka/finek-matematika2/Priklady_MA2.pdf" width="100%" height="800px"></iframe>
+[Otevřít / Stáhnout Příklady_MA2.pdf](https://kma.fp.tul.cz/images/stories/vyuka/finek-matematika2/Priklady_MA2.pdf)
+
 ## Přednášky
 
 ### Nekonečné řady
