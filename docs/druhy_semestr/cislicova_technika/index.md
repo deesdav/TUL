@@ -76,15 +76,27 @@ Zkouška prověřuje schopnost navrhnout konkrétní digitální zařízení:
 
 - [Otevřít / Stáhnout na CIE_3.pdf](./prednasky/CIE_3.pdf)
 
+### 3. Používané logické funkce a jejich popis ve VHDL - příklady
+
+<iframe src="./prednasky/CIE_3_priklady.pdf" width="100%" height="800px"></iframe>
+
+- [Otevřít / Stáhnout na CIE_3_priklady.pdf](./prednasky/CIE_3_priklady.pdf)
+
+### 4. Klopné obvody
+
+<iframe src="./prednasky/CIE_4.pdf" width="100%" height="800px"></iframe>
+
+- [Otevřít / Stáhnout na CIE_4.pdf](./prednasky/CIE_4.pdf)
+
 ## Cvičení
 
-### Hradla
+### 1. Hradla
 
 <iframe src="./cviceni/LAB01.pdf" width="100%" height="800px"></iframe>
 
 - [Otevřít / Stáhnout na LAB01.pdf](./cviceni/LAB01.pdf)
 
-### Booleova algebra
+### 2. Booleova algebra
 
 <iframe src="./cviceni/LAB02b-Zakony_Bool.pdf" width="100%" height="800px"></iframe>
 
@@ -93,3 +105,9 @@ Zkouška prověřuje schopnost navrhnout konkrétní digitální zařízení:
 <iframe src="./cviceni/LAB02c-Upravy_log_vyrazu.pdf" width="100%" height="800px"></iframe>
 
 - [Otevřít / Stáhnout na LAB02c-Upravy_log_vyrazu.pdf](./cviceni/LAB02c-Upravy_log_vyrazu.pdf)
+
+### 3. Vivado, VHDL jazyk
+
+<iframe src="./cviceni/LAB_03.pdf" width="100%" height="800px"></iframe>
+
+- [Otevřít / Stáhnout na LAB_03.pdf](./cviceni/LAB_03.pdf)
