@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Sat Mar 11 11:43:36 2023
+# Process ID: 39976
+# Current directory: C:/work/2023/CITE/LAB03/LAB03/LAB03.runs/impl_1
+# Command line: vivado.exe -log lab03.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source lab03.tcl -notrace
+# Log file: C:/work/2023/CITE/LAB03/LAB03/LAB03.runs/impl_1/lab03.vdi
+# Journal file: C:/work/2023/CITE/LAB03/LAB03/LAB03.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source lab03.tcl -notrace
