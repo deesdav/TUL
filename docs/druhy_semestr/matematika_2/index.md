@@ -74,3 +74,15 @@ Zkouška je složena z výpočetní a teoretické části:
 <iframe src="./prednasky/Parcialni_derivace.pdf" width="100%" height="800px"></iframe>
 
 - [Otevřít / Stáhnout na Parcialni_derivace.pdf](./prednasky/Parcialni_derivace.pdf)
+
+### Taylorův polynom
+
+<iframe src="./prednasky/Taylor.pdf" width="100%" height="800px"></iframe>
+
+- [Otevřít / Stáhnout na Taylor.pdf](./prednasky/Taylor.pdf)
+
+### Implicitní funkce
+
+<iframe src="./prednasky/Implicitni_funkce.pdf" width="100%" height="800px"></iframe>
+
+- [Otevřít / Stáhnout na Implicitni_funkce.pdf](./prednasky/Implicitni_funkce.pdf)
