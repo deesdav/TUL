@@ -88,6 +88,12 @@ Zkouška prověřuje schopnost navrhnout konkrétní digitální zařízení:
 
 - [Otevřít / Stáhnout na CIE_4.pdf](./prednasky/CIE_4.pdf)
 
+### 5. Sekvenční logické systémy a automaty
+
+<iframe src="./prednasky/CIE_5.pdff" width="100%" height="800px"></iframe>
+
+- [Otevřít / Stáhnout na CIE_5.pdf](./prednasky/CIE_5.pdf)
+
 ## Cvičení
 
 ### 1. Hradla
@@ -111,3 +117,9 @@ Zkouška prověřuje schopnost navrhnout konkrétní digitální zařízení:
 <iframe src="./cviceni/LAB_03.pdf" width="100%" height="800px"></iframe>
 
 - [Otevřít / Stáhnout na LAB_03.pdf](./cviceni/LAB_03.pdf)
+
+### 4. Podmíněné přiřazení, multiplexor
+
+<iframe src="./cviceni/LAB_04.pdf" width="100%" height="800px"></iframe>
+
+- [Otevřít / Stáhnout na LAB_04.pdf](./cviceni/LAB_04.pdf)

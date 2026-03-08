@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Mon Mar 27 08:16:41 2023
+# Process ID: 11696
+# Current directory: e:/TransparenceCloud/CITE2022/LAB04_pconditional/LAB04
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent26496 E:\TransparenceCloud\CITE2022\LAB04_pconditional\LAB04\LAB04.xpr
+# Log file: e:/TransparenceCloud/CITE2022/LAB04_pconditional/LAB04/vivado.log
+# Journal file: e:/TransparenceCloud/CITE2022/LAB04_pconditional/LAB04\vivado.jou
+#-----------------------------------------------------------
+start_gui
+exit
+INFO: [Common 17-206] Exiting Vivado at Mon Mar 27 08:17:09 2023...
