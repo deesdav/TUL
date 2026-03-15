@@ -87,3 +87,8 @@ Zkouška je složena z výpočetní a teoretické části:
 
 - [Otevřít / Stáhnout na Implicitni_funkce.pdf](./prednasky/Implicitni_funkce.pdf)
 
+### Transformace
+
+<iframe src="./prednasky/Transformace.pdf" width="100%" height="800px"></iframe>
+
+- [Otevřít / Stáhnout na Transformace.pdf](./prednasky/Transformace.pdf)

@@ -90,9 +90,15 @@ Zkouška prověřuje schopnost navrhnout konkrétní digitální zařízení:
 
 ### 5. Sekvenční logické systémy a automaty
 
-<iframe src="./prednasky/CIE_5.pdff" width="100%" height="800px"></iframe>
+<iframe src="./prednasky/CIE_5.pdf" width="100%" height="800px"></iframe>
 
 - [Otevřít / Stáhnout na CIE_5.pdf](./prednasky/CIE_5.pdf)
+
+### 6. Jazyky popisující hardware
+
+<iframe src="./prednasky/CIE_6.pdf" width="100%" height="800px"></iframe>
+
+- [Otevřít / Stáhnout na CIE_6.pdf](./prednasky/CIE_6.pdf)
 
 ## Cvičení
 
@@ -124,7 +130,7 @@ Zkouška prověřuje schopnost navrhnout konkrétní digitální zařízení:
 
 - [Otevřít / Stáhnout na LAB_04.pdf](./cviceni/LAB_04.pdf)
 
-#### multiplexory.vhdl
+#### multiplexory.vhd
 
 ```vhdl
 -- 1. Strukturní popis pomocí logických hradel pro výstup q_struct
@@ -169,4 +175,58 @@ begin
          d(6) when s = "110" else
          d(7); -- Poslední větev 'else' bez podmínky
 end Behavioral;
+```
+
+### 5. Výběrové přiřazení, dekodéry
+
+<iframe src="./cviceni/LAB_05.pdf" width="100%" height="800px"></iframe>
+
+- [Otevřít / Stáhnout na LAB_05.pdf](./cviceni/LAB_05.pdf)
+
+#### decoder.vhd
+
+```vhdl
+-- Výběrové přiřazení pro dekodér 2 na 4
+    with d select q <=
+        "0001" when "00",
+        "0010" when "01",
+        "0100" when "10",
+        "1000" when others; -- 'others' pokrývá stav "11" a slouží jako pojistka
+```
+
+#### displays.vhd
+
+```vhdl
+-- 1. Dekodér pro výběr konkrétního displeje (výstup displays, 8 bitů)
+    -- Vybíráme jeden z 8 displejů. Vybraný displej má '0', ostatní '1' (negativní výstup).
+    with disp_sel select displays <=
+        "11111110" when "000", -- Rozsvítí nejvíce pravý displej
+        "11111101" when "001",
+        "11111011" when "010",
+        "11110111" when "011",
+        "11101111" when "100",
+        "11011111" when "101",
+        "10111111" when "110",
+        "01111111" when others; -- "111" (nejvíce levý displej)
+
+    -- 2. Dekodér pro znaky na 7-segmentovém displeji (výstup segments, 8 bitů)
+    -- Pořadí segmentů je: DP, G, F, E, D, C, B, A
+    -- 0 znamená, že daný segment svítí!
+    with char_sel select segments <=
+        "11000000" when "0000", -- Znak 0 (nesvítí jen G a DP)
+        "11111001" when "0001", -- Znak 1 (svítí B, C)
+        "10100100" when "0010", -- Znak 2
+        "10110000" when "0011", -- Znak 3
+        "10011001" when "0100", -- Znak 4
+        "10010010" when "0101", -- Znak 5
+        "10000010" when "0110", -- Znak 6
+        "11111000" when "0111", -- Znak 7
+        "10000000" when "1000", -- Znak 8 (svítí vše kromě DP)
+        "10010000" when "1001", -- Znak 9
+        "10001000" when "1010", -- Znak A
+        "10000011" when "1011", -- Znak b
+        "11000110" when "1100", -- Znak C
+        "10100001" when "1101", -- Znak d
+        "10000110" when "1110", -- Znak E
+        "10001110" when others; -- Znak F ("1111")
 ```
