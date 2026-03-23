@@ -92,3 +92,23 @@ Zkouška je složena z výpočetní a teoretické části:
 <iframe src="./prednasky/Transformace.pdf" width="100%" height="800px"></iframe>
 
 - [Otevřít / Stáhnout na Transformace.pdf](./prednasky/Transformace.pdf)
+
+## Testy a řešení
+
+### Test 2024
+
+<iframe src="./testy/pisemkaL1_24.pdf" width="100%" height="800px"></iframe>
+
+- [Otevřít / Stáhnout na pisemkaL1_24.pdf](./testy/pisemkaL1_24.pdf)
+
+### Test 2024 - řešení
+
+<iframe src="./testy/pisemkaL1_24_reseni.pdf" width="100%" height="800px"></iframe>
+
+- [Otevřít / Stáhnout na pisemkaL1_24_reseni.pdf](./testy/pisemkaL1_24_reseni.pdf)
+
+### Test 2025
+
+<iframe src="./testy/pisemkaL1_25a.pdf" width="100%" height="800px"></iframe>
+
+- [Otevřít / Stáhnout na pisemkaL1_25a.pdf](./testy/pisemkaL1_25a.pdf)

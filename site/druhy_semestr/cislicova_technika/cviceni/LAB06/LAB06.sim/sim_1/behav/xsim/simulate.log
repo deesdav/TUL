@@ -1,0 +1,5 @@
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+Stopped at time : 0 fs : File "E:/TransparenceCloud/CITE2022/LAB06_registers/LAB06/LAB06.srcs/sim_1/new/multiplexor_tb.vhd" Line 25
+Stopped at time : 10 ns : File "E:/TransparenceCloud/CITE2022/LAB06_registers/LAB06/LAB06.srcs/sim_1/new/multiplexor_tb.vhd" Line 26
+Stopped at time : 10 ns : File "E:/TransparenceCloud/CITE2022/LAB06_registers/LAB06/LAB06.srcs/sim_1/new/multiplexor_tb.vhd" Line 27

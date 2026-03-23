@@ -1,0 +1,15 @@
+Vivado Simulator 2020.1
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto 2d4bb956944c4d678454db3a913dd907 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot multiplexor_tb_behav xil_defaultlib.multiplexor_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling architecture behavioral of entity xil_defaultlib.multiplexor [multiplexor_default]
+Compiling architecture testbench of entity xil_defaultlib.multiplexor_tb
+Built simulation snapshot multiplexor_tb_behav

@@ -100,6 +100,12 @@ Zkouška prověřuje schopnost navrhnout konkrétní digitální zařízení:
 
 - [Otevřít / Stáhnout na CIE_6.pdf](./prednasky/CIE_6.pdf)
 
+### 7. Binární čítače a paměti
+
+<iframe src="./prednasky/CIE_7.pdf" width="100%" height="800px"></iframe>
+
+- [Otevřít / Stáhnout na CIE_7.pdf](./prednasky/CIE_7.pdf)
+
 ## Cvičení
 
 ### 1. Hradla
@@ -123,6 +129,12 @@ Zkouška prověřuje schopnost navrhnout konkrétní digitální zařízení:
 <iframe src="./cviceni/LAB_03.pdf" width="100%" height="800px"></iframe>
 
 - [Otevřít / Stáhnout na LAB_03.pdf](./cviceni/LAB_03.pdf)
+
+### 4. Podmíněné přiřazení, multiplexor
+
+<iframe src="./cviceni/LAB_04.pdf" width="100%" height="800px"></iframe>
+
+- [Otevřít / Stáhnout na LAB_04.pdf](./cviceni/LAB_04.pdf)
 
 ### 4. Podmíněné přiřazení, multiplexor
 
@@ -229,4 +241,132 @@ end Behavioral;
         "10100001" when "1101", -- Znak d
         "10000110" when "1110", -- Znak E
         "10001110" when others; -- Znak F ("1111")
+```
+
+### 6. Výběrové přiřazení, dekodéry
+
+<iframe src="./cviceni/LAB_06.pdf" width="100%" height="800px"></iframe>
+
+- [Otevřít / Stáhnout na LAB_06.pdf](./cviceni/LAB_06.pdf)
+
+#### multiplexor.vhd
+
+```vhdl
+process(d, s) -- Citlivostní seznam obsahuje oba vstupy
+begin
+    if s = "00" then
+        q <= d(0);
+    elsif s = "01" then
+        q <= d(1);
+    elsif s = "10" then
+        q <= d(2);
+    else
+        q <= d(3);
+    end if;
+end process;
+```
+
+#### multiplexor_tb.vhd
+
+```vhdl
+process
+begin
+    -- Počáteční stav
+    mux_d <= "0000";
+
+    -- Test pro vstup d(0)
+    mux_s <= "00";
+    wait for 10 ns;
+    mux_d <= "0001"; -- d(0) jde do 1
+    wait for 10 ns;
+
+    -- Test pro vstup d(1)
+    mux_s <= "01";
+    mux_d <= "0000"; -- reset vstupů
+    wait for 10 ns;
+    mux_d <= "0010"; -- d(1) jde do 1
+    wait for 10 ns;
+
+    -- Test pro vstup d(2)
+    mux_s <= "10";
+    mux_d <= "0000";
+    wait for 10 ns;
+    mux_d <= "0100"; -- d(2) jde do 1
+    wait for 10 ns;
+
+    -- Test pro vstup d(3)
+    mux_s <= "11";
+    mux_d <= "0000";
+    wait for 10 ns;
+    mux_d <= "1000"; -- d(3) jde do 1
+    wait for 10 ns;
+
+    wait; -- Zastavení simulace
+end process;
+```
+
+#### decoder.vhd
+
+```vhdl
+process(d) -- Vstupní signál v citlivostním seznamu
+begin
+    case d is
+        when "00" => q <= "0001";
+        when "01" => q <= "0010";
+        when "10" => q <= "0100";
+        when others => q <= "1000"; -- 'others' pokryje stav "11" a další stavy jako 'U', 'X' atd.
+    end case;
+end process;
+```
+
+#### decoder_tb.vhd
+
+```vhdl
+architecture Behavioral of decoder_tb is
+    -- Deklarace signálů s inicializací
+    signal dec_d : std_logic_vector(1 downto 0) := (others => '0');
+    signal dec_q : std_logic_vector(3 downto 0);
+begin
+    -- Instance testovaného obvodu
+    dec_inst: entity work.decoder
+        port map(
+            d => dec_d,
+            q => dec_q
+        );
+
+    -- Proces pro buzení vstupů
+    process
+    begin
+        dec_d <= "00"; wait for 10 ns;
+        dec_d <= "01"; wait for 10 ns;
+        dec_d <= "10"; wait for 10 ns;
+        dec_d <= "11"; wait for 10 ns;
+        wait;
+    end process;
+end Behavioral;
+
+```
+
+#### top.vhd
+
+```vhdl
+-- Příklad namapování
+-- Společná data pro MUXy na přepínačích 0 až 3
+-- Výběr MUX1 na přepínačích 4, 5
+-- Výběr MUX2 na přepínačích 6, 7
+mux1_inst: entity work.multiplexor
+    port map(
+        d => SW(3 downto 0),
+        s => SW(5 downto 4),
+        q => LEDs(0)
+    );
+
+mux2_inst: entity work.multiplexor
+    port map(
+        d => SW(3 downto 0), -- Sdílené datové vstupy
+        s => SW(7 downto 6), -- Rozdílné vstupy výběru
+        q => LEDs(1)
+    );
+
+-- Podobně instancuješ i dec1_inst a dec2_inst na další volné SW a LEDs
 ```
