@@ -1,0 +1,254 @@
+
+% Nadpis první úrovně
+Boundary-scan design
+% -------------------
+
+Metody, které jsem dosud popisoval byly navrhovány pro testování samotného integrovaného obvody, případně jeho části, a to většinou izolovaně, před montáží do zařízení. Předpokládalo se tedy, že existuje přímé propojení mezi testerem a testovaným obvodem. V reálných zařízeních však obvykle není možné použít piny integrovaného obvodu (např. pouzdra typu BGA) pro vkládání testovacích vzorků. Představené metody poskytují metodiku provedení testu, zvýšení sledovatelnosti a řiditelnosti vnitřních uzlů obvodu. Při testování [CIT25] uceleného systému je však potřeba vytvořit podporu pro řízení testu vně čipu a také je nutno zajistit testování propojení mezi jednotlivými obvody.
+
+V moderních číslicových systémech, u obvodů které se vyskytují na pultech obchodů, se stále častěji objevuje poznámka, že obvod je kompatibilní s Boundary Scan (BS). Toto rozhraní, které bude dále podrobněji popsáno, díky své jednoduchosti, malému počtu přidaných pinů a hlavně univerzálnosti získává stále nové uplatnění nejen ve své „domovské“ oblasti – v testování propojení mezi obvody, ale i v oblasti programování in-circuit programovatelných (ISP) obvodů, řízení vlastní funkce obvodu atd. Na tomto místě bych se chtěl omluvit, že zejména v této kapitole budu používat anglické výrazy pro popis funkcí, registru, instrukcí atd. I když někde existují české názvy, jejich používání by text pouze znečitelnilo, a znesnadnilo orientaci v původní normě.
+
+Metoda Boundary scan (BS) – viz [CIT17] je známa pod různými jmény. Původně byla označována jako JTAG (Joint Test Action Group), později získala označení IEEE-1149. Stala se totiž standardem pod označením IEEE Std. 1149.1 (Standard Test Access Port and Boundary-Scan Architecture). Původní definice normy zahrnovala pouze čistě číslicové obvody. Vzhledem k uvedeným vlastnostem probíhá stále další vývoj této normy a její definice je stále aktualizována. Zde je stručná historie jednotlivých verzí:
+
+% číslovaný seznam "bullet list" - každý řádek jeden item
+1149.1 v roce 1990; první verze normy
+1149.1a z roku 1993; první revize, úpravy definic, nové volitelné instrukce
+1149.1b z roku 1994; doplnění o popisný jazyk BSDL (Boundary scan description language)
+1149.1c z roku 2001; doplněná verze, sloučení instrukcí SAMPLE a PRELOAD
+% Konec: číslovaný seznam "bullet list" 
+
+Na základě této normy vznikly postupně i další standardy.
+
+% Nadpis druhé úrovně
+Základní principy Boundary scan
+% -------------------
+
+Základní schéma zařízení s Boundary scan je uvedeno na OBR15. Zařízení se zápisem do rozhraní (český výraz pro Boundary scan) má všechny vstupy a výstupy obvodu propojeny prostřednictvím buňky Boundary scan (BSC). Schéma této buňky je uvedeno na OBR16. Jedinými buňkami, které nejsou vybaveny BSC jsou signály řídící jednotky BS – vstupy TDI (Test Data In), TMS (Test Mode Select) a TCK (Test Clock) a výstup TDO (Test Data Out). Nepovinným vstupem je TRST (Test Reset).
+
+% vložit obrázek
+OBR15 – Základní schéma Boundary scan
+
+Tyto víceúčelové buňky jsou zřetězeny do tzv. Boundary scan Registru (BSR) – Scan out jedné BSC je spojeno s Scan in následující buňky. Registr má dva mody práce – sériový a paralelní. V sériovém modu jsou data posouvána od TDI pinu obvodu tímto řetězcem do pinu TDO. Paralelní operace – Capture nebo Update – provádí paralelní zachycení hodnot na vstupních pinech obvodu nebo přesouvají logické hodnoty z registru do výstupních pinů obvodu.
+
+Buňky BS, zařazené mezi piny obvodu a vlastní logiku čipu, nemění základní funkci obvodu. Jediný projev implementace BSC je ve zpoždění signálu na vstupu do logiky průchodem přes jeden multiplexor. Scanovací cesta, propojující jednotlivé BSC je nezávislá na funkci zařízení. 
+
+% vložit obrázek
+OBR16 – Schéma BS buňky
+
+Základní buňka uvedená na OBR16 se skládá ze dvou paměťových elementů. Jejich konstrukce bývá různá, ale pro potřeby prezentace funkce je budu uvažovat jako D-klopné obvody. Tyto dva KO jsou doplněny dvěma multiplexory – vstupním a výstupním. Buňka se používá ve čtyřech základních režimech:
+
+% Nečíslovaný seznam "bullet list" - každý řádek jeden item
+Capture mode; logická hodnota na vstupu Data in je připojena na vstup KO v obrázku označeného jako Capture/Scan cell a zaznamenána impulsem na vstupu ClockDR
+Serial Shift mode; logická hodnota ze Scan out předcházející buňky je přivedena na Scan in a zachycena do Capture/Scan cell impulsem na vstupu ClockDR
+Update mode; Hodnota sériovým posouváním uložená v buňce Update/Hold cell je přesunuta do Data out impulsem na UpdateDR
+Normal mode; Data out je propojen přímo s Data in a BSC nemá pro funkci obvodu žádný vliv
+% Konec Nečíslovaný seznam "bullet list" 
+
+Jakmile je vybrán některý registr, je propojen jeho vstup s pinem TDI a výstup na TDO. Tím je registr propojen se příslušnými vstupy a je možno provádět tyto registrové funkce: paralelní zachycení hodnot, sériový posun těchto hodnot s doplňováním nových ze vstupu TDI a konečně i paralelní zápis nasunutých hodnot do výstupu registru.
+
+Na OBR15 a OBR17 jsou zobrazeny Boundary scan zařízení s těmito základními bloky:
+
+Test Access Port (TAP); jde o skupinu čtyř povinných pinů obvodu (TDI, TDO, TMS a TCK) a jednoho volitelného (TRST). Asynchronní reset je volitelný, protože základní stav, jinak přímo aktivovaný TRST, lze nastavit synchronně nastavením TMS do log 1 a maximálně pěti pulsy na TCK.
+
+TAP kontrolér; jde o konečný stavový diagram, jehož přechody jsou řízeny vstupy TMS a TCK, případně i TRST (viz OBR18).
+
+Boundary scan register (BSR); skupina BSC na každém ze vstupů, vnitřně propojeny do registru.
+
+Instruction register (IR); jde o n-bitový registr (kde n >= 2), který obsahuje aktuální instrukci.
+
+Bypass register (BR) jednobitový registr, který je určen pro obcházení příslušného obvodu bez ovlivňování jeho stavu a nastavení.
+
+% vložit obrázek
+OBR17 – Boundary scan registry
+
+Tyto uvedené části jsou povinné, musí je obsahovat každé zařízení které je s uvedenou normou kompatibilní. Ve standardu jsou ovšem definovány i bloky, které nejsou povinné a mohou být implementovány volitelně:
+
+Identification Register (ID registr); identifikační registr je 32bitový registr, který obsahuje neměnnou informaci o obvodu, kombinaci bitů, která jednoznačně identifikuje výrobce a typ.
+
+User Data Register; uživatelem definovaný jeden, nebo více registrů.
+
+V jednom okamžiku je pouze jeden z registrů zapojen mezi TDI a TDO – Bypass registr, BS registr, instrukční registr, ID registr nebo libovolný z uživatelských registrů. Toto propojení je aktivní pouze ve stavu ShiftDR/ShiftIR viz kapitola Test Access Port (TAP) a TAP kontrolér (REFčíslokapitoly) na straně REFstranakapitoly.
+
+Bylo zavedeno pravidlo, že všechny registry se zapojují tak, že TDI je spojeno s MSB registru a LSB registru je připojeno k TDO.
+
+% Nadpis druhé úrovně
+Instrukce Boundary-scan
+% -------------------
+
+Který registr bude zapojen do cesty dat z TDI do TDO určuje, krom jiného, paralelně dekódovaná informace instrukčního registru (IR). Povinné jsou pouze tři základní instrukce (v textu jsou instrukce odlišeny zápisem velkými písmeny):
+
+% Použít prostředí description
+%
+% Ukázka:
+%
+% \begin{description}
+%   \item[Zvyrazněný text], který bude následně popsán.
+%   \item[Druhý zvyrazněný text], který bude následně popsán.
+% \end{description}
+%
+%
+Instrukce BYPASS % položka prostředí description
+je-li v instrukčním registru kombinace odpovídající této instrukci, může příslušný obvod zůstat ve funkčním režimu, mezi TDI a TDO je zapojen pouze Bypass registr a tak jsou data přicházející do obvodů beze změny posouvána do dalších obvodů. Stav ostatních částí tohoto obvodu zůstává beze změny. Tato instrukce má povinný kód – samé log  1: <11..11>.
+
+Instrukce SAMPLE/PRELOAD % položka prostředí description
+obvod opět zůstává ve funkčním modu, ovšem mezi TDI a TDO je zapojen BSR. Tak je možno do jednotlivých bitů BSR nasunout vhodné testovací vzorky a původní hodnoty vysunout z obvodu. Instrukce se používá právě pro nastavení nových hodnot, aniž by došlo k přerušení základní funkce obvodu. Kód instrukce není definován – je tedy na návrháři obvodu jakou z povinně neobsazených kombinací použije. A ještě jedna poznámka – ve specifikacích normy 1a a 1b existovaly samostatné instrukce SAMPLE a PRELOAD. Až v roce 2001 (IEEE 1149.1c) byly sloučeny do jediné.
+
+Instrukce EXTEST % položka prostředí description
+obvod je přepnut do režimu testování propojení – external test. Mezi TDI a TDO je ve stavu ShiftDR zapojen BSR, výstupní multiplexor je přepnut signálem Mode na výstupní klopný obvod BSC (hold cell). Data zachycená na straně vstupů ve stavu CaptureDR jsou po přepnutí do stavu ShiftDR vysouvána ven. Instrukce má opět povinný kód a to samé log 0: <00..00>
+Krom uvedených povinných instrukcí existuje ve standardu IEEE 1149.1 dalších šest instrukcí. 
+
+Instrukce INTEST % položka prostředí description
+Tato instrukce umožňuje provádět test v podobě, jako bychom ovládali tester typu jehlového pole (bed-of-nails) – tedy nastavování vstupů pro testování vnitřku obvodu z vnějších pinů obvodu a sledování odezev na jeho výstupech. Ačkoliv je to nepovinná instrukce, je její funkce pevně dána standardem. Testovací vzorky jsou nastavovány pro vstupy obvodu a na výstupních pinech jsou snímány odezvy testu
+
+Instrukce IDCODE % položka prostředí description
+Tato instrukce je implementována pouze v případě, že je vestavěn IDregistr (viz popis registrů v kapitole Boundary-scan Registry, REFčíslokapitoly). Při vykonávání instrukce je IDregistr zapojen mezi TDI a TDO a pomocí TCK je trvale uložená kombinace vysouvána směrem k TDO. Nově nasunutá kombinace z TDI je ignorována.
+
+Instrukce USERCODE % položka prostředí description
+Instrukce USERCODE je implementována podobným způsobem jako ID registr, ovšem na rozdíl od něj jeho provedení není svázáno žádnými pravidly. Chování je podobné instrukci IDCODE
+
+Instrukce RUNBIST % položka prostředí description
+Tato instrukce způsobí spuštění vestavěného testu obvodu (BIST) bez potřeby doplňování testovacích vzorků z TDI. Pomocí této instrukce lze provést i dynamický test, ovšem samotný test lze provádět pouze ve stavu Run-Test/Idle. Výsledky testu mohou být zachyceny pouze pomocí funkce stavu CaptureDR.
+
+Instrukce CLAMP % položka prostředí description
+Instrukce CLAMP je použita pro řízení výstupů obvodu definované logické úrovně pomocí BSC. V takovém případě je zapojen Bypass registr mezi TDI a TDO zatímco na pinech obvodu je statická hodnota. Požadovaná hodnota je nasunuta společně s testovacími vzorky.
+
+Instrukce HIGHZ % položka prostředí description
+Tato instrukce nastaví výstupy obvodu do neaktivního stavu – např. do stavu vysoké impedance. Využívá se například pro umožnění testu obvodů, které nejsou vybaveny Boundary scan testem.
+Všech těchto devět instrukcí je známo pod názvem public instructions a jedná se o instrukce s definovanou funkcí, s definovanými vazbami a propojeními uvnitř příslušného obvodu. Existuje však, podle zvolené délky instrukčního registru, množství nevyužitých kombinací, které lze použít pro vlastní instrukce (private instructions), jež pak mají uživatelem definovanou funkci a umožňují například manipulovat s obsahem dalších uživatelských registrů.
+% konec description
+
+% Nadpis druhé úrovně
+Test Access Port (TAP) a TAP kontrolér
+% -------------------
+
+Pro pochopení základních principů činnosti BS je potřeba vysvětlit funkci Test Access portu (TAP) a jeho kontroléru. TAP se skládá z těchto vývodů:
+Test Clock (TCK); vstup testovacích hodin. Jde o vstup, kterým jsou do obvodu přivedeny testovací hodiny, jež taktují činnost celé logiky v testovacím modu. Většina činností (změny stavů, snímání hodnot vstupů atd.) se provádí na náběžnou (raising) hranu tohoto signálu. Předpokládá se tedy, že hodnoty ostatních vstupů jsou již v tomto okamžiku ustáleny.
+Test Mode Select (TMS); vstup řízení modu kontroléru. Podle nastavené logické hodnoty dochází ke změnám TAP kontroléru. Pin obvodu je proveden jako pull-up, tedy v nezapojeném stavu či po zapnutí je nastaven na log 1 a jeho stav je sledován na náběžnou hranu TCK.
+Test Data In (TDI); jednobitový vstup testovacích dat do obvodu. Vlastní cesta přicházejících dat je dána stavem IR. Provedení pinu je opět pull-up a opět na náběžnou hranu TCK je sledována hodnota.
+Test Data Out (TDO); jednobitový výstup testovacích dat z obvodu. Výchozí hodnota je „Z“ – třetí stav. Tento výstup je aktivní pouze v testovacím režimu a zachycené hodnoty se na výstupu projeví na závěrnou hranu TCK.
+Test Reset (TRST); na rozdíl od předcházejících jde o nepovinný vstup, asynchronní reset kontroléru. Provedení pinu je opět pull-up, aktivní je v log 0.
+Signály TMS a TCK jsou přivedeny do stavového automatu se šestnácti stavy; jeho schéma je zobrazeno na OBR18.
+
+% vložit obrázek
+OBR18 – Stavový diagram TAP kontroléru
+
+Jednotlivé nápisy představují jméno příslušného stavu, šipky s logickou hodnotou znázorňují do kterého stavu automat přejde na náběžnou hranu TCK pro uvedenou hodnotu TMS. Z obrázku je patrno, že obsahuje šest stabilních stavů – tedy stavů ve kterých automat setrvává jestliže se hodnota TMS nemění: Test-Logic-Reset, Run-Test/Idle, Shift-DR, Pause-DR, Shift-IR a Pause-IR. Ovšem existuje pouze jediný stabilní stav pro hodnotu TMS rovnou log 1 – Test-Logic-Reset. To znamená, že reset celého testovacího rozhraní nastane, jestliže se nastaví TMS do log 1 a přivede se maximálně pět hodinových impulsů. Změna nastane synchronně a tato vlastnost je důvodem, proč může být vynechán signál TRST.
+
+% Nadpis druhé úrovně
+Popis základních stavů TAP kontroléru
+% -------------------
+
+Jakmile je vyžadováno zpřístupnění testovacího rozhraní, je nastaveno TMS do log 0 a jsou aktivovány hodiny TCK. Automat opustí stav Test Logic Reset a přejde do stavu Run-test/Idle. Z něj pak lze přejít do větve ovládání datového registru (SelectDR) nebo instrukčního registru (SelectIR), případně zpět do výchozího stavu.
+
+% Nadpis třetí úrovně
+Test-Logic-Reset [kód F]
+% -------------------
+
+Testovací logika je nefunkční, funkční část testovaného obvodu pracuje normálně. Tento stav je stabilní pro TMS = log 1; pro aktivaci testovacího režimu je třeba nastavit TMS do log 0 a přivést hodinový impuls na TCK. Změna stavu proběhne na náběžnou hranu TCK. Jestliže je implementován nepovinný vstup /TRST dojde k nastavení tohoto stavu asynchronně v okamžiku změny stavu 1-0. Tento stav ruší dříve nastavenou instrukci v IR – je nastavena implicitní instrukce (viz popis instrukcí v kapitole Instrukce Boundary-scan, REFčíslokapitoly).
+
+% Nadpis třetí úrovně
+Run-Test/Idle [kód C]
+% -------------------
+
+Jedná se o stabilní stav, zůstává-li TMS = log 0 při běžících hodinách TCK. Funkce testovací logiky je závislá na instrukci která je nastavena v IR. Jestliže je např. nastavena funkce RUNBIST je potřeba vyčkat na dokončení této funkce – právě v tomto stavu. Jestliže dosud není změněna implicitní instrukce, nebo je nastavena instrukce která nemá definovanou funkci v tomto stavu, tak do testovací logiky nepřichází žádné změny na řídících signálech, ani testovací hodinový signál. Stav IR se také nemění.
+
+% Nadpis třetí úrovně
+SelectDR [kód 7], SelectIR [kód 4]
+% -------------------
+
+Tyto stavy jsou zařazený pro výběr jedné ze dvou větví stavového automatu – manipulace s datovými registry, nebo s instrukčním registrem.
+
+% Nadpis třetí úrovně
+CaptureDR [kód 6]
+% -------------------
+
+V tomto stavu kontroléru jsou do paralelních vstupů vybraného registru paralelně nahrána data. Stav registru zůstane beze změn jestliže vybraný registr nemá paralelní vstupy, nebo snímání vstupů není vyžadováno vybranou instrukcí.
+
+% Nadpis třetí úrovně
+ShiftDR [kód 2]
+% -------------------
+
+V tomto stavu (stabilní pro TMS = log 0) jsou dříve sejmutá data sériově posouvána do TDO na náběžnou hranu TCK, do registru jsou nasouvána nová data ze vstupu TDI. Registr který není zařazen do sériové cesty od TDI k TDO zůstává jeho stav beze změn. Poslední posun se provede v okamžiku kdy se stav mění do stavu Exit1DR; vazba TDI – registr – TDO je propojena pouze po dobu trvání tohoto stavu.
+
+% Nadpis třetí úrovně
+UpdateDR [kód 5]
+% -------------------
+
+Jakmile je kontrolér v tomto stavu je proces sériového posouvání dat dokončen. Jestliže to vyžaduje platná instrukce v IR, je dříve nasunutý stav, na závěrnou hranu TCK pulsu, paralelně nahrán do paralelních výstupů.
+
+% Nadpis třetí úrovně
+CaptureIR [kód E]
+% -------------------
+
+Tento stav je podobný již popsanému stavu CaptureDR. Do instrukčního registru však nejsou snímána data z vnějších pinů, ale do posuvné části IR je nasunuta takzvaná fixní hodnota – poslední dva bity jsou povinně nastaveny do stavu <x..x01>, ostatní bity mohou obsahovat data specifické pro konkrétní obvod. Změna se provede opět na náběžnou hranu.
+
+% Nadpis třetí úrovně
+ShiftIR [kód A]
+% -------------------
+
+V předcházejícím kroku nastavená hodnota posuvné části IR je na náběžnou hranu TCK posouvána směrem k TDO za současného nasouvání logických hodnot ze vstupu TDI. Poslední posun se provede v okamžiku kdy je ve stavu ShiftIR na TMS nastavena hodnota log 1, tedy v okamžiku, kdy se stav mění do stavu Exit1IR.
+
+% Nadpis třetí úrovně
+UpdateIR [kód D]
+% -------------------
+
+Na závěrnou hranu TCK přechodu ze stavu Exit1IR nebo Exit2IR se přesune hodnota posuvné části IR do paralelního IR. Od tohoto okamžiku je platná nová instrukce.
+
+% Nadpis třetí úrovně
+Exit1DR [kód 1], Exit1IR [kód 9], Exit2DR [kód 0], Exit2IR [kód 8]
+% -------------------
+
+Dočasné stavy, které slouží jako přechodové, jednotlivé registry zůstávají beze změny. V případě, že se vracíme zpět do Shift stavu, proces posouvání pokračuje z předchozího stavu.
+
+% Nadpis třetí úrovně
+PauseDR [kód 3], PauseIR [kód B]
+% -------------------
+
+Tyto stavy jsou zařazeny jako stabilní neaktivní stavy, přičemž stav registrů se nemění. Slouží například pro naplnění pamětí testeru a pod.
+TAP kontrolér, podle aktuálního stavu automatu, ovládá tři skupiny řídících signálů (viz OBR19).
+
+% vložit obrázek
+OBR19 – Znázornění výstupů TAP kontroléru
+
+Jsou to jednak signálu řídící instrukční registr (ClockIR, UpdateIR, ShiftIR), jednak podobné signály pro řízení datových registrů (ClockDR, UpdateDR, ShiftDR). Poslední skupinou jsou Reset, Select a Enable. Reset je využíván instrukčním i v datových registrech, Select připojuje podle nastavené instrukce výstup odpovídajícího registru na TDO a konečně Enable aktivuje výstupní třístavový budič během testu.
+
+% Nadpis druhé úrovně
+Boundary-scan Registry
+% -------------------
+
+Na OBR17 je znázorněno že obvod s diagnostikou Boundary scan obsahuje různé registry. Jsou mezi nimi registry plně definovatelné návrhářem, některé jsou pevně dány IEEE standardem. Povinné registry jsou tyto:
+
+% Nadpis třetí úrovně
+Instrukční registr (Instruction Register – IR)
+% -------------------
+
+Instrukční registr (viz OBR20) je minimálně 2 bity dlouhý. Tato délka je dána počtem čtyř povinných instrukcí, které je nutno tímto registrem dekódovat. Maximální délka není dána a záleží jen na návrháři obvodu; nejčastěji se objevují délky 4, případně 5, nebo 8 bitů. Registr se skládá ze dvou registrů – první je posuvný registr (scan), který slouží pro posun dat od TDI k TDO, druhý je pevný (hold) a hodnota se do něj ukládá paralelním zkopírováním hodnot z posuvného registru. Během stavu ShiftIR je posuvná část IR propojena mezi TDI a TDO, taktována signálem ClockIR, přičemž hold registr zůstává beze změny.
+
+% vložit obrázek
+OBR20 – Obecné schéma architektury instrukčního registru
+
+V režimu CaptureIR TAP kontroléru (v okamžiku přechodu z CaptureIR do následujícího stavu na náběžnou hranu TCK) je do posuvné části nahrána povinná hodnota – fixní kód. Jde o kombinaci „01“ do nejnižších bitů registru – tedy log 1 nejblíže k TDO; ostatní bity jsou volitelné, nastavitelné návrhářem obvodu. Implicitní hodnotou instrukčního registru, nastavovanou ve stavu Test-Logic-Reset, je instrukce IDCODE. V případě, že tato nepovinná instrukce není implementována, je nastavena instrukce BYPASS. Instrukci obsaženou v IR vyhodnocuje instrukční dekodér, který kombinačně vyhodnocuje obsah IR a ovládá stavy jednotlivých přepínačů a multiplexerů.
+
+% Nadpis třetí úrovně
+Bypass Registr (BR)
+% -------------------
+
+Bypass registr je v podstatě jednobitový registr. Je-li nastavena instrukce BYPASS, je tento registr zapojen mezi TDI a TDO a během testu tedy data prochází obvodem se zpožděním jediného takt hodin TCK, zbylá část obvodu je testovacím modem nedotčena a může pracovat ve funkčním režimu, obvod se vlastně testu neúčastní. Implicitní hodnota Bypass registru (nastavena v okamžiku přechodu CaptureDR → ShiftDR) je log 0.
+Pro tuto instrukci je podle IEEE 1149.1 povinná kombinace log 1 na všech bitech instrukčního registru <11...11>
+
+% Nadpis třetí úrovně
+Boundary scan register (BSR)
+% -------------------
+
+Každý pin obvodu (krom TAP) je s jádrem obvodu spojen pomocí BSC. Tyto buňky jsou v testovacím režimu seřazeny do registru kolem tohoto obvodu do tzv. Boundary scan registru. Tento registr, v kombinaci s odpovídající instrukcí, umožňuje sledovat a nastavovat hodnoty jednotlivých pinů.
+
+% Nadpis třetí úrovně
+Identifikační registr (Device Identification Register – IDregister)
+% -------------------
+
+Identifikační registr je volitelný a je-li implementován, obsahuje informaci, která je unikátní pro konkrétní obvod. Jedná se o 32bitový registr, který je logicky rozdělen do čtyř částí (viz OBR21).
+
+% vložit obrázek
+OBR21 – Struktura ID registru
+
+LSB registru (bit 0) povinně obsahuje log 1. Bity 11-1 obsahují kód výrobce, v bitech 27-12 je uložena informace o konkrétním obvodu a poslední část ID registru (bity 31-28) obsahuje informaci o verzi. Tyto bity jsou při instrukci IDCODE vysouvány do TDO. Kód výrobce je dán předpisem JEDEC (Standard Manufacturer's Identification Code – Publication JEP106 viz [CITw6]
+).

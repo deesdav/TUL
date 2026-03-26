@@ -1,0 +1,53 @@
+
+[1]	Agrawal, V. D. - Cheng, K. - Johnson, D. D. - Lin, T.: Designing Circuits with Partial Scan, IEEE Design&Test of Computers, Aug. 1988, pp. 8 – 15.
+[2]	Ando, H.,: Testing VLSI with random access scan, Diag. Papers Compcon 80, IEEE pub. 80CH1491-OC, Feb. 1980, pp. 50 – 52
+[3]	Bleeker H.: „Boundary-Scan Test, a practical approach“, ISBN 0-7923-9296-5, 1993.
+[4]	Bonhomme Y., Girard P, Landrault C., Pravossoudovitch S.: Power Driven Chaining of Flip-flops in Scan Architectures, Proceedings IEEE International Test Conference (ITC), IEEE Computer Society, 2002, pp. 796 – 803
+[5]	Brglez, F., Bryan, D., Kozminski, K., "Combinational Profiles of Sequential Circuits", Proc. IEEE International Symposium of Circuits and Systems (ISCAS'89), Portland, OR, May 1989.
+[6]	Bushnell M. L., Agrawal V. D.,: Essentials of Electronic Testing for Digital, Memory and Mixed-Signal VLSI Circuits, Kluwer Academic Publishers , ISBN 0-7923-7991-8
+[7]	Corno F., Prinetto P., Rebaudengo M., Sonza Reorda M.,: “A Test Pattern Generation Methodology for Low Power Consumption ‘, Proc. IEEE VLSI Test Symp., 1998
+[8]	Crouch A. L.: Design-for-Test for Digital IC's and Embedded Core Systems, Prentice Hall, 1999, ISBN: 0130848271
+[9]	Dabholkar V., Chakravarty S., Pomeranz I.  and Reddy S.M.,: “Techniques for Reducing Power Dissipation During Test, Application in Full Scan Circuits”, Journal IEEE Transactions on CAD, Vol. 17, N” 12, pp. 1325-1333, Dec. 1998
+[10]	Eichelberger E. Williams T., A Logic Design Structure for LSI Testability, proc. ACM/IEEE Design Automaton Conf., 1977, pp. 462 – 468
+[11]	Gerstendoerfer, S., Wunderlich, H.-J., "Minimized power consumption for scan-based BIST", Journal of Electronic Testing: Theory and Applications (JETTA), Special Issue, January 2000, pp. 203-212
+[12]	Girard, P.: “Low Power Testing of VLSI Circuits: Problems and Solutions”. Proc. of ISQUED Symposium, 2000
+[13]	Girard P., Guiller L., Landrault C.  and Pravossoudovitch S.,: “A Test Vector Ordering Technique for Switching Aktivity Reduction during Test Operation “, Proc. IEEE Great Lakes Symp. on VLSI, pp. 24-27,
+[14]	Gupta, R. - Breuer, M. A.: Partial Scan Design of  Register-Transfer Level Circuits, Journal of Electronic Testing: Theory and Applications, Vol. 7, 1995, 
+[15]	Hertwig A.  and Wunderlich H.J.,: “Low Power Serial Built-In Self-Test “, Proc. IEEE ETW’98, pp. 49-53
+[16]	Hlavicka J.,: Diagnostika a spolehlivost, CVUT Praha, ISBN 80-01-01846-6
+[17]	IEEE Std 1149.1-1993, IEEE Standard Test Access Port and Boundary-scan Architecture.
+[18]	Kotasek Z.,: Zboril F., Hlavicka J.,: Partial Scan Metodology for RTL designs, ETW-1999.
+[19]	Manich, S., Gabarró, A., Lopez, M., Figueras, J., Girard, P., Guiller, L., Landrault, C., Pravossoudovitch, S., Teixeira P., Santos, M.,: “Low Power BIST by Filtering Non-Detecting Vectors“, Proc. IEEE ETW’99, Sept. 1999
+[20]	MentorGraphics – Scan and ATPG process Guide, 2003
+[21]	Nicolici, N., Al-Hashimi, B. M., "Scan Latch Partitioning into Multiple Scan Chains for Power Minimization in Full Scan Sequential Circuits", Proc. DATE-2001, March, 2001, Paris, France
+[22]	Adam Osseiran:Analog and Mixed-Signal BoundaryScan, KAP 1999, ISBN 0-7923-8686-8
+[23]	Pleskacz W. A., Borejko T., Gugala T., Pizon P., Stopjakova V.: “DefSim - the Educational Integrated Circuit for Defect Simulation,” Submitted for publication in Proc. of the IEEE International Conference on Microelectronic Systems Education – MSE’05, Anaheim, California, USA, June 2005.
+[24]	Zdenìk Plíva, Ondøej Novák, Noullet, J., L.: Comparison of the Low-Power Diagnostics Methods, proceedings of ECMS 2003, June 2-4, 2003, Liberec, pp. 299-304, ISBN 80-7083-708-X 
+[25]	Novak O., Pliva Z., Nosek J., Hlawiczka A., Garbolino T., Gucwa K., : Test-Per-Clock Logic BIST with Semi-Deterministic Test Patterns and Zero-Aliasing Compactor
+[26]	Plíva, Z., Novák, O.: Scan Based Circuits with Low Power Consumption, Proc. of DDECS2003, April 14-16, 2003, Poznan, pp. 267-232, ISBN 83-7143-557-6 
+[27]	Plíva, Z., Novák, O.: Low power Boundary Scan Design, Proc. of BEC2002, October 6-9, 2002, Tallinn, pp. 265-268, ISBN 9985-59-292-1 ( 195.3kB) 
+[28]	Plíva, Z., Novák, O., Bourdeu d'Aguerre, P.: Hardware Overhead of Boundary Scan and RAS Design Methodologies, Proc. of DDECS2002, ISBN 80-214-2094-4
+[29]	Plíva Z.: Prostøedky pro diagnostiku obvodù z hlediska plochy èipu a jeho spotøebì energie, Disertaèní práce, TU Liberec, záøí 2001
+[30]	Stroud Ch. E., A designer’s Guide to Built-In Self Test, Kluwer Academic Publications, ISBN 1-4020-7050-0
+[31]	Wang S.,  Gupta S.K.,: “ATPG for Heat Dissipation Minimization During Scan Testing”, Proc. ACM/IEEE Design Auto.Conf., pp. 614-619, June 1997
+[32]	Zorian, Y., “A distributed BIST control scheme for complex VLSI devices”, Proc.. IEEE VTS’93, April 1999
+
+
+
+
+[w1]	http://asic.amsint.com/    - Austria Mikro Systeme International
+[w2]	http://www.cadence.com - Cadence Design Systems
+[w3]	http://grouper.ieee.org/groups/1532/ - IEEE Std. 1532.
+[w4]	http://www.nexus5001.org/  - Global Embedded Processor Debug Interface Standard Consortium
+[w5]	http://cmp.imag.fr  - Circuit Multi Projects
+[w6]	http://www.jedec.org – Joined Electron Device Engineering Council
+[w7]	http://www.latticesemi.com/  - Lattice Semiconductors
+[w8]	http://www.mentor.com/ - MentorGraphics
+[w9]	http://www.national.com/pf/ST/STA400EP.html - NationalSemiconductor
+[w10]	http://www.pld.ttu.ee/applets/bs/ - Java Applet pro výuku BS
+[w11]	http://www.rcdidactic.cz – stránky firmy RC
+[w12]	http://java.sun.com/j2se/ - Java Virtual Machine
+[w13]	http://www.ti.com - Texas Instruments webovské stránky; pøímý odkaz  http://www.ti.com/sc/data/jtag/scanedu.exe, pøípadnì z domovské stránky hledání s parametrem “JTAG” nebo “Scan educator” 
+[w14]	http://www.tosmec-web.toshiba.co.jp/stildirector/eng/index.html - webovské stránky vìnované STIL (IEEE 1450)
+[w15]	http://www.fm.vslib.cz/~kes/asic/iscas/index.html - benchmarkové obvody
+[w16]	http://www.fm.vslib.cz/~reason/edu_html/EDUchip_libindex.htm - dokumentace obvodu TA-block 

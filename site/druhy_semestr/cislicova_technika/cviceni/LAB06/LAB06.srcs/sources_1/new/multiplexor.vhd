@@ -17,6 +17,15 @@ begin
     process(all)
     begin
         -- insert if here
+        if s = "00" then
+            q <= d(0);
+        elsif s = "01" then
+            q <= d(1);
+        elsif s = "10" then
+            q <= d(2);
+        else q <= d(3);
+        end if;
+        
     end process;
 
 end Behavioral;

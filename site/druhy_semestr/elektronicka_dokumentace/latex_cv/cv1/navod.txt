@@ -1,0 +1,110 @@
+Cílem tohoto cvičení je seznámení se s univerzitní šablonou pro sazbu (nejen) závěrečných prací.
+
+Vygenerujte PDF soubor obsahujicí zformátovaný text ze souboru "text.txt". Ke zformátování textu použijte TUL LaTeX šablonu (viz přiložená pdf přednáška). Pro překlad dokumentu můžete použít "standalone" instalaci systému LaTeX, nebo využít online editoru Overleaf (doporučuji - https://www.overleaf.com/read/mtwcfmwskvby ). Jako návod můžete použít přiloženou prezentaci (přednáška).
+
+Soubor "text.txt" mimo textu obsahuje komentáře (označené znakem "%") popisující: strukturu dokumentu, vložené obrázky, číslované seznamy, seznamy, popisující seznamy, použití referencí, použití křížových odkazů apod.
+
+Jako výchozí soubor šablony pro Váš dokument upravte (přepište) soubor "manual-tulthesis.tex".
+
+Úkoly:
+
+1) Upravte informace o dokumentu:
+
+    práce bude vysázena jako projekt (volba Proj)
+    změňte jméno práce
+    změňte jméno autora
+    změňte jméno vedoucího práce
+    vyplňte název vámi studovaného studijního programu
+    úprava abstraktu (můžete vložit libovolný náhodný text)
+    úpravte klíčová slova (můžete vložit libovolná)
+    úprava textu poděkování
+    úprava seznamu použitých zkratek
+
+2) Struktura
+
+    Doplňte nadpisy kapitol a sekcí dle následující struktury
+
+    Hint: nejvyšší úroveň je definována příkazem \chapter{ ... }
+
+    > Boundary-scan design
+    >   > Základní principy Boundary scan
+    >   > Instrukce Boundary-scan
+    >   > Test Access Port (TAP) a TAP kontrolér
+    >   > Popis základních stavů TAP kontroléru
+    >   >   > Test-Logic-Reset [kód F]
+    >   >   > Run-Test/Idle [kód C]
+    >   >   > SelectDR [kód 7], SelectIR [kód 4]
+    >   >   > CaptureDR [kód 6]
+    >   >   > ShiftDR [kód 2]
+    >   >   > UpdateDR [kód 5]
+    >   >   > CaptureIR [kód E]
+    >   >   > ShiftIR [kód A]
+    >   >   > UpdateIR [kód D]
+    >   >   > Exit1DR [kód 1], Exit1IR [kód 9], Exit2DR [kód 0], Exit2IR [kód 8]
+    >   >   > PauseDR [kód 3], PauseIR [kód B]
+    >   > Boundary-scan Registry
+    >   >   > Instrukční registr (Instruction Register – IR)
+    >   >   > Bypass Registr (BR)
+    >   >   > Boundary scan register (BSR)
+    >   >   > Identifikační registr (Device Identification Register – IDregister)
+
+3) Seznamy
+
+    Na požadovaných místech (dle komentářů) vložte číslované seznamy, odrážkové seznamy, a seznamy s popisem (prostředí description)
+
+    Hint:
+
+    \begin{enumerate}
+        \item text text
+        \item text text
+    \end{enumerate}
+
+    \begin{itemize}
+        \item text text
+        \item text text
+    \end{itemize}
+
+    \begin{description}
+        \item [zvyrazneny text1] text text
+        \item [zvyrazneny text2] text text
+    \end{description}
+
+
+
+4) Obrázky
+
+    Na vyznačené pozice vložte požadované obrázky ze složky figs/ (% vložit obrázek). (Overleaf - před vkládáním obrázků je nutné obrázky nejdříve nahrát do projektu)
+
+    Hint (použití plovoucího objektu figure):
+
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.5\textwidth]{nazev_souboru.png}
+        \caption{Popisek}
+        \label{fig:xx:doporuceny_tvar_pro_odkazovanani_se_v_textu}
+    \end{figure}
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+----------------------------------------------- na dalším cvičení ---------------------------------------------------
+_____________________________________________________________________________________________________________________
+
+
+5) Odkazování v textu
+
+    Na vyznačených místech doplňte odkazy na obrázky a také odkazy na vybrané kapitoly.
+
+    Místa pro vložení odkazů jsou v textu znázorněny sekvencemi:
+
+    OBR - odkaz na obrázek č. xx
+    REF - odkaz na kapitolu, stranu kapitoly, atd.
+
+    hint:
+    definice na odkazovaný "objekt": \label{ identifikator_odkazu }
+    Odkazovaní v textu: \ref{ identifikator_odkazu }, \pageref{ identifikator_odkazu }
+
+6) Citování literatury
+
+    Do kořenového adresáře projektu přidejte přiložený soubor "refsEDK.bib". Tento soubor zaregistujte jako zdroj bibliografických záznamů - příkaz \addbibresource{refsEDK.bib}. Původní příkaz \addbibresource{refTULTHESIS.bib} můžete zakomentovat/odstranit/přepsat.
+
+    Na požadovaných místech v textu (sekvence CITxx) doplňte odpovídající odkazy na použitou literaturu. Odpovídající identifikátor pro použití příkazu \cite{identikátor} nalezněte porovnáním souboru "reference.txt" a "refsEDK.bib"

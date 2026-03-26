@@ -32,12 +32,12 @@ architecture testbench of multiplexor_tb is
                 temp := temp / 2;
             end loop;
         end if;
-        return retval;
+        return retval;				 
     end function uint2slv;
     
 begin
 
-    mux1 : entity work.multiplexor
+    mux1_inst : entity work.multiplexor
         port map(
             d => mux_d,
             s => mux_s,
@@ -51,7 +51,23 @@ begin
         mux_s <= "00";
         wait for 10 ns;
         mux_d <= "0001";
-        
+        wait for 10 ns;
+     
+        mux_s <= "01";
+        wait for 10 ns;
+        mux_d <= "0010";
+        wait for 10 ns;	   
+		
+		mux_s <= "10";
+        wait for 10 ns;
+        mux_d <= "0100";
+        wait for 10 ns;
+    
+		mux_s <= "11";
+        wait for 10 ns;
+        mux_d <= "1000";
+        wait for 10 ns;
+	
         -- try to use function uint2slv together with for loop to test all possible input combinations
         -- the power operator ** could come in handy
         
