@@ -51,6 +51,7 @@ Zkouška je složena z výpočetní a teoretické části:
 ## Příklady k procvičení Matematika 2 z [KM.tul](https://kma.fp.tul.cz/)
 
 <iframe src="https://kma.fp.tul.cz/images/stories/vyuka/finek-matematika2/Priklady_MA2.pdf" width="100%" height="800px"></iframe>
+
 [Otevřít / Stáhnout Příklady_MA2.pdf](https://kma.fp.tul.cz/images/stories/vyuka/finek-matematika2/Priklady_MA2.pdf)
 
 ## Přednášky
@@ -95,6 +96,18 @@ Zkouška je složena z výpočetní a teoretické části:
 
 ## Testy a řešení
 
+### Test 2023
+
+<iframe src="./testy/ZadaniL1.pdf" width="100%" height="800px"></iframe>
+
+- [Otevřít / Stáhnout na ZadaniL1.pdf](./testy/ZadaniL1.pdf)
+
+### Test 2023 - řešení
+
+<iframe src="./testy/Reseni_zadaniL1.pdf" width="100%" height="800px"></iframe>
+
+- [Otevřít / Stáhnout na Reseni_zadaniL1.pdf](./testy/Reseni_zadaniL1.pdf)
+
 ### Test 2024
 
 <iframe src="./testy/pisemkaL1_24.pdf" width="100%" height="800px"></iframe>
@@ -112,3 +125,9 @@ Zkouška je složena z výpočetní a teoretické části:
 <iframe src="./testy/pisemkaL1_25a.pdf" width="100%" height="800px"></iframe>
 
 - [Otevřít / Stáhnout na pisemkaL1_25a.pdf](./testy/pisemkaL1_25a.pdf)
+
+### Test 2025 - řešení
+
+<iframe src="./testy/pisemkaL1_25a_reseni.pdf" width="100%" height="800px"></iframe>
+
+- [Otevřít / Stáhnout na pisemkaL1_25a_reseni.pdf](./testy/pisemkaL1_25a_reseni.pdf)
