@@ -106,6 +106,12 @@ Zkouška prověřuje schopnost navrhnout konkrétní digitální zařízení:
 
 - [Otevřít / Stáhnout na CIE_7.pdf](./prednasky/CIE_7.pdf)
 
+### 8. Paměti a aritmetické obvody
+
+<iframe src="./prednasky/CIE_8.pdf" width="100%" height="800px"></iframe>
+
+- [Otevřít / Stáhnout na CIE_8.pdf](./prednasky/CIE_8.pdf)
+
 ## Cvičení
 
 ### 1. Hradla
@@ -370,3 +376,11 @@ mux2_inst: entity work.multiplexor
 
 -- Podobně instancuješ i dec1_inst a dec2_inst na další volné SW a LEDs
 ```
+
+### 7. Registry
+
+<iframe src="./cviceni/LAB_07.pdf" width="100%" height="800px"></iframe>
+
+- [Otevřít / Stáhnout na LAB_07.pdf](./cviceni/LAB_07.pdf)
+¨
+#### .vhd
