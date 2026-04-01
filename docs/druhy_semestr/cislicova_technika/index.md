@@ -382,5 +382,194 @@ mux2_inst: entity work.multiplexor
 <iframe src="./cviceni/LAB_07.pdf" width="100%" height="800px"></iframe>
 
 - [Otevřít / Stáhnout na LAB_07.pdf](./cviceni/LAB_07.pdf)
-¨
-#### .vhd
+
+#### simple_reg.vhd
+
+```vhdl
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity simple_reg is
+    Port (
+        clock       : in  STD_LOGIC;
+        reset       : in  STD_LOGIC;
+        data        : in  STD_LOGIC;
+        enable      : in  STD_LOGIC;
+        q_ff_re     : out STD_LOGIC;
+        q_latch     : out STD_LOGIC;
+        q_ff_re_sr  : out STD_LOGIC;
+        q_ff_fe_ar  : out STD_LOGIC
+    );
+end simple_reg;
+
+architecture Behavioral of simple_reg is
+    -- Deklarace signálů s různými výchozími hodnotami podle zadání
+    signal ff_re      : std_logic := '1';
+    signal s_latch    : std_logic := '0';
+    signal s_ff_re_sr : std_logic := '1';
+    signal s_ff_fe_ar : std_logic := '0';
+
+begin
+
+    -- =========================================================
+    -- 2. Základní klopný obvod typu D (Z předlohy)
+    -- =========================================================
+    process (clock)
+    begin
+        if rising_edge(clock) then
+            ff_re <= data;
+        end if;
+    end process;
+    q_ff_re <= ff_re;
+
+    -- =========================================================
+    -- 4a. Hladinový klopný obvod (Latch) s asynch. resetem
+    -- =========================================================
+    process (clock, reset, data)
+    begin
+        if reset = '1' then
+            s_latch <= '0';
+        elsif clock = '1' then
+            s_latch <= data;
+        end if;
+    end process;
+    q_latch <= s_latch;
+
+    -- =========================================================
+    -- 4b. Hranový (náběžná) D-FF se synchronním resetem a enable
+    -- =========================================================
+    process (clock)
+    begin
+        if rising_edge(clock) then
+            if reset = '1' then
+                s_ff_re_sr <= '0';
+            elsif enable = '1' then
+                s_ff_re_sr <= data;
+            end if;
+        end if;
+    end process;
+    q_ff_re_sr <= s_ff_re_sr;
+
+    -- =========================================================
+    -- 4c. Hranový (sestupná) D-FF s asynchronním resetem a enable
+    -- =========================================================
+    process (clock, reset)
+    begin
+        if reset = '1' then
+            s_ff_fe_ar <= '0';
+        elsif falling_edge(clock) then
+            if enable = '1' then
+                s_ff_fe_ar <= data;
+            end if;
+        end if;
+    end process;
+    q_ff_fe_ar <= s_ff_fe_ar;
+
+end Behavioral;
+```
+
+#### simple_regs_tb.vhd
+
+```vhdl
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity simple_regs_tb is
+end simple_regs_tb;
+
+architecture behavior of simple_regs_tb is
+
+    -- Definice komponenty, kterou testujeme
+    component simple_reg
+    port(
+         clock      : in std_logic;
+         reset      : in std_logic;
+         data       : in std_logic;
+         enable     : in std_logic;
+         q_ff_re    : out std_logic;
+         q_latch    : out std_logic;
+         q_ff_re_sr : out std_logic;
+         q_ff_fe_ar : out std_logic
+        );
+    end component;
+
+    -- Vstupní signály (s výchozími stavy)
+    signal clock  : std_logic := '0';
+    signal reset  : std_logic := '0';
+    signal data   : std_logic := '1';
+    signal enable : std_logic := '1';
+
+    -- Výstupní signály
+    signal q_ff_re    : std_logic;
+    signal q_latch    : std_logic;
+    signal q_ff_re_sr : std_logic;
+    signal q_ff_fe_ar : std_logic;
+
+    -- Definice periody hodin (podle grafu v PDF odpovídá jeden cyklus 20 ns)
+    constant clk_period : time := 20 ns;
+
+begin
+
+    -- Připojení (namapování) testovaného obvodu (UUT)
+    uut: simple_reg port map (
+          clock      => clock,
+          reset      => reset,
+          data       => data,
+          enable     => enable,
+          q_ff_re    => q_ff_re,
+          q_latch    => q_latch,
+          q_ff_re_sr => q_ff_re_sr,
+          q_ff_fe_ar => q_ff_fe_ar
+        );
+
+    -- Proces, který generuje nekonečné hodiny (0, 1, 0, 1...)
+    clk_process :process
+    begin
+        clock <= '0';
+        wait for clk_period/2;
+        clock <= '1';
+        wait for clk_period/2;
+    end process;
+
+    -- Proces pro generování dat, resetu a enable podle průběhů z grafu
+    stim_proc: process
+    begin
+        -- Počáteční stavy (čas 0 ns)
+        reset  <= '0';
+        enable <= '1';
+        data   <= '1';
+
+        wait for 20 ns;
+        data <= '0';
+
+        wait for 20 ns;
+        data <= '1';
+
+        -- Rychlé překlopení dat kolem času 45-50 ns
+        wait for 5 ns;
+        data <= '0';
+        wait for 5 ns;
+        data <= '1';
+
+        wait for 15 ns;  -- Čas 65 ns
+        enable <= '0';
+        data   <= '0';
+
+        wait for 20 ns;  -- Čas 85 ns
+        enable <= '1';
+
+        wait for 15 ns;  -- Čas 100 ns
+        reset <= '1';
+
+        wait for 5 ns;   -- Čas 105 ns
+        reset <= '0';
+
+        wait for 20 ns;  -- Čas 125 ns
+        reset <= '1';
+
+        -- Ukončení změn
+        wait;
+    end process;
+
+end behavior;
+```
