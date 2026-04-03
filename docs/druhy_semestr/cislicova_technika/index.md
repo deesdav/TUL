@@ -112,6 +112,12 @@ Zkouška prověřuje schopnost navrhnout konkrétní digitální zařízení:
 
 - [Otevřít / Stáhnout na CIE_8.pdf](./prednasky/CIE_8.pdf)
 
+### 9. Zákaznické obvody
+
+<iframe src="./prednasky/Zakaznicke_obvody.pdf" width="100%" height="800px"></iframe>
+
+- [Otevřít / Stáhnout na Zakaznicke_obvody.pdf](./prednasky/Zakaznicke_obvody.pdf)
+
 ## Cvičení
 
 ### 1. Hradla
@@ -572,4 +578,146 @@ begin
     end process;
 
 end behavior;
+```
+
+### 8. Posuvný registr / sériová komunikace, Johnsonův čítač, LFSR
+
+<iframe src="./cviceni/LAB_07b.pdf" width="100%" height="800px"></iframe>
+
+- [Otevřít / Stáhnout na LAB_07b.pdf](./cviceni/LAB_07b.pdf)
+
+#### shift_reg.vhd
+
+```vhdl
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity shift_reg is
+    Port (
+        clock          : in  STD_LOGIC;
+        shift_not_load : in  STD_LOGIC;
+        serial_in      : in  STD_LOGIC;
+        data_in        : in  STD_LOGIC_VECTOR (7 downto 0);
+        serial_out     : out STD_LOGIC;
+        data_out       : out STD_LOGIC_VECTOR (7 downto 0)
+    );
+end shift_reg;
+
+architecture Behavioral of shift_reg is
+    -- Vnitřní paměť registru (počáteční stav samé nuly)
+    signal s_reg : std_logic_vector(7 downto 0) := (others => '0');
+begin
+
+    process(clock)
+    begin
+        if rising_edge(clock) then
+            if shift_not_load = '0' then
+                -- Paralelní nahrání dat (Load)
+                s_reg <= data_in;
+            else
+                -- Posun doprava (Shift): na pozici 7 jde serial_in, zbytek se posune o 1 dolů
+                s_reg <= serial_in & s_reg(7 downto 1);
+            end if;
+        end if;
+    end process;
+
+    -- Výstupy jsou asynchronně připojené přímo na vnitřní signál
+    serial_out <= s_reg(0); -- Nejnižší bit vypadává ven jako serial_out
+    data_out   <= s_reg;
+
+end Behavioral;
+```
+
+#### johnson_count.vhd
+
+```vhdl
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity johnson_count is
+    Port (
+        clock      : in  STD_LOGIC;
+        reset      : in  STD_LOGIC;
+        q_johnson  : out STD_LOGIC_VECTOR (3 downto 0);
+        q_binary   : out STD_LOGIC_VECTOR (2 downto 0)
+    );
+end johnson_count;
+
+architecture Behavioral of johnson_count is
+    signal s_reg : std_logic_vector(3 downto 0) := (others => '0');
+begin
+
+    -- Sekvenční proces (paměť) - samotný čítač
+    process(clock)
+    begin
+        if rising_edge(clock) then
+            if reset = '1' then
+                s_reg <= "0000"; -- Synchronní reset vynuluje registr
+            else
+                -- Posun doprava s negovanou zpětnou vazbou
+                s_reg <= not s_reg(0) & s_reg(3 downto 1);
+            end if;
+        end if;
+    end process;
+
+    q_johnson <= s_reg;
+
+    -- Kombinační proces - Dekodér do binárního kódu
+    process(s_reg)
+    begin
+        case s_reg is
+            when "0000" => q_binary <= "000"; -- 0
+            when "1000" => q_binary <= "001"; -- 1
+            when "1100" => q_binary <= "010"; -- 2
+            when "1110" => q_binary <= "011"; -- 3
+            when "1111" => q_binary <= "100"; -- 4
+            when "0111" => q_binary <= "101"; -- 5
+            when "0011" => q_binary <= "110"; -- 6
+            when "0001" => q_binary <= "111"; -- 7
+            when others => q_binary <= "000"; -- Pojistka pro neplatné stavy
+        end case;
+    end process;
+
+end Behavioral;
+```
+
+#### LFSR.vhd
+
+```vhdl
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity LFSR is
+    Port (
+        clock : in  STD_LOGIC;
+        load  : in  STD_LOGIC;
+        SW    : in  STD_LOGIC_VECTOR (15 downto 0);
+        LED   : out STD_LOGIC_VECTOR (15 downto 0)
+    );
+end LFSR;
+
+architecture Behavioral of LFSR is
+    -- Pozor: LFSR nesmí nikdy začít v samých nulách, jinak se zasekne!
+    signal s_reg    : std_logic_vector(15 downto 0) := x"0001";
+    signal feedback : std_logic;
+begin
+
+    -- Zpětná vazba vypočítaná z bitů 5, 3, 2 a 0 pomocí XOR
+    feedback <= s_reg(5) xor s_reg(3) xor s_reg(2) xor s_reg(0);
+
+    process(clock)
+    begin
+        if rising_edge(clock) then
+            if load = '1' then
+                s_reg <= SW; -- Nahrání hodnoty z přepínačů
+            else
+                -- Posun doprava, na pozici 15 se nasune vypočítaná zpětná vazba
+                s_reg <= feedback & s_reg(15 downto 1);
+            end if;
+        end if;
+    end process;
+
+    LED <= s_reg;
+
+end Behavioral;
 ```
