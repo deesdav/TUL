@@ -1,0 +1,78 @@
+Vygenerujte PDF soubor obsahujicí zformátovaný text ze souboru "text.txt". Ke zformátování textu použijte TUL LaTeX šablonu (viz přiložená pdf přednáška). Pro překlad dokumentu můžete použít "standalone" instalaci systému LaTeX, nebo využít online editoru Overleaf (doporučuji - https://www.overleaf.com/read/mtwcfmwskvby ). Jako návod můžete použít přiloženou prezentaci (přednáška).
+
+Soubor "text.txt" mimo textu obsahuje komentáře (označené znakem "%") popisující: strukturu dokumentu, vložené obrázky, rovnice, apod.
+
+Jako výchozí soubor šablony pro Váš dokument upravte (přepište) soubor "manual-tulthesis.tex".
+
+Úkoly:
+
+Hlavní úkol: Zformátujte text obsažený v souboru "text.txt", aby váš výstup odpovídal ukázkovému souboru "matematika.pdf"
+
+Na začátku doporučuji doplnění balíku:
+            Pro sazbu speciálních matematických znaků: amsmath
+            Pro sazbu znaku stupňů "°" použijte balík: gensymb
+            
+
+1) Upravte informace o dokumentu:
+
+    práce bude vysázena jako semestrální projekt (volba SP)
+    změňte jméno práce
+    změňte jméno autora
+    změňte jméno vedoucího práce
+    vyplňte název vámi studovaného studijního programu
+    (volitelné) úprava abstraktu
+    (volitelné) úprava textu poděkování
+    (volitelné) úprava seznamu použitých zkratek
+
+2) Struktura
+    Doplňte nadpisy kapitol a sekcí dle následující struktury
+
+3) Obrázky
+
+    Na vyznačené pozice vložte požadované obrázky ze složky figs/ (% vložit obrázek). (Overleaf - před vkládáním obrázků je nutné obrázky nejdříve nahrát do projektu)
+
+    Hint (použití plovoucího objektu figure):
+
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.5\textwidth]{nazev_souboru.png}
+        \caption{Popisek}
+        \label{fig:xx:doporuceny_tvar_pro_odkazovanani_se_v_textu}
+    \end{figure}
+
+
+4) Rovnice a matematika v textu
+
+    Na vyznačených místech doplňte matematické výrazy a rovnice.
+
+    Hint:
+    v textu $a=1$
+
+    číslovaná rovnice
+    \begin{equation}
+        a=1
+    \end{equation}
+    
+    Pro sazbu speciálních matematických znaků: amsmath
+    Pro sazbu znaku stupňů "°" použijte balík: gensymb
+
+5) Vložte ukázku zdrojového kódu: sikmy_vrh.m
+    Potřebný balík: listings
+    
+    Hint:
+       \begin{lstlisting} .... \end{lstlisting} s nepovinnými parametry [  language=Matlab,
+                                                                           caption=...,
+                                                                           style=Matlab-editor,
+                                                                           label=lst:THR_alpha ]
+                                                                       
+    Pro "počeštění" popisků v použijte (do preambule): \renewcommand{\lstlistingname}{Ukázka kódu}
+   
+    Pro lepší zvýraznení Matlab kódů použijte balík: matlab-prettifier
+
+6) Doplňte tabulku č. 1
+
+7) Doplňte poznámku pod čarou
+    Hint:
+        Text okolo poznámky\footnote{Poznámka pod čarou}.
+
+

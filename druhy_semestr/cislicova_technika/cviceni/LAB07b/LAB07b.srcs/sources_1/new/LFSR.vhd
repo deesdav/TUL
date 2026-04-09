@@ -11,8 +11,22 @@ entity LFSR is
 end LFSR;
 
 architecture Behavioral of LFSR is
-
+	signal s_reg    : std_logic_vector(15 downto 0) := x"0001";
+    signal feedback : std_logic; 
 begin
-
+	feedback <= s_reg(5) xor s_reg(3) xor s_reg(2) xor s_reg(0);
+	
+	process(clock)
+	begin 
+		if rising_edge(clock) then
+			if load = '1' then
+				s_reg <= SW;
+			else
+				s_reg <= feedback & s_reg(15 downto 1);
+			end if;	
+		end if;
+	end process;									   
+	LED <= s_reg;
+	
 
 end Behavioral;

@@ -1,0 +1,126 @@
+% Kapitola
+Šikmý vrh
+% -------------------------
+
+Vrh šikmý je pohyb tělesa v tíhovém poli
+% Poznámka pod čarou
+Je-li vrh popisován v inerciální vztažné soustavě (např. vrh na povrchu nerotujících astronomických těles bez atmosféry), setrvačné síly nepůsobí a tíhové pole je rovno „čistému“ gravitačnímu poli tělesa a tíhové zrychlení rovno zrychlení gravitačnímu.
+% ----------------------
+, při kterém počáteční rychlost svírá s horizontem nenulový elevační úhel.
+
+Při kladném elevačním úhlu ($0\degree < \alpha < 90\degree$) se jedná o vrh šikmý vzhůru, při záporném
+% ------------------
+% (-90° menší než alpha menší než 0°)
+% ------------------
+o vrh šikmý dolů (při nulovém elevačním úhlu se jedná o vrh vodorovný).
+
+Pokud vrh probíhá ve vakuu a uvažujeme-li pouze homogenní tíhové pole (např. reálný případ vrhů relativně malou rychlostí v malých výškách nad povrchem astronomických těles bez atmosféry), pohybuje se těleso po parabole, ve vzduchu (tzn. s nezanedbatelným odporem vzduchu) po tzv. balistické křivce.
+
+
+% ---------------------------
+% Obrázek: sikmy_vrh.eps
+% popis: Trajektorie šikmých vrhů pod různými elevačními úhly $\alpha$, ale stejnou počáteční rychlostí $v_0 = 10$~m/s; $T$ značí dobu letu; $R$ značí dostřel, $H$ značí nejvyšší bod trajektorie. Obrázek byl vygenerován v programovacím jazyce MATLAB (viz ukázka kódu \ref{lst:THR_alpha}).
+% ---------------------------
+
+% Sekce
+Matematický model
+% -------------------------
+
+Předpokládejme, že těleso má počáteční rychlost $v_0$ svírající s vodorovným směrem elevační úhel $\alpha$. Následný pohyb (ve vakuu, resp. při zanedbání odporu vzduchu) se skládá z rovnoměrného přímočarého pohybu touto rychlostí v původním směru (tímto směrem položíme osu $x$) a z volného pádu (tedy rovnoměrně zrychleného pohybu) ve směru tíhového zrychlení $g$, který lze ztotožnit s pohybem ve směru osy $y$. Ve směru osy z tedy pohyb neprobíhá (trajektorií tedy bude rovinná křivka).
+
+Proto platí:
+\begin{align}
+    x &= x_0 + v_0 t \cos(\alpha), \\
+    y &= y_0 + v_0 t \sin(\alpha) - \frac{1}{2} g t^2.
+\end{align}
+Vyloučením času $t$ a přesunem počátku soustavy souřadnic do bodu $[x_0,y_0]$ získáme rovnici trajektorie šikmého vrhu:
+\begin{equation}
+    y = x \tan(\alpha) - \frac{g x^2}{ 2 v_0^2 \cos^2(\alpha)}.
+\end{equation}
+Pro vrh šikmý vzhůru lze z této rovnice určit maximální dosaženou výšku:
+% ------------------
+% vložit rovnici 1.4 (viz ukázkové pdf)
+% --------------------
+a délku vrhu (tedy vzdálenost, po které těleso klesne do původní výšky), neboli dostřel:
+% ------------------
+% vložit rovnici 1.5 (viz ukázkové pdf)
+% --------------------
+Z rovnic vyplývá, že maximální výšky vrhu lze dosáhnout pod úhlem $90\degree$ a největšího dostřelu pod úhlem $90\degree$.
+
+% ------------------
+% Doplnit tabulku 1.1 (viz ukázkové pdf)
+\begin{table}[]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+     \hline
+     $\alpha$ & $\mathbf{15\degree}$ & $\mathbf{30\degree}$ & $\mathbf{45\degree}$ & $\mathbf{60\degree}$ & $\mathbf{75\degree}$ & $\mathbf{90\degree}$ \\ \hline
+      & & & & & & \\ \hline
+      & & & & & & \\ \hline
+      & & & & & & \\ \hline
+\end{tabular}
+    \caption{Výsledky $T$ (doba letu), $R$ (dostřel), $H$ (nejvyšší bod trajektorie) pro různé elevační úhly $\alpha$ a stejnou počáteční rychlost $v_0 = 10$~m/s}
+    \label{tab:tabulka}
+\end{table}
+
+
+% ------------------------------------------
+% Vlozit ukázku zdrojového kódu: sikmy_vrh.m
+% ------------------------------------------
+% Hint:
+%   Potřebný balík: listings
+%   \begin{lstlisting} .... \end{lstlisting} s nepovinnými parametry [  language=Matlab,
+%                                                                       caption=...,
+%                                                                       style=Matlab-editor,
+%                                                                       label=lst:THR_alpha ]
+%   Pro "počeštění" popisků v použijte (do preambule): \renewcommand{\lstlistingname}{Ukázka kódu}
+%   Pro lepší zvýraznení Matlab kódů použijte balík: matlab-prettifier
+
+
+% Kapitola
+Násobení matic
+% -------------------------
+
+Součin matic hovorově též maticové násobení (neplést se skalárním násobkem matice) je v matematice zobecnění součinu čísel na matice. Formálně se dá definovat jako binární operace na maticích odpovídajících typů. Využívá se v matematice, fyzice a jejich aplikacích, obvykle pro popis skládání lineárních zobrazení.
+
+Speciálním případem násobení matic je součin matice typu
+% m krát n
+a vektoru braného jako matice o typu
+% n\times 1
+(sloupcový vektor). Tento součin lze interpretovat jako aplikaci lineárního zobrazení reprezentovaného transformační maticí na vektor.
+
+% sekce
+Formální definice
+% -------------------------
+
+Pokud je $\mathbf{A}$ matice typu $m \times n$ tvaru
+% Vlozit rovnici 2.1 (viz ukázkové pdf)
+%
+% Hint:
+% \begin{equation}
+%    \mathbf{A}=
+%    \begin{pmatrix}
+%       1 & 2 \\
+%       3 & 4
+%    \end{pmatrix}
+% \end{equation}
+% "tečkování": \cdots, \vdots, \ddots
+a $\mathbf{B}$ je matice typu
+% n krát p
+tvaru
+% Vlozit rovnici 2.2 (viz ukázkové pdf)
+jejich součin
+% A krát B
+je matice typu
+% m krát p
+definovaná vztahem
+% Vlozit rovnici 2.3 (viz ukázkové pdf)
+Výsledek součinu
+% A krát B
+má tvar
+% Vlozit rovnici 2.4 (viz ukázkové pdf)
+
+
+
+
+
+
