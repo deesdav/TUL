@@ -106,17 +106,23 @@ Zkouška prověřuje schopnost navrhnout konkrétní digitální zařízení:
 
 - [Otevřít / Stáhnout na CIE_7.pdf](./prednasky/CIE_7.pdf)
 
-### 8. Paměti a aritmetické obvody
+### 8a. Paměti a aritmetické obvody
 
 <iframe src="./prednasky/CIE_8.pdf" width="100%" height="800px"></iframe>
 
 - [Otevřít / Stáhnout na CIE_8.pdf](./prednasky/CIE_8.pdf)
 
-### 9. Zákaznické obvody
+### 8b. Zákaznické obvody
 
 <iframe src="./prednasky/Zakaznicke_obvody.pdf" width="100%" height="800px"></iframe>
 
 - [Otevřít / Stáhnout na Zakaznicke_obvody.pdf](./prednasky/Zakaznicke_obvody.pdf)
+
+### 9. Procesory, mikroprocesory, procesory na FPGA
+
+<iframe src="./prednasky/CIE_9.pdf" width="100%" height="800px"></iframe>
+
+- [Otevřít / Stáhnout na CIE_9.pdf](./prednasky/CIE_9.pdf)
 
 ## Cvičení
 
@@ -383,7 +389,7 @@ mux2_inst: entity work.multiplexor
 -- Podobně instancuješ i dec1_inst a dec2_inst na další volné SW a LEDs
 ```
 
-### 7. Registry
+### 7a. Registry
 
 <iframe src="./cviceni/LAB_07.pdf" width="100%" height="800px"></iframe>
 
@@ -580,7 +586,7 @@ begin
 end behavior;
 ```
 
-### 8. Posuvný registr / sériová komunikace, Johnsonův čítač, LFSR
+### 7b. Posuvný registr / sériová komunikace, Johnsonův čítač, LFSR
 
 <iframe src="./cviceni/LAB_07b.pdf" width="100%" height="800px"></iframe>
 
@@ -720,4 +726,159 @@ begin
     LED <= s_reg;
 
 end Behavioral;
+```
+
+### 8. Čítače, generické parametry, děličky hodin, detekce tlačítka
+
+<iframe src="./cviceni/LAB_08.pdf" width="100%" height="800px"></iframe>
+
+- [Otevřít / Stáhnout na LAB_08.pdf](./cviceni/LAB_08.pdf)
+
+#### counter.vhd
+
+```vhdl
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL; -- Knihovna pro aritmetické operace (unsigned)
+
+entity counter is
+    generic(
+        COUNTER_WIDTH : integer := 4 -- Generický parametr určující šířku čítače
+    );
+    port(
+        clock        : in  std_logic;
+        reset        : in  std_logic;
+        clock_enable : in  std_logic;
+        limit        : in  std_logic_vector(COUNTER_WIDTH - 1 downto 0);
+        repeat       : in  std_logic;
+        cnt          : out std_logic_vector(COUNTER_WIDTH - 1 downto 0);
+        done         : out std_logic
+    );
+end counter;
+
+architecture Behavioral of counter is
+    -- Vnitřní registr čítače typu unsigned (umožňuje sčítání)
+    signal counter_reg : unsigned(COUNTER_WIDTH - 1 downto 0) := (others => '0');
+begin
+
+    process(clock)
+    begin
+        if rising_edge(clock) then
+            -- a. Synchronní reset má nejvyšší prioritu
+            if reset = '1' then
+                counter_reg <= (others => '0');
+
+            -- b. Čítání je povoleno signálem clock_enable
+            elsif clock_enable = '1' then
+
+                -- c. Dosáhl čítač limitu?
+                if counter_reg = unsigned(limit) then
+                    if repeat = '1' then
+                        counter_reg <= (others => '0'); -- Začne znovu od nuly
+                    end if;
+                    -- Pokud je repeat '0', neudělá se nic -> čítač se zastaví na limitu
+                else
+                    counter_reg <= counter_reg + 1; -- Normální čítání
+                end if;
+
+            end if;
+        end if;
+    end process;
+
+    -- Venkovní přiřazení: převod unsigned zpět na std_logic_vector
+    cnt <= std_logic_vector(counter_reg);
+
+    -- d. Výstup done je 1, když čítač dosáhne limitu (kombinační logika mimo proces)
+    done <= '1' when counter_reg = unsigned(limit) else '0';
+
+end Behavioral;
+```
+
+#### debounce.vhd
+
+```vhdl
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
+entity debounce is
+    port(
+        clock   : in  std_logic;
+        button  : in  std_logic;
+        pressed : out std_logic
+    );
+end debounce;
+
+architecture Behavioral of debounce is
+    -- Vypočítané konstanty pro 100Hz děličku ze 100MHz hodin
+    constant DIV100HZ_WIDTH : integer := 20;
+    constant DIV100HZ_LIMIT : integer := 999999;
+
+    -- Signály pro děličku
+    signal div_cnt  : unsigned(DIV100HZ_WIDTH - 1 downto 0) := (others => '0');
+    signal ce_100Hz : std_logic;
+
+    -- Třístupňový posuvný registr pro vzorkování tlačítka
+    signal shift_reg : std_logic_vector(2 downto 0) := (others => '0');
+
+begin
+
+    -- Proces děličky hodin (vytváří pomalý pulz)
+    process(clock)
+    begin
+        if rising_edge(clock) then
+            if div_cnt = DIV100HZ_LIMIT then
+                div_cnt <= (others => '0');
+            else
+                div_cnt <= div_cnt + 1;
+            end if;
+        end if;
+    end process;
+
+    -- Vytvoří pulz povolení (clock enable) trvající 1 takt každých 10 ms
+    ce_100Hz <= '1' when div_cnt = DIV100HZ_LIMIT else '0';
+
+    -- Posuvný registr, který posouvá data jen při ce_100Hz
+    process(clock)
+    begin
+        if rising_edge(clock) then
+            if ce_100Hz = '1' then
+                -- Posuneme stará data a načteme nový stav tlačítka
+                shift_reg <= shift_reg(1 downto 0) & button;
+            end if;
+        end if;
+    end process;
+
+    -- Bod 3b: Detekce náběžné hrany.
+    -- Tlačítko bylo předtím '0' (uvolněné) a teď je '1' (stisknuté).
+    pressed <= '1' when shift_reg(1) = '1' and shift_reg(2) = '0' else '0';
+
+end Behavioral;
+```
+
+#### top.vhd
+
+```vhdl
+-- Instance našeho čítače, ze kterého pomocí generic uděláme 16bitový
+counter_inst: entity work.counter
+    generic map (
+        COUNTER_WIDTH => 16  -- Zde přepisujeme výchozí 4bity na 16 bitů
+    )
+    port map (
+        clock        => clock,
+        reset        => btnC,        -- Středové tlačítko jako reset
+        clock_enable => s_pressed,   -- Napojeno z výstupu obvodu debounce!
+        limit        => SW(15 downto 0), -- Přepínače určují limit
+        repeat       => btnL,        -- Levé tlačítko určuje repeat
+        cnt          => LED(15 downto 0),
+        done         => LED_BLUE
+    );
+
+-- Instance debounceru pro pravé tlačítko
+debounce_inst: entity work.debounce
+    port map(
+        clock   => clock,
+        button  => btnR,      -- Tlačítko, kterým chceme čítat
+        pressed => s_pressed  -- Vnitřní signál, který jde do clock_enable čítače
+    );
 ```
