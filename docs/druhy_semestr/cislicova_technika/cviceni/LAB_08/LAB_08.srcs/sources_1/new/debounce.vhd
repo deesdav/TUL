@@ -13,8 +13,8 @@ end debounce;
 architecture Behavioral of debounce is
     
     -- change values to create 100 Hz pulses.
-    constant DIV100HZ_WIDTH : integer := 1;
-    constant DIV100HZ_LIMIT : integer := 1;
+    constant DIV100HZ_WIDTH : integer := 20;
+    constant DIV100HZ_LIMIT : integer := 999999;
     
     signal div100Hz_done : std_logic;
 
@@ -54,7 +54,7 @@ begin
             pressed <= '0';
             if div100Hz_done = '1' then
                 -- detect rising edge or falling edge
-                if actual_button_value = 'U' and last_button_value = 'U' then
+                if actual_button_value = '1' and last_button_value = '0' then
                     pressed <= '1';
                 end if;
             end if;

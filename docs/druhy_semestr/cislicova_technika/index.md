@@ -739,59 +739,53 @@ end Behavioral;
 ```vhdl
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-use IEEE.NUMERIC_STD.ALL; -- Knihovna pro aritmetické operace (unsigned)
+use IEEE.NUMERIC_STD.ALL;
 
 entity counter is
     generic(
-        COUNTER_WIDTH : integer := 4 -- Generický parametr určující šířku čítače
+        COUNTER_WIDTH : integer := 4
     );
     port(
-        clock        : in  std_logic;
-        reset        : in  std_logic;
-        clock_enable : in  std_logic;
+        clock        : in  std_logic;   -- 100 MHz clock
+        cnt          : out std_logic_vector(COUNTER_WIDTH - 1 downto 0); -- counter output
+        --
+        reset        : in  std_logic;   -- positive reset
+        clock_enable : in  std_logic;   -- clock enable
         limit        : in  std_logic_vector(COUNTER_WIDTH - 1 downto 0);
-        repeat       : in  std_logic;
-        cnt          : out std_logic_vector(COUNTER_WIDTH - 1 downto 0);
-        done         : out std_logic
+        repeat       : in  std_logic;   -- repeat when finished
+        done         : out std_logic    -- counter reached limit
     );
 end counter;
 
 architecture Behavioral of counter is
-    -- Vnitřní registr čítače typu unsigned (umožňuje sčítání)
-    signal counter_reg : unsigned(COUNTER_WIDTH - 1 downto 0) := (others => '0');
+
+    signal counter_reg : unsigned(COUNTER_WIDTH - 1 downto 0);
+
 begin
 
     process(clock)
     begin
         if rising_edge(clock) then
-            -- a. Synchronní reset má nejvyšší prioritu
-            if reset = '1' then
-                counter_reg <= (others => '0');
+			if ( reset = '1' ) then
+				counter_reg <= (others => '0');
+			elsif ( clock_enable = '1' ) then
+				if (counter_reg = unsigned(limit)) then
+					if (repeat = '1') then
+						counter_reg <= (others => '0');
+					end if;
+				else
+					counter_reg <= counter_reg + 1;
+				end if;
+			end if;
 
-            -- b. Čítání je povoleno signálem clock_enable
-            elsif clock_enable = '1' then
-
-                -- c. Dosáhl čítač limitu?
-                if counter_reg = unsigned(limit) then
-                    if repeat = '1' then
-                        counter_reg <= (others => '0'); -- Začne znovu od nuly
-                    end if;
-                    -- Pokud je repeat '0', neudělá se nic -> čítač se zastaví na limitu
-                else
-                    counter_reg <= counter_reg + 1; -- Normální čítání
-                end if;
-
-            end if;
         end if;
     end process;
 
-    -- Venkovní přiřazení: převod unsigned zpět na std_logic_vector
     cnt <= std_logic_vector(counter_reg);
-
-    -- d. Výstup done je 1, když čítač dosáhne limitu (kombinační logika mimo proces)
-    done <= '1' when counter_reg = unsigned(limit) else '0';
+	done <= '1' when counter_reg = unsigned(limit) else '0';
 
 end Behavioral;
+
 ```
 
 #### debounce.vhd
@@ -799,86 +793,263 @@ end Behavioral;
 ```vhdl
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-use IEEE.NUMERIC_STD.ALL;
+use IEEE.NUMERIC_STD.all;
 
 entity debounce is
     port(
-        clock   : in  std_logic;
-        button  : in  std_logic;
-        pressed : out std_logic
+        clock        : in  std_logic;
+        button       : in  std_logic;
+        pressed      : out std_logic
     );
 end debounce;
 
 architecture Behavioral of debounce is
-    -- Vypočítané konstanty pro 100Hz děličku ze 100MHz hodin
+
+    -- change values to create 100 Hz pulses.
     constant DIV100HZ_WIDTH : integer := 20;
     constant DIV100HZ_LIMIT : integer := 999999;
 
-    -- Signály pro děličku
-    signal div_cnt  : unsigned(DIV100HZ_WIDTH - 1 downto 0) := (others => '0');
-    signal ce_100Hz : std_logic;
+    signal div100Hz_done : std_logic;
 
-    -- Třístupňový posuvný registr pro vzorkování tlačítka
-    signal shift_reg : std_logic_vector(2 downto 0) := (others => '0');
+    signal last_button_value : std_logic;
+    signal actual_button_value : std_logic;
 
 begin
 
-    -- Proces děličky hodin (vytváří pomalý pulz)
+    clock_div : entity work.counter
+        generic map(
+            COUNTER_WIDTH => DIV100HZ_WIDTH
+        )
+        port map(
+            clock        => clock,
+            cnt          => open,
+            reset        => '0',
+            clock_enable => '1',
+            limit        => std_logic_vector(to_unsigned(DIV100HZ_LIMIT, DIV100HZ_WIDTH)),
+            repeat       => '1',
+            done         => div100Hz_done
+        );
+
+    -- register updates each 100 ms
     process(clock)
     begin
         if rising_edge(clock) then
-            if div_cnt = DIV100HZ_LIMIT then
-                div_cnt <= (others => '0');
-            else
-                div_cnt <= div_cnt + 1;
+            if div100Hz_done = '1' then
+                actual_button_value <= button;
+                last_button_value <= actual_button_value;
             end if;
         end if;
     end process;
 
-    -- Vytvoří pulz povolení (clock enable) trvající 1 takt každých 10 ms
-    ce_100Hz <= '1' when div_cnt = DIV100HZ_LIMIT else '0';
-
-    -- Posuvný registr, který posouvá data jen při ce_100Hz
     process(clock)
     begin
         if rising_edge(clock) then
-            if ce_100Hz = '1' then
-                -- Posuneme stará data a načteme nový stav tlačítka
-                shift_reg <= shift_reg(1 downto 0) & button;
+            pressed <= '0';
+            if div100Hz_done = '1' then
+                -- detect rising edge or falling edge
+                if actual_button_value = '1' and last_button_value = '0' then
+                    pressed <= '1';
+                end if;
             end if;
         end if;
     end process;
-
-    -- Bod 3b: Detekce náběžné hrany.
-    -- Tlačítko bylo předtím '0' (uvolněné) a teď je '1' (stisknuté).
-    pressed <= '1' when shift_reg(1) = '1' and shift_reg(2) = '0' else '0';
 
 end Behavioral;
+
 ```
 
 #### top.vhd
 
 ```vhdl
--- Instance našeho čítače, ze kterého pomocí generic uděláme 16bitový
-counter_inst: entity work.counter
-    generic map (
-        COUNTER_WIDTH => 16  -- Zde přepisujeme výchozí 4bity na 16 bitů
-    )
-    port map (
-        clock        => clock,
-        reset        => btnC,        -- Středové tlačítko jako reset
-        clock_enable => s_pressed,   -- Napojeno z výstupu obvodu debounce!
-        limit        => SW(15 downto 0), -- Přepínače určují limit
-        repeat       => btnL,        -- Levé tlačítko určuje repeat
-        cnt          => LED(15 downto 0),
-        done         => LED_BLUE
-    );
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
 
--- Instance debounceru pro pravé tlačítko
-debounce_inst: entity work.debounce
-    port map(
-        clock   => clock,
-        button  => btnR,      -- Tlačítko, kterým chceme čítat
-        pressed => s_pressed  -- Vnitřní signál, který jde do clock_enable čítače
+entity top is
+    port(
+        clock                                             : in  std_logic;
+        btn_up, btn_right, btn_down, btn_left, btn_center : in  std_logic;
+        SW                                                : in  std_logic_vector(15 downto 0);
+        LED                                               : out std_logic_vector(15 downto 0);
+        LED_BLUE                                          : out std_logic;
+		segments										  : out std_logic_vector(7 downto 0);
+        displays 										  : out std_logic_vector(7 downto 0)
     );
+end top;
+
+architecture Behavioral of top is
+
+    constant BOARD_WIDTH : integer                                    := 16;
+    signal limit         : std_logic_vector(BOARD_WIDTH - 1 downto 0) := (others => '0');
+	signal s_pressed : std_logic;
+
+	signal s_count : std_logic_vector(15 downto 0);
+
+begin
+	 LED <= s_count;
+    counter_sixteen : entity work.counter
+        generic map(
+            COUNTER_WIDTH => BOARD_WIDTH
+        )
+        port map(
+            clock        => clock,
+            cnt          => s_count,
+            reset        => btn_right,
+            clock_enable => s_pressed,
+            limit        => SW,
+            repeat       => btn_down,
+            done         => LED_BLUE
+        );
+
+    debounce_inst : entity work.debounce
+		port map(
+			clock        => clock,
+			-- connect to a button of your choice
+
+			button       => btn_up,
+			-- create a signal and connect it to the clock_enable port of the counter above
+			pressed => s_pressed
+
+		);
+
+	display_driver_inst : entity work.display_driver
+		port map(
+			din 		=> X"0000" & s_count,
+			segments 	=> segments,
+			displays 	=> displays,
+			clock 		=> clock,
+			reset 		=> btn_center
+
+		);
+
+end Behavioral;
+
+```
+
+#### display_driver.vhd
+
+```vhdl
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
+entity display_driver is
+    port(
+        clock    : in  std_logic;
+        reset    : in  std_logic;
+        din      : in  std_logic_vector(31 downto 0);
+        segments : out std_logic_vector(7 downto 0);
+        displays : out std_logic_vector(7 downto 0)
+    );
+end display_driver;
+
+architecture Behavioral of display_driver is
+
+	constant C_10KHZ_WIDTH : integer := 14;
+	constant C_10KHZ_LIMIT : integer := 9999;
+
+	signal s_en_10khz : std_logic;
+	signal s_cnt_3bit : unsigned(2 downto 0);
+
+	signal s_hex : std_logic_vector(3 downto 0);
+
+begin
+
+	clk_div_i : entity work.counter
+		generic map (
+	    	COUNTER_WIDTH => C_10KHZ_WIDTH
+	    );
+        port map(
+            clock        => clock,
+            cnt          => open,
+            reset        => '0',
+            clock_enable => '1',
+            limit        => std_logic_vector(to_unsigned(C_10KHZ_LIMIT, C_10KHZ_WIDTH)),
+            repeat       => '1',
+            done         => s_en_10khz
+        );
+
+	process(clock)
+	begin
+	    if rising_edge(clock) then
+	        if reset = '1' then
+	            s_cnt_3bit <= (others => '0');
+	        elsif s_en_10khz = '1' then
+	             s_cnt_3bit <=  s_cnt_3bit + 1;
+	        end if;
+
+			case s_cnt_3bit is
+			    when "000" =>
+			        s_hex <= din(3 downto 0);
+			        displays <= "11111110";
+				when "001" =>
+			        s_hex <= din(7 downto 4);
+			        displays <= "11111101";
+				when "010" =>
+					s_hex <= din(11 downto 8);
+			        displays <= "11111011";
+				when "011" =>
+					s_hex <= din(15 downto 12);
+			        displays <= "11110111";
+				when "100" =>
+					s_hex <= din(19 downto 16);
+			        displays <= "11101111";
+				when "101" =>
+					s_hex <= din(23 downto 20);
+			        displays <= "11011111";
+				when "110" =>
+					s_hex <= din(27 downto 24);
+			        displays <= "10111111";
+				when others =>
+					s_hex <= din(31 downto 28);
+			        displays <= "01111111";
+			end case;
+	    end if;
+
+	end process;
+
+	process(s_hex)
+	begin
+		case s_hex is	-- DP G F E D C B A
+			when X"0" =>
+			    segments <= "11000000";
+			when X"1" =>
+				segments <= "11111001";
+			when X"2" =>
+				segments <= "10100100";
+			when X"3" =>
+				segments <= "10110000";
+			when X"4" =>
+				segments <= "10010001";
+			when X"5" =>
+				segments <= "10010010";
+			when X"6" =>
+				segments <= "10000010";
+			when X"7" =>
+				segments <= "11111000";
+			when X"8" =>
+				segments <= "10000000";
+			when X"9" =>
+				segments <= "10100000";
+			when X"A" =>
+				segments <= "11001000";
+			when X"b" =>
+				segments <= "10000011";
+			when X"C" =>
+				segments <= "11000110";
+			when X"d" =>
+				segments <= "10100001";
+			when X"E" =>
+				segments <= "10000110";
+			when X"F" =>
+			    segments <= "10001110";
+			when others =>
+			    segments <= "11111111";
+		end case;
+
+	end process;
+
+
+end Behavioral;
+
 ```
