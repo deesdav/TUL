@@ -26,23 +26,24 @@ begin
 
     process(clock)
     begin
-        if rising_edge(clock) then	
-			if ( reset = '1' ) then
-				counter_reg <= (others => '0');
-			elsif ( clock_enable = '1' ) then
-				if (counter_reg = unsigned(limit)) then
-					if (repeat = '1') then
-						counter_reg <= (others => '0');
-					end if;	
-				else
-					counter_reg <= counter_reg + 1;
-				end if;				
-			end if;			
-            
+        if rising_edge(clock) then
+            if reset = '1' then
+                counter_reg <= (others => '0');
+            elsif clock_enable = '1' then
+                --counter_reg <= counter_reg + 1; --tady byla chyba
+                if counter_reg >= unsigned(limit) then
+                    if repeat = '1' then
+                        counter_reg <= (others => '0');
+                    end if;
+                else 
+                    counter_reg <= counter_reg + 1;
+                end if;
+            end if;
         end if;
     end process;
 
-    cnt <= std_logic_vector(counter_reg);	   
-	done <= '1' when counter_reg = unsigned(limit) else '0';
+    cnt <= std_logic_vector(counter_reg);
+    done <= '1' when counter_reg >= unsigned(limit) else '0';
+  
 
 end Behavioral;

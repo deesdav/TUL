@@ -766,23 +766,83 @@ begin
     process(clock)
     begin
         if rising_edge(clock) then
-			if ( reset = '1' ) then
-				counter_reg <= (others => '0');
-			elsif ( clock_enable = '1' ) then
-				if (counter_reg = unsigned(limit)) then
-					if (repeat = '1') then
-						counter_reg <= (others => '0');
-					end if;
-				else
-					counter_reg <= counter_reg + 1;
-				end if;
-			end if;
-
+            if reset = '1' then
+                counter_reg <= (others => '0');
+            elsif clock_enable = '1' then
+                if counter_reg >= unsigned(limit) then
+                    if repeat = '1' then
+                        counter_reg <= (others => '0');
+                    end if;
+                else
+                    counter_reg <= counter_reg + 1;
+                end if;
+            end if;
         end if;
     end process;
 
     cnt <= std_logic_vector(counter_reg);
-	done <= '1' when counter_reg = unsigned(limit) else '0';
+    done <= '1' when counter_reg >= unsigned(limit) else '0';
+
+
+end Behavioral;
+
+```
+
+#### counter_tb.vhd
+
+```vhdl
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
+entity counter_tb is
+end counter_tb;
+
+architecture Behavioral of counter_tb is
+
+    constant SIM_WIDTH : integer := 4;
+    constant CLK_PERIOD : time := 10 ns;
+
+    signal clock : std_logic := '1';
+
+    -- inputs
+    signal reset        : std_logic                                := '0';
+    signal clock_enable : std_logic                                := '0';
+    signal limit        : std_logic_vector(SIM_WIDTH - 1 downto 0) := std_logic_vector(to_unsigned(7, SIM_WIDTH));
+    signal repeat       : std_logic                                := '0';
+
+    signal cnt : std_logic_vector(SIM_WIDTH - 1 downto 0);
+    signal done         : std_logic;
+
+begin
+
+    clock <= not clock after CLK_PERIOD / 2;
+
+    DUT : entity work.counter
+        generic map(
+            COUNTER_WIDTH => SIM_WIDTH
+        )
+        port map(
+            clock        => clock,
+            cnt          => cnt,
+            reset        => reset,
+            clock_enable => clock_enable,
+            limit        => limit,
+            repeat       => repeat,
+            done         => done
+        );
+
+    tb : process
+    begin
+        reset <= '1';
+        wait for CLK_PERIOD;
+        reset <= '0';
+        wait for CLK_PERIOD * 2;
+        clock_enable <= '1';
+        wait;
+
+    end process;
+
 
 end Behavioral;
 
@@ -872,8 +932,9 @@ entity top is
         SW                                                : in  std_logic_vector(15 downto 0);
         LED                                               : out std_logic_vector(15 downto 0);
         LED_BLUE                                          : out std_logic;
-		segments										  : out std_logic_vector(7 downto 0);
-        displays 										  : out std_logic_vector(7 downto 0)
+		--for du
+		segments                                          : out std_logic_vector(7 downto 0);
+        displays                                          : out std_logic_vector(7 downto 0)
     );
 end top;
 
@@ -881,19 +942,25 @@ architecture Behavioral of top is
 
     constant BOARD_WIDTH : integer                                    := 16;
     signal limit         : std_logic_vector(BOARD_WIDTH - 1 downto 0) := (others => '0');
-	signal s_pressed : std_logic;
+    signal s_pressed     : std_logic;
 
-	signal s_count : std_logic_vector(15 downto 0);
+	--for du
+    signal s_count : std_logic_vector(15 downto 0);
+    --signal s_din   : std_logic_vector(31 downto 0);
 
 begin
-	 LED <= s_count;
+	--for du
+	--LED <= s_count;
+	--s_din <= X"0000" & s_count;
     counter_sixteen : entity work.counter
         generic map(
             COUNTER_WIDTH => BOARD_WIDTH
         )
         port map(
             clock        => clock,
-            cnt          => s_count,
+            cnt          => LED,
+			--for du
+			--cnt			 => s_count,
             reset        => btn_right,
             clock_enable => s_pressed,
             limit        => SW,
@@ -902,24 +969,23 @@ begin
         );
 
     debounce_inst : entity work.debounce
-		port map(
-			clock        => clock,
-			-- connect to a button of your choice
+        port map(
+              clock        => clock,
+               -- connect to a button of your choice
+              button       => btn_up,
+              -- create a signal and connect it to the clock_enable port of the counter above
+              pressed      => s_pressed
+        );
 
-			button       => btn_up,
-			-- create a signal and connect it to the clock_enable port of the counter above
-			pressed => s_pressed
-
-		);
-
+	--for du
 	display_driver_inst : entity work.display_driver
 		port map(
-			din 		=> X"0000" & s_count,
-			segments 	=> segments,
-			displays 	=> displays,
-			clock 		=> clock,
-			reset 		=> btn_center
-
+		  	din         => X"0000" & s_count,
+            --din 		=> s_din,
+			segments    => segments,
+            displays    => displays,
+            clock       => clock,
+            reset       => btn_center
 		);
 
 end Behavioral;
@@ -945,20 +1011,20 @@ end display_driver;
 
 architecture Behavioral of display_driver is
 
-	constant C_10KHZ_WIDTH : integer := 14;
-	constant C_10KHZ_LIMIT : integer := 9999;
+    constant C_10KHZ_WIDTH : integer := 14;
+    constant C_10KHZ_LIMIT : integer := 9999;
 
-	signal s_en_10khz : std_logic;
-	signal s_cnt_3bit : unsigned(2 downto 0);
+    signal s_en_10khz : std_logic;
+    signal s_cnt_3bit : unsigned(2 downto 0);
 
-	signal s_hex : std_logic_vector(3 downto 0);
+    signal s_hex : std_logic_vector(3 downto 0);
 
 begin
 
-	clk_div_i : entity work.counter
-		generic map (
-	    	COUNTER_WIDTH => C_10KHZ_WIDTH
-	    );
+    clk_div_i : entity work.counter
+        generic map (
+            COUNTER_WIDTH => C_10KHZ_WIDTH
+        )
         port map(
             clock        => clock,
             cnt          => open,
@@ -969,87 +1035,91 @@ begin
             done         => s_en_10khz
         );
 
+
 	process(clock)
 	begin
-	    if rising_edge(clock) then
-	        if reset = '1' then
-	            s_cnt_3bit <= (others => '0');
-	        elsif s_en_10khz = '1' then
-	             s_cnt_3bit <=  s_cnt_3bit + 1;
-	        end if;
-
-			case s_cnt_3bit is
-			    when "000" =>
-			        s_hex <= din(3 downto 0);
-			        displays <= "11111110";
-				when "001" =>
-			        s_hex <= din(7 downto 4);
-			        displays <= "11111101";
-				when "010" =>
-					s_hex <= din(11 downto 8);
-			        displays <= "11111011";
-				when "011" =>
-					s_hex <= din(15 downto 12);
-			        displays <= "11110111";
-				when "100" =>
-					s_hex <= din(19 downto 16);
-			        displays <= "11101111";
-				when "101" =>
-					s_hex <= din(23 downto 20);
-			        displays <= "11011111";
-				when "110" =>
-					s_hex <= din(27 downto 24);
-			        displays <= "10111111";
-				when others =>
-					s_hex <= din(31 downto 28);
-			        displays <= "01111111";
-			end case;
-	    end if;
-
+		if rising_edge(clock) then
+			if reset = '1' then
+				s_cnt_3bit <= "000";
+			elsif s_en_10khz = '1' then
+				s_cnt_3bit <= s_cnt_3bit + 1;
+			end if;
+		end if;
 	end process;
 
-	process(s_hex)
+	--multiplexor
+	process(s_cnt_3bit,din)
 	begin
-		case s_hex is	-- DP G F E D C B A
-			when X"0" =>
-			    segments <= "11000000";
-			when X"1" =>
-				segments <= "11111001";
-			when X"2" =>
-				segments <= "10100100";
-			when X"3" =>
-				segments <= "10110000";
-			when X"4" =>
-				segments <= "10010001";
-			when X"5" =>
-				segments <= "10010010";
-			when X"6" =>
-				segments <= "10000010";
-			when X"7" =>
-				segments <= "11111000";
-			when X"8" =>
-				segments <= "10000000";
-			when X"9" =>
-				segments <= "10100000";
-			when X"A" =>
-				segments <= "11001000";
-			when X"b" =>
-				segments <= "10000011";
-			when X"C" =>
-				segments <= "11000110";
-			when X"d" =>
-				segments <= "10100001";
-			when X"E" =>
-				segments <= "10000110";
-			when X"F" =>
-			    segments <= "10001110";
+		case s_cnt_3bit is
+			when "000" =>
+			s_hex <= din(3 downto 0);
+			displays <= "11111110";
+			when "001" =>
+			s_hex <= din(7 downto 4);
+			displays <= "11111101";
+			when "010" =>
+			s_hex <= din(11 downto 8);
+			displays <= "11111011";
+			when "011" =>
+			s_hex <= din(15 downto 12);
+			displays <= "11110111";
+			when "100" =>
+			s_hex <= din(19 downto 16);
+			displays <= "11101111";
+			when "101" =>
+			s_hex <= din(23 downto 20);
+			displays <= "11011111";
+			when "110" =>
+			s_hex <= din(27 downto 24);
+			displays <= "10111111";
 			when others =>
-			    segments <= "11111111";
+			s_hex <= din(31 downto 28);
+			displays <= "01111111";
 		end case;
+	end process;
 
+	--decoder
+	process(s_hex)
+    begin
+		--DP G F E D C B A
+		case s_hex is
+			when X"0" =>
+			segments <= "11000000";
+			when X"1" =>
+			segments <= "11111001";
+			when X"2" =>
+			segments <= "10100100";
+			when X"3" =>
+			segments <= "10110000";
+			when X"4" =>
+			segments <= "10011001";
+			when X"5" =>
+			segments <= "10010010";
+			when X"6" =>
+			segments <= "10000010";
+			when X"7" =>
+			segments <= "11111000";
+			when X"8" =>
+			segments <= "10000000";
+			when X"9" =>
+			segments <= "10100000";
+			when X"A" =>
+			segments <= "10001000";
+			when X"b" =>
+			segments <= "10000011";
+			when X"C" =>
+			segments <= "11000110";
+			when X"d" =>
+			segments <= "10100001";
+			when X"E" =>
+			segments <= "10000110";
+			when X"F" =>
+			segments <= "10001110";
+			when others =>
+			segments <= "11111111";
+		end case;
 	end process;
 
 
 end Behavioral;
-
 ```
