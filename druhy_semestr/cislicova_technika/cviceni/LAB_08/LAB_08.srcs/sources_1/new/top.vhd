@@ -9,8 +9,9 @@ entity top is
         SW                                                : in  std_logic_vector(15 downto 0);
         LED                                               : out std_logic_vector(15 downto 0);
         LED_BLUE                                          : out std_logic;
-		segments										  : out std_logic_vector(7 downto 0);
-        displays 										  : out std_logic_vector(7 downto 0)
+		--for du
+		segments                                          : out std_logic_vector(7 downto 0);
+        displays                                          : out std_logic_vector(7 downto 0)
     );
 end top;
 
@@ -18,19 +19,25 @@ architecture Behavioral of top is
 
     constant BOARD_WIDTH : integer                                    := 16;
     signal limit         : std_logic_vector(BOARD_WIDTH - 1 downto 0) := (others => '0');
-	signal s_pressed : std_logic;
-	
-	signal s_count : std_logic_vector(15 downto 0);
-	
+    signal s_pressed     : std_logic;
+
+	--for du
+    signal s_count : std_logic_vector(15 downto 0);
+    --signal s_din   : std_logic_vector(31 downto 0);
+
 begin
-	 LED <= s_count;
+	--for du
+	--LED <= s_count;	
+	--s_din <= X"0000" & s_count;
     counter_sixteen : entity work.counter
         generic map(
             COUNTER_WIDTH => BOARD_WIDTH
         )
         port map(
             clock        => clock,
-            cnt          => s_count,
+            cnt          => LED,
+			--for du
+			--cnt			 => s_count,	
             reset        => btn_right,
             clock_enable => s_pressed,
             limit        => SW,
@@ -39,24 +46,23 @@ begin
         );
         
     debounce_inst : entity work.debounce
-		port map(
-			clock        => clock,
-			-- connect to a button of your choice  
-			
-			button       => btn_up,
-			-- create a signal and connect it to the clock_enable port of the counter above
-			pressed => s_pressed
-			
-		);	
+        port map(
+              clock        => clock,
+               -- connect to a button of your choice
+              button       => btn_up,
+              -- create a signal and connect it to the clock_enable port of the counter above
+              pressed      => s_pressed
+        );	 
 		
+	--for du	
 	display_driver_inst : entity work.display_driver
 		port map(
-			din 		=> X"0000" & s_count,
-			segments 	=> segments,
-			displays 	=> displays,  
-			clock 		=> clock,
-			reset 		=> btn_center
-	
+		  	din         => X"0000" & s_count,
+            --din 		=> s_din,
+			segments    => segments,
+            displays    => displays,
+            clock       => clock,
+            reset       => btn_center
 		);
 
 end Behavioral;
