@@ -1153,8 +1153,7 @@ end fsm_moore;
 
 architecture Behavioral of fsm_moore is
 
-    -- Nadeklarujeme si 5 stavů (pro sekvenci 1011)
-    type fsm_type is (S0, S1, S10, S101, S1011);
+    type fsm_type is (StateStart, S0, S00, S001, S0011);
     signal current_state, next_state : fsm_type;
 begin
 
@@ -1173,35 +1172,68 @@ begin
     -- fsm transfer and output function are combinatorial logic
     transfer : process(current_state, seq)
     begin
-        -- default values
+        -- default state
         next_state <= current_state;
+        -- default output
         found      <= '0';
+--        case current_state is
+--            when StateStart =>
+--                -- assign outputs
+--                found <= '0';
+--                -- transfer function
+--                if seq = '1' then
+--                    next_state <= StateFound;
+--                end if;
+--            when StateFound =>
+--                found <= '1';
+--                if seq = '0' then
+--                    next_state <= StateStart;
+--                end if;
 
+--            when others =>
+--                -- graveyard | eden
+--                next_state <= StateStart;
+--        end case
         case current_state is
+            when StateStart =>
+                if seq = '0' then
+                    next_state <= S0;
+                else
+                    next_state <= StateStart;
+                end if;
             when S0 =>
-                if seq = '1' then next_state <= S1; else next_state <= S0; end if;
-
-            when S1 =>
-                if seq = '0' then next_state <= S10; else next_state <= S1; end if;
-
-            when S10 =>
-                if seq = '1' then next_state <= S101; else next_state <= S0; end if;
-
-            when S101 =>
-                if seq = '1' then next_state <= S1011; else next_state <= S10; end if;
-
-            when S1011 =>
-                found <= '1'; -- Tady jsme našli sekvenci 1011!
-                -- Překrývání: pokud po 1011 přijde další 1, máme první bit nové sekvence (stav S1)
-                -- Pokud přijde 0, jsme na začátku sekvence 10 (máme '1' z konce minulé sekvence a teď '0')
-                if seq = '1' then next_state <= S1; else next_state <= S10; end if;
-
+                if seq = '0' then
+                    next_state <= S00;
+                else
+                    next_state <= StateStart;
+                end if;
+            when S00 =>
+                if seq = '1' then
+                    next_state <= S001;
+                else
+                    next_state <= S00;
+                end if;
+            when S001 =>
+                if seq = '1' then
+                    next_state <= S0011;
+                else
+                    next_state <= S0;
+                end if;
+            when S0011 =>
+                found <= '1';
+                if seq = '0' then
+                    next_state <= S0;
+                else
+                    next_state <= StateStart;
+                end if;
             when others =>
-                next_state <= S0;
+                next_state <= StateStart;
         end case;
+
     end process;
 
 end Behavioral;
+
 ```
 
 #### fsm_mealy.vhd
@@ -1221,8 +1253,7 @@ end fsm_mealy;
 
 architecture Behavioral of fsm_mealy is
 
-    -- O jeden stav méně než Moore!
-    type fsm_type is (S0, S1, S10, S101);
+    type fsm_type is (StateStart, S0, S00, S001);
     signal current_state, next_state : fsm_type;
 begin
 
@@ -1241,33 +1272,63 @@ begin
     -- fsm transfer and output function are combinatorial logic
     transfer : process(current_state, seq)
     begin
-        -- default values
+        -- default state
+--        case current_state is
+--            when StateStart =>
+--                -- assign outputs
+--                -- transfer function
+--                if seq = '1' then
+--                    next_state <= StateFound;
+--                    found      <= '1';
+--                else
+--                    found <= '0';
+--                end if;
+--            when StateFound =>
+--                if seq = '0' then
+--                    next_state <= StateStart;
+--                    found      <= '0';
+--                else
+--                    found <= '1';
+--                end if;
+--            when others =>
+--                -- graveyard | eden
+--                next_state <= StateStart;
+--        end case;
         next_state <= current_state;
-        found      <= '0';
-
+        found <= '0';
         case current_state is
-            when S0 =>
-                if seq = '1' then next_state <= S1; else next_state <= S0; end if;
-
-            when S1 =>
-                if seq = '0' then next_state <= S10; else next_state <= S1; end if;
-
-            when S10 =>
-                if seq = '1' then next_state <= S101; else next_state <= S0; end if;
-
-            when S101 =>
-                if seq = '1' then
-                    next_state <= S1;
-                    found <= '1'; -- Detekováno přesně při přechodu!
+            when StateStart =>
+                if seq = '0' then
+                    next_state <= S0;
                 else
-                    next_state <= S10;
+                    next_state <= StateStart;
                 end if;
-
+            when S0 =>
+                if seq = '0' then
+                    next_state <= S00;
+                else
+                    next_state <= StateStart;
+                end if;
+            when S00 =>
+                if seq = '1' then
+                    next_state <= S001;
+                else
+                    next_state <= S00;
+                end if;
+            when S001 =>
+                if seq = '1' then
+                    found <= '1';
+                    next_state <= StateStart;
+                else
+                    next_state <= S0;
+                end if;
             when others =>
-                next_state <= S0;
+                next_state <= StateStart;
         end case;
     end process;
+
 end Behavioral;
+
 ```
 
 #### fsm_compare.vhd
@@ -1311,26 +1372,27 @@ begin
 
     tb : process
     begin
-        -- 1. Reset obou automatů
+        -- insert your stimulus here
+
         rst <= '1';
         wait for CLK_P;
         rst <= '0';
 
-        -- 2. Zkusíme špatnou sekvenci (např. 1010), aby se otestovalo, že found zůstane 0
-        seq <= '1'; wait for CLK_P;
-        seq <= '0'; wait for CLK_P;
-        seq <= '1'; wait for CLK_P;
-        seq <= '0'; wait for CLK_P;
+        -- spatna testovaci sekvence (napr. 1010)
+        -- seq <= '1'; wait for CLK_P;
+        -- seq <= '0'; wait for CLK_P;
+        -- seq <= '1'; wait for CLK_P;
+        -- seq <= '0'; wait for CLK_P;
 
-        -- 3. Nyní pošleme správnou sekvenci (1011)
-        seq <= '1'; wait for CLK_P;
+        -- spravna sekvence 0011
+        seq <= '0'; wait for CLK_P;
         seq <= '0'; wait for CLK_P;
         seq <= '1'; wait for CLK_P;
         seq <= '1'; wait for CLK_P;
 
-        -- Zastavení simulace
         wait;
     end process;
 
 end Behavioral;
+
 ```
