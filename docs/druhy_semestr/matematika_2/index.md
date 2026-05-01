@@ -131,3 +131,39 @@ Zkouška je složena z výpočetní a teoretické části:
 <iframe src="./testy/pisemkaL1_25a_reseni.pdf" width="100%" height="800px"></iframe>
 
 - [Otevřít / Stáhnout na pisemkaL1_25a_reseni.pdf](./testy/pisemkaL1_25a_reseni.pdf)
+
+### Test 2 2023
+
+<iframe src="./testy2/zadani.pdf" width="100%" height="800px"></iframe>
+
+- [Otevřít / Stáhnout na zadani.pdf](./testy2/zadani.pdf)
+
+### Test 2 2023 - řešení
+
+<iframe src="./testy2/reseni.pdf" width="100%" height="800px"></iframe>
+
+- [Otevřít / Stáhnout na reseni.pdf](./testy2/reseni.pdf)
+
+### Test 2 2024
+
+<iframe src="./testy2/pisemkaL2_24.pdf" width="100%" height="800px"></iframe>
+
+- [Otevřít / Stáhnout na pisemkaL2_24.pdf](./testy2/pisemkaL2_24.pdf)
+
+### Test 2 2024 - řešení
+
+<iframe src="./testy/pisemkaL2_24_reseni.pdf" width="100%" height="800px"></iframe>
+
+- [Otevřít / Stáhnout na pisemkaL2_24_reseni.pdf](./testy/pisemkaL2_24_reseni.pdf)
+
+### Test 2 2025
+
+<iframe src="./testy2/pisemkaL2_25a.pdf" width="100%" height="800px"></iframe>
+
+- [Otevřít / Stáhnout na pisemkaL2_25a.pdf](./testy2/pisemkaL2_25a.pdf)
+
+### Test 2 2025 - řešení
+
+<iframe src="./testy/pisemkaL2_25a_reseni.pdf" width="100%" height="800px"></iframe>
+
+- [Otevřít / Stáhnout na pisemkaL2_25a_reseni.pdf](./testy/pisemkaL2_25a_reseni.pdf)
