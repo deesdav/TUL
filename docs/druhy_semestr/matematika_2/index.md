@@ -152,9 +152,9 @@ Zkouška je složena z výpočetní a teoretické části:
 
 ### Test 2 2024 - řešení
 
-<iframe src="./testy/pisemkaL2_24_reseni.pdf" width="100%" height="800px"></iframe>
+<iframe src="./testy2/pisemkaL2_24_reseni.pdf" width="100%" height="800px"></iframe>
 
-- [Otevřít / Stáhnout na pisemkaL2_24_reseni.pdf](./testy/pisemkaL2_24_reseni.pdf)
+- [Otevřít / Stáhnout na pisemkaL2_24_reseni.pdf](./testy2/pisemkaL2_24_reseni.pdf)
 
 ### Test 2 2025
 
@@ -164,6 +164,6 @@ Zkouška je složena z výpočetní a teoretické části:
 
 ### Test 2 2025 - řešení
 
-<iframe src="./testy/pisemkaL2_25a_reseni.pdf" width="100%" height="800px"></iframe>
+<iframe src="./testy2/pisemkaL2_25a_reseni.pdf" width="100%" height="800px"></iframe>
 
-- [Otevřít / Stáhnout na pisemkaL2_25a_reseni.pdf](./testy/pisemkaL2_25a_reseni.pdf)
+- [Otevřít / Stáhnout na pisemkaL2_25a_reseni.pdf](./testy2/pisemkaL2_25a_reseni.pdf)
