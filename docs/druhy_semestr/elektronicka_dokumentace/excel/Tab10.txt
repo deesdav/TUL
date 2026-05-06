@@ -1,0 +1,4 @@
+Zpracování databáze pomocí tabulkového procesoru 
+
+1. Vytvořte kontingenční tabulku a graf, ze které půjde vyčíst úspěšnost studentů v jednotlivých akademických ročnících, s filtrem podle předmětů. 
+Filtr=Předmět, Osa=AR+zkr., Legenda=Suma(hodnoty), Hodnoty=Součet z 1+1-+2+2-+3+4+X+BezPok).

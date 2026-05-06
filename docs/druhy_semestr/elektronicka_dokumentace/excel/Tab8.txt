@@ -1,0 +1,7 @@
+Kategorizace vypočtených hodnot a kontrola správnosti zadávaných dat:
+1. Na webových stránkách (např. http://www.vypocet.cz/bmi) najděte, jakým způsobem se vypočítá a kategorizuje BMI (Body Mass Index).
+2. Do souboru Tab8 vložte pomocnou tabulku s kategoriemi a zdravotními riziky podle hodnoty BMI. Sloupec s mezními hodnotami BMI upravte tak, aby bylo možné využít funkcí LOOKUP / VLOOKUP.
+3. Doplňte výpočet ve sloupci BMI.
+4. Vhodně použijte funkce LOOKUP / VLOOKUP k doplnění sloupců "Vypočtená Kategorie" a "Vypočtená Zdravotní rizika".
+5. Skryjte buňky s pomocnou tabulkou kategorií BMI.
+6. Nastavte kontrolu vstupních dat tak, aby bylo možné zadat do buněk s výškou a váhou jen kladná čísla reálné velikosti.
