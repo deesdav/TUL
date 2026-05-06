@@ -1,0 +1,9 @@
+Zpracování databáze pomocí tabulkového procesoru 
+(filtrování, třídění, základní statistiky, vzájemné vztahy mezi daty).
+1. V tabulce Tab9 nastavte pro seznam osob automatický filtr. Poté vyzkoušejte zda funguje třídění a filtrace záznamů podle jednotlivých polí v záhlaví tabulky.
+2. Ukotvěte příčky tak, aby záhlaví tabulky bylo vidět stále i při rolování.
+3. Pro výpočet průměrného platu použijte funkci SUBTOTAL.
+3. Z dat vytvořte novou tabulku četností (histogtam) lidí narozených v 50., 60., 70. a 80. letech (použijte funkci FREQUENCY, nejlépe jako maticový vzorec).
+4. Vytvořte tabulku, ve které bude možné zobrazit, kolik mužů a kolik žen kouří a kolik ne (použijte "Kontingenční tabulku").
+5. Vytvořte koláčový graf, který zobrazí, kolik procent je v tabulce mužů a kolik žen (např. funkcí COUNTIF a pomocné tabulky).
+6. Vytvořte tabulku, ve které bude v prvním sloupci seznam zvířat, v dalších sloupcích budou počty jednotlivých zvířat, kuřáků a nekuřáků (použijte Kontingenční tabulku).

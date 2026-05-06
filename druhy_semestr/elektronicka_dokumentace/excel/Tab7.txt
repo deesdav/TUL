@@ -1,0 +1,2 @@
+Zadávání dat výběrem a kontrola jejich správnosti:
+1. V tabulce Tab7 nastavte ve sloupcích s předměty a známkami kontrolu vstupních dat tak, aby se obojí zadávalo ze seznamu a aby nebylo možné zadat jiné než v seznamu uvedené údaje.
