@@ -1,0 +1,16 @@
+1)zjednodušit pomocí b.algebry...zadání viz. priklad.jpg
+
+2)
+seèíst ve dvojkovém doplòku èísla -6 a -4
+
+3)
+Navrhnout SSO - 4bit vstupy {a1,a0, b1, b0}. Vektor A{A0,a1}, B{b0,B1} reprezentuje slovo v bin váhovém kodu (oba vektory nabývají hodnot (0,1,2,3)10*).Je-li alespoò po dobu dvou taktù splnìná podminká A>=B, tak výstup=1.. když podminka pøestane platit po dobu 1 taktu, tak výstup 1. Vstup se vrátí do 0 když podmínka není splnìna po dobu 2 a více taktù
+
+*->dolní index
+
+
+3.1)
+zjednodušte podmínku A>=B tak, aby mìl automat pouze 1 vstup. Použijte multiplexor se tøemi vstupy SELECT a 8mi datovými vstupy.
+
+3.2)
+Výstup.fci automatu implementujte pomocí dekoderu, pøechod.fce syntetizujte pomocí obvodù NAND
