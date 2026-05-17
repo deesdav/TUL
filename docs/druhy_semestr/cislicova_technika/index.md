@@ -1396,3 +1396,250 @@ begin
 end Behavioral;
 
 ```
+
+## Zápočtové testy 1. a 2.
+
+### Zadání
+
+#### 1. test
+
+##### ones_counter
+
+![photo](cite_1_a_2_zapoctovy_test_zadani/ones_counter.png)
+
+##### priority_encoder
+
+![photo](cite_1_a_2_zapoctovy_test_zadani/priority_encoder.png)
+
+#### 2. test
+
+##### 1
+
+![photo](cite_1_a_2_zapoctovy_test_zadani/1.jpg)
+
+##### 2
+
+![photo](cite_1_a_2_zapoctovy_test_zadani/2.jpg)
+
+##### A
+
+![photo](cite_1_a_2_zapoctovy_test_zadani/A.jpg)
+
+##### B
+
+![photo](cite_1_a_2_zapoctovy_test_zadani/B.jpg)
+
+### Řešení
+
+#### 1. test
+
+##### ones_counter.vhd
+
+```vhdl
+
+library IEEE;
+use IEEE.std_logic_1164.all;
+
+entity ones_counter is
+    port (
+        q : in  std_logic_vector(2 downto 0);
+        a : out std_logic_vector(1 downto 0)
+    );
+end entity ones_counter;
+
+architecture rtl of ones_counter is
+begin
+    -- Souběžné výběrové přiřazení (bez procesu!)
+    with q select
+        a <= "00" when "000",
+             "01" when "001" | "010" | "100",
+             "10" when "011" | "101" | "110",
+             "11" when "111",
+             "00" when others;
+end architecture rtl;
+```
+
+##### priority_encoder.vhd
+
+```vhdl
+library IEEE;
+use IEEE.std_logic_1164.all;
+
+entity priority_encoder is
+    port (
+        a : in  std_logic_vector(6 downto 0);
+        q : out std_logic_vector(2 downto 0)
+    );
+end entity priority_encoder;
+
+architecture rtl of priority_encoder is
+begin
+    -- Souběžné podmíněné přiřazení (bez procesu!)
+    q <= "111" when a(6) = '1' else
+         "110" when a(5) = '1' else
+         "101" when a(4) = '1' else
+         "100" when a(3) = '1' else
+         "011" when a(2) = '1' else
+         "010" when a(1) = '1' else
+         "001" when a(0) = '1' else
+         "000";
+end architecture rtl;
+```
+
+### 2. test
+
+##### fsm.vhd
+
+```vhdl
+library IEEE;
+use IEEE.std_logic_1164.all;
+
+entity fsm is
+    port (
+        clk, x : in std_logic;
+        y      : out std_logic
+    );
+end fsm;
+
+architecture rtl of fsm is
+    type fsm_type is (A, B, C);
+    signal current_state, next_state : fsm_type;
+begin
+
+    -- 1. PROCES: Pouze paměť (hodiny)
+    process(clk)
+    begin
+        if rising_edge(clk) then
+            current_state <= next_state;
+        end if;
+    end process;
+
+    -- 2. PROCES: Kombinační logika (přechody a výstupy)
+    process(current_state, x)
+    begin
+        -- Výchozí hodnoty jako ochrana proti nechtěným pamětem
+        next_state <= A;
+        y <= '0';
+
+        case current_state is
+            when A =>
+                if x = '1' then
+                    y <= '0';
+                    next_state <= B;
+                else
+                    y <= '0';
+                    next_state <= A;
+                end if;
+            when B =>
+                if x = '0' then
+                    y <= '1';
+                    next_state <= C;
+                else
+                    y <= '0';
+                    next_state <= B;
+                end if;
+            when C =>
+                if x = '0' then
+                    y <= '1';
+                    next_state <= C;
+                else
+                    y <= '0';
+                    next_state <= A;
+                end if;
+            when others =>
+                next_state <= A;
+        end case;
+
+    end process;
+
+end rtl;
+```
+
+##### counter.vhd
+
+```vhdl
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.numeric_std.all;
+
+entity counter is
+    generic(
+        WIDTH : integer := 4  -- Generický parametr pro šířku čítače
+    );
+    port (
+        clk : in std_logic;
+        rst : in std_logic;
+        ce  : in std_logic;
+        z   : out std_logic;  -- Z je výstupní port (indikátor nuly)
+        q   : out std_logic_vector(WIDTH-1 downto 0) -- Výstup Q
+    );
+end entity counter;
+
+architecture rtl of counter is
+    -- Vnitřní signál
+    signal s_cnt : unsigned(WIDTH-1 downto 0) := (others => '0');
+begin
+
+    process(clk)
+    begin
+        if falling_edge(clk) then       -- SESTUPNÁ HRANA
+            if rst = '1' then           -- SYNCHRONNÍ RESET
+                s_cnt <= (others => '0');
+            elsif ce = '1' then         -- POVOLENÍ ČÍTÁNÍ (ce)
+                s_cnt <= s_cnt - 1;     -- DEKREMENTACE
+            end if;
+        end if;
+    end process;
+
+    -- Přiřazení vnitřního signálu na výstup
+    q <= std_logic_vector(s_cnt);
+
+    -- Indikace nulové hodnoty
+    z <= '1' when s_cnt = 0 else '0';
+
+end architecture rtl;
+```
+
+##### shreg.vhd
+
+```vhdl
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity shreg is
+    generic(
+        -- N definujeme jako integer s nějakou výchozí hodnotou (např. 4 nebo 8)
+        N : integer := 4
+    );
+    port(
+        clk : in std_logic;
+        rst : in std_logic;
+        sh  : in std_logic;
+        s   : in std_logic_vector(N-1 downto 0);         -- N bitový vstup
+        q   : out std_logic_vector((4*N)-1 downto 0)     -- 4x N bitový výstup
+    );
+end entity shreg;
+
+architecture rtl of shreg is
+    -- Vnitřní signál pro paměť registru (stejně velký jako výstup)
+    signal s_reg : std_logic_vector((4*N)-1 downto 0) := (others => '0');
+begin
+
+    process(clk)
+    begin
+        if rising_edge(clk) then          -- Náběžná hrana
+            if rst = '1' then             -- Synchronní reset
+                s_reg <= (others => '0');
+            elsif sh = '1' then           -- Povolení posuvu
+                -- Nová data 's' přilepíme zleva (MSB) k horním 3/4 starého obsahu.
+                -- Nejspodnějších N bitů z (N-1 downto 0) tím pádem nenávratně zmizí.
+                s_reg <= s & s_reg((4*N)-1 downto N);
+            end if;
+        end if;
+    end process;
+
+    -- Přiřazení vnitřní paměti na výstupní port
+    q <= s_reg;
+
+end architecture rtl;
+```

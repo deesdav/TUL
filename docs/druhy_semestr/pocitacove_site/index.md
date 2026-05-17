@@ -53,16 +53,8 @@ Zkouška prověřuje komplexní znalost fungování sítí:
 
 - [Otevřít / Stáhnout na elaborat-sablona.dot](./elaborat-sablona.dot)
 
-## Úlohy
+## PST - Zápisky/Otázky na Sítě
 
-### Úloha 1 - síťové příkazy
+<iframe src="./pocitacove-site-zapisky.pdf" width="100%" height="800px"></iframe>
 
-<iframe src="./ulohy/svancar_uloha1.pdf" width="100%" height="800px"></iframe>
-
-- [Otevřít / Stáhnout na svancar_uloha1.pdf](./ulohy/svancar_uloha1.pdf)
-
-### Úloha 2 - kabeláž UTP
-
-<iframe src="./ulohy/svancar-vala-02.pdf" width="100%" height="800px"></iframe>
-
-- [Otevřít / Stáhnout na svancar-vala-02.pdf](./ulohy/svancar-vala-02.pdf)
+- [Otevřít / Stáhnout na pocitacove-site-zapisky.pdf](./pocitacove-site-zapisky.pdf)
