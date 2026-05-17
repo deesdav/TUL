@@ -1,0 +1,7 @@
+3x - TEST 2: B - shift register
+3x - TEST 2: 1 - fsm
+3x - TEST 2: 2 - counter
+3x - TEST 1: Karnaug.mapa, Bool. algebra
+3x - TEST 1: Počítač jedniček
+3x - TEST 1: Prioritní kodér
+3x - TEST 2: A - moore automat
