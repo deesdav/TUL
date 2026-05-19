@@ -50,49 +50,66 @@ Zkouška bývá dvoukolová:
 
 - [Přehled na Elearning](https://elearning.tul.cz/course/view.php?id=19201)
 
+## Ukázky zkoušky
+
+### Ukázka 1: Srážky
+
+<iframe src="./zkouska/ZK_ukazka1.pdf" width="100%" height="800px"></iframe>
+
+- [Otevřít / Stáhnout na ZK_ukazka1.pdf](./zkouska/ZK_ukazka1.pdf)
+
+### Ukázka 2: Slovníkové testy
+
+<iframe src="./zkouska/ZK_ukazka2.pdf" width="100%" height="800px"></iframe>
+
+- [Otevřít / Stáhnout na ZK_ukazka2.pdf](./zkouska/ZK_ukazka2.pdf)
+
+### Ukázka 3: Hra Reversi
+
+<iframe src="./zkouska/ZK_ukazka3.pdf" width="100%" height="800px"></iframe>
+
+- [Otevřít / Stáhnout na ZK_ukazka3.pdf](./zkouska/ZK_ukazka3.pdf)
+
 ## Úlohy pro procvičení
 
 ### Text řetezce
 
 <iframe src="./ulohy_pro_procviceni/alg2_u011_TextRetezce.pdf" width="100%" height="800px"></iframe>
 
-- [Otevřít / Stáhnout na Limity.pdf](./ulohy_pro_procviceni/alg2_u011_TextRetezce.pdf)
+- [Otevřít / Stáhnout na alg2_u011_TextRetezce.pdf](./ulohy_pro_procviceni/alg2_u011_TextRetezce.pdf)
 
 ### Pole bodu
 
 <iframe src="./ulohy_pro_procviceni/alg2_u012_PoleBodu.pdf" width="100%" height="800px"></iframe>
 
-- [Otevřít / Stáhnout na Limity.pdf](./ulohy_pro_procviceni/alg2_u012_PoleBodu.pdf)
+- [Otevřít / Stáhnout na alg2_u012_PoleBodu.pdf](./ulohy_pro_procviceni/alg2_u012_PoleBodu.pdf)
 
 ### Hra hadani čísla
 
 <iframe src="./ulohy_pro_procviceni/alg2_u022_HraHadaniCisla.pdf" width="100%" height="800px"></iframe>
 
-- [Otevřít / Stáhnout na Limity.pdf](./ulohy_pro_procviceni/alg2_u022_HraHadaniCisla.pdf)
+- [Otevřít / Stáhnout na alg2_u022_HraHadaniCisla.pdf](./ulohy_pro_procviceni/alg2_u022_HraHadaniCisla.pdf)
 
 ### Závodník
 
 <iframe src="./ulohy_pro_procviceni/alg2_u031_Zavodnik.pdf" width="100%" height="800px"></iframe>
 
-- [Otevřít / Stáhnout na Limity.pdf](./ulohy_pro_procviceni/alg2_u031_Zavodnik.pdf)
+- [Otevřít / Stáhnout na alg2_u031_Zavodnik.pdf](./ulohy_pro_procviceni/alg2_u031_Zavodnik.pdf)
 
 ### Zlomky
 
 <iframe src="./ulohy_pro_procviceni/alg2_u032_Zlomky.pdf" width="100%" height="800px"></iframe>
 
-- [Otevřít / Stáhnout na Limity.pdf](./ulohy_pro_procviceni/alg2_u032_Zlomky.pdf)
+- [Otevřít / Stáhnout na alg2_u032_Zlomky.pdf](./ulohy_pro_procviceni/alg2_u032_Zlomky.pdf)
 
 ### Komplexní čísla
 
 <iframe src="./ulohy_pro_procviceni/alg2_u033_KomplexniCisla.pdf" width="100%" height="800px"></iframe>
 
-- [Otevřít / Stáhnout na Limity.pdf](./ulohy_pro_procviceni/alg2_u033_KomplexniCisla.pdf)
+- [Otevřít / Stáhnout na alg2_u033_KomplexniCisla.pdf](./ulohy_pro_procviceni/alg2_u033_KomplexniCisla.pdf)
 
 ### Vektory
 
 <iframe src="./ulohy_pro_procviceni/alg2_u034_Vektory.pdf" width="100%" height="800px"></iframe>
 
-- [Otevřít / Stáhnout na Limity.pdf](./ulohy_pro_procviceni/alg2_u034_Vektory.pdf)
-
-  [text](ulohy_pro_procviceni/alg2_u033_KomplexniCisla.pdf)
-  [text](ulohy_pro_procviceni/alg2_u034_Vektory.pdf)
+- [Otevřít / Stáhnout na alg2_u034_Vektory.pdf](./ulohy_pro_procviceni/alg2_u034_Vektory.pdf)
