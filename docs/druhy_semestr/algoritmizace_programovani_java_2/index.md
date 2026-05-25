@@ -70,6 +70,12 @@ Zkouška bývá dvoukolová:
 
 - [Otevřít / Stáhnout na ZK_ukazka3.pdf](./zkouska/ZK_ukazka3.pdf)
 
+## Cheat Sheet
+
+<iframe src="./cheatshit.pdf" width="100%" height="800px"></iframe>
+
+- [Otevřít / Stáhnout na cheatshit.pdf](./cheatshit.pdf)
+
 ## Úlohy pro procvičení
 
 ### Text řetezce
