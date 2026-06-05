@@ -70,13 +70,13 @@ Zkouška prověřuje schopnost navrhnout konkrétní digitální zařízení:
 
 - [Otevřít / Stáhnout na P02_booleova_algebra.pdf](./prednasky/P02_booleova_algebra.pdf)
 
-### 3. Používané logické funkce a jejich popis ve VHDL
+### 3a. Používané logické funkce a jejich popis ve VHDL
 
 <iframe src="./prednasky/CIE_3.pdf" width="100%" height="800px"></iframe>
 
 - [Otevřít / Stáhnout na CIE_3.pdf](./prednasky/CIE_3.pdf)
 
-### 3. Používané logické funkce a jejich popis ve VHDL - příklady
+### 3b. Používané logické funkce a jejich popis ve VHDL - příklady
 
 <iframe src="./prednasky/CIE_3_priklady.pdf" width="100%" height="800px"></iframe>
 
@@ -128,7 +128,19 @@ Zkouška prověřuje schopnost navrhnout konkrétní digitální zařízení:
 
 <iframe src="./prednasky/Paměťový_podsystém.pdf" width="100%" height="800px"></iframe>
 
-- [Otevřít / Stáhnout na CIE_9.pdf](./prednasky/Paměťový_podsystém.pdf)
+- [Otevřít / Stáhnout na Paměťový_podsystém.pdf](./prednasky/Paměťový_podsystém.pdf)
+
+### 11. Převodníky
+
+<iframe src="./prednasky/CIE12.pdf" width="100%" height="800px"></iframe>
+
+- [Otevřít / Stáhnout na CIE12.pdf](./prednasky/CIE12.pdf)
+
+### 12. Vlastnosti číslicových obvodů, trendy ve vývoj
+
+<iframe src="./prednasky/CIE_CIT14.pdf" width="100%" height="800px"></iframe>
+
+- [Otevřít / Stáhnout na CIE_CIT14.pdf](./prednasky/CIE_CIT14.pdf)
 
 ## Cvičení
 
