@@ -1,0 +1,156 @@
+dynamicke hazardy
+-pricinou dyn hazardu mohou být statické hazardy
+-pro vysetreni se pouzivaji stavove diagramy
+-je potreba odstranit pro sekvencni obvody asynchronni
+
+uplný soubor log.fce
+-funkce jejichz kombinaci muzeme navrhnout jakykoliv èíslicový obvod
+-NAND,NOR
+
+Zakazkove, polozakazkove, programovatelne
+Zakazkove - podle uzivatele se navrhují vsechny masky technologickeho procesu 
+poloZakazkove - podle uzivatele se navrhujé pouze propojovací masky
+programovatelne -  uzivatel sam programuje funkce PLD (programable logic device), FPGA, CPLD (complex programable logic device)
+
+obvody s otevrenym kolektorem
+-obvody maji misto jednoho tranzistoru externi odpor
+-pozivaji se pri navrhu sbernic
+
+Tset, Thold
+-tset - po tento cas by se na vstupu nemelo nic menit, protoze se ceka na 1 na vstupu
+-thold- cas na ustalni vystupu
+
+3typy technologii vyroby IO + vyhody
+-TTL- 0-5V napeti 0 - 0,8 =(log 0), 2,7 - 5= (log 1), bipolarni kremikove tranzistory, nizka spotreba
+-ECL- rychle, nizky sum. vysoka spotreba
+-CMOS- nizka spotreba ve statickem stavu, odolnost vuci sumu
+
+Skupinova minimalizace
+-minimalizace logickych fci s vetsim poctem promennych
+-metoda Quine MCLuskey
+
+Sekvencni obvody
+- citace a pameti
+- u sekvencnich obvodu je vystup jednoznacne urcen vstupujici promennou a stavem pameti
+
+Kriteria minimality log. vyrazu
+- zmenseni poctu termu
+- minimalizace poctu vstupnich promennych
+- minimalizace poctu negaci
+
+ECL a CMOS
+-ECL	-nejrychlejsi logika, pouziti bipolarnich tranzistoru mimo oblast saturace
+	-velika spotreba energie
+-CMOS	-velike zpozdeni
+	-v klidu temer nulova spotreba
+
+Faktorizace obvodu
+-zanaha upravit zapis obvodu tak aby se nektere casti opakovali,ktere pak v zapojeni pouzijeme vicekrat a tim obvod zjednodusime
+
+Obvody s tretim stavem
+- obvody maji krome log 1 a 0 i stav vysoke impedance
+- ochrana pred prepetim
+- pouzivaji se pri navrhu sbernic
+
+Typy programovatelnych zakazkovych obvodu
+- Standartni bunky - cislicove FB jsou rozmistovany na cipu do rad(sloupcu)
+- Standartni bloky - obdoba standartich bunek v analogove oblasti
+- Parametrizovane FB - v dane strukture obvodu lze menit a nastavovat hodnoty
+- plne zakazkove IO - nejlepsi funkcni parametry
+
+Kolik je vsech moznych funkci dvou promennych?
+-16
+- AB, A,B,A(non)B
+
+Term
+-vyraz tvoreny pouze promenymi v primem a negovanem tvaru
+
+Minterm 
+- soucinovy term obsahujici nezavislé promenne (mndf)
+Maxterm
+- souctovy term obsahujici nezavisle promenne (mnkf)
+
+AD prevodniky
+-paralelni
+-s postupnou aproximaci
+- s dvojtou integraci
+- sigma delta
+
+Logicky zisk
+- uvadi pocet hradel, ktere lze zapojit na vystup
+
+prioritni koder
+- KLO
+- u 2n vstupu ma n vystupu, ktere udavaji v bin tvaru poluhu aktivniho vstupu s nejvyssi prioritou
+
+Silicon Roadmap
+- predikce a dosavadni vyvoj vlastnostni(CPU,takt,ram,pocet hradel,architektura)
+
+Staticky hazard
+- neocekavany vystup klopneho obvodu
+- nastava pri zpozdeni
+- odstraneni, pokriti sousednich entic jednim termem
+
+tranzistory
+- trivyvodovy mapetim rizeny spinac
+- dva porty jsou sepnuty nebo rozepnuty v zavislosti na tretim
+
+subsystem pameti
+- 3 urovne cache ram hdd
+
+vystupni vetveni
+- pocet jednotlivych vstupu ktere muzeme napajet
+
+Sbernice
+- skupina sdilenych vodicu, ktera slouzi pro vymenu datovych slov
+
+NonEkvivalence
+- lichost XOR(xor je vhodny pro aritmeticke operace)
+
+Evkvivalence
+- sudost NXOR
+
+Typy programovatelnych obvodu
+-PLD - pevne dana struktura and-or-vystup
+-CPLD - vrstveni PLD + propojovaci matice
+-FPGA - vrstveni PLD lze programovat
+
+Look up table
+-generator logicky fci, rejstrik, prepocitavaci nebo hash tabulka
+
+RAM
+-sram - nepotrebuji obnovu
+-dram - poterbuji periodickyu obnovu
+
+t0 - trvala 0, 
+t1 trvala 1,
+zkrat log 0,
+trvale otevreno log 1
+
+johnsnuv citac
+-Když spojíme výstup posuvného registru se vstupem pomocí invertoru, vznikne kruhový Johnsonùv èítaè.
+-nevyuziva vsechny mozne stavy, vyuziva 2n stavu
+-extremne rychly
+
+preplneni (overflow)
+- kdyz dve kladna daj zapornou
+- kdyz dve zaporna daj kladnou
+
+CO JE VIRTUALNI PAMET!
+- ...
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Unexpected error!
