@@ -56,6 +56,12 @@ Zkouška prověřuje schopnost navrhnout konkrétní digitální zařízení:
 
 - [Otevřít / Stáhnout na Skripta](skripta_21_03_12.pdf)
 
+## CITE Komplet zk za 1
+
+<iframe src="CIT_Komplet_zk_za_1.pdf" width="100%" height="800px"></iframe>
+
+- [Otevřít / Stáhnout na CIT_Komplet_zk_za_1.pdf](CIT_Komplet_zk_za_1.pdf)
+
 ## Přednášky
 
 ### 1. Hradla
