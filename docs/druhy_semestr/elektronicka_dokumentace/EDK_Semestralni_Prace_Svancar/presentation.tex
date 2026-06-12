@@ -1,0 +1,105 @@
+% Šablona prezentace s aplikací nového vizuálního stylu TUL
+% Upraveno pro semestrální práci – Sběr dat a monitorování procesů
+\newcommand{\verze}{Verze 2.3}
+
+\newcommand{\TULextlogofile}{V21TUL_pruhledne_CZ.pdf}
+
+% NASTAVENÍ: Fakulta mechatroniky (FM), poměr stran 16:9
+\documentclass[FM,aspect169]{tulpresentation} 
+
+\usepackage{polyglossia}
+\setdefaultlanguage{czech}
+
+% HLAVIČKA DOKUMENTU – TVÉ ÚDAJE
+\title{Sběr dat a monitorování procesů pomocí vestavěných systémů}
+\author{David Švancar}
+\institute{FM TUL}
+
+\newcommand{\authorMail}{david.svancar@tul.cz}
+\date{11. června 2026}
+
+\begin{document} 
+
+% 1. Úvodní snímek (Povinný dle zadání i šablony)
+\TULtitleframe
+
+% 2. Obsah prezentace / Outline (Povinný dle zadání)
+\begin{frame}{Obsah prezentace} 
+  \tableofcontents[sections={1-}]
+\end{frame} 
+
+% 3. Vlastní prezentace tématu (Max. 5 snímků dle zadání)
+
+\section{Úvod a cíle}
+% Snímek 1: Úvod
+\begin{frame}{Úvod a cíle}
+  \begin{itemize}
+    \item \textbf{Průmyslová automatizace:} Rostoucí nároky na efektivní sběr a vyhodnocování procesních dat v reálném čase.
+    \item \textbf{Vestavěné systémy:} Klíčový stavební kámen díky vysoké spolehlivosti a nízké spotřebě energie.
+    \item \textbf{Cíl semestrální práce:} Návrh a realizace modulární monitorovací jednotky pro sběr fyzikálních veličin v náročném průmyslovém prostředí.
+  \end{itemize}
+\end{frame}
+
+\section{Hardwarová architektura}
+% Snímek 2: Hardware
+\begin{frame}{Hardwarová architektura}
+  \begin{block}{Řídicí jádro}
+    32bitový mikrokontrolér s procesorovým jádrem \textbf{ARM Cortex-M4} (zajišťuje dostatečný výkon pro filtraci signálů).
+  \end{block}
+  \begin{itemize}
+    \item \textbf{Napájecí část:} Stabilizace napětí z průmyslových $24\,\mathrm{V}$ na logických $3,3\,\mathrm{V}$.
+    \item \textbf{Senzorické rozhraní:} Integrované ADC převodníky pro vyhodnocování napěťových úrovní ze senzorů teploty a tlaku.
+    \item \textbf{Komunikační modul:} Průmyslová sběrnice RS-485 pro spolehlivý přenos dat do nadřazeného systému.
+  \end{itemize}
+\end{frame}
+
+\section{Naměřené výsledky}
+% Snímek 3: Data a tabulka
+\begin{frame}{Analýza spotřeby a filtrace}
+  Proudový odběr mikrokontroléru roste lineárně s frekvencí (viz tabulka):
+  \begin{center}
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        \textbf{Měření} & \textbf{Frekvence [MHz]} & \textbf{Napětí [V]} & \textbf{Odběr [mA]} \\ \hline
+        1 & 8  & 3,3 & 4,2  \\ \hline
+        4 & 96 & 3,3 & 35,1 \\ \hline
+    \end{tabular}
+  \end{center}
+  \vspace{0.1cm}
+  Vstupní obvody byly doplněny o analogový RC filtr s mezním kmitočtem $f_0 = 1023\,\mathrm{Hz}$ pro potlačení nízkofrekvenčního šumu.
+\end{frame}
+
+\section{Programová implementace}
+% Snímek 4: Ukázka kódu
+\begin{frame}[fragile]{Programová implementace v jazyce C}
+  Konfigurace interního registru periferie ADC (přímé mapování do paměti):
+  \begin{verbatim}
+  #define ADC_CR_REG  (*((volatile uint32_t*)0x40012000))
+  #define ADC_ENABLE  (1 << 0)
+
+  void init_adc_peripheral(void) {
+      // Zapnuti periferie ADC pomoci prislusneho bitu
+      ADC_CR_REG |= ADC_ENABLE;
+      
+      /* Cekani na stabilizaci referencniho napeti */
+      for(volatile int i = 0; i < 1000; i++);
+  }
+  \end{verbatim}
+\end{frame}
+
+\section{Závěr}
+% 4. Závěr (Povinný dle zadání)
+\begin{frame}{Závěr}
+  \begin{itemize}
+    \item \textbf{Ověření funkčnosti:} Navržená monitorovací stanice úspěšně integruje senzorická pole a bezpečně přenáší data.
+    \item \textbf{Optimalizace:} Analýza spotřeby ukázala nutnost dynamického řízení frekvence pro energeticky úsporné režimy.
+    \item \textbf{Splnění cílů:} Ukázkový dokument i prezentace byly kompletně zpracovány v systému \LaTeX\ při striktním dodržení pravidel české technické typografie TUL.
+  \end{itemize}
+\end{frame}
+
+% 5. Poděkování za pozornost (Povinné dle zadání)
+% Makro \TULendframe automaticky vygeneruje oficiální závěrečný slide TUL s poděkováním
+\section*{Konec}
+\TULendframe 
+
+\end{document}
