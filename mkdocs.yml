@@ -132,12 +132,13 @@ extra_css:
 nav:
   - Domovská stránka: index.md
 
-  - Číslicová technika: druhy_semestr/cislicova_technika/index.md
-  - Matematika 2: druhy_semestr/matematika_2/index.md
-  - Programování Java 2: druhy_semestr/algoritmizace_programovani_java_2/index.md
-  - Počítačové sítě: druhy_semestr/pocitacove_site/index.md
-  - Mat. seminář 2: druhy_semestr/mat_seminar_2/index.md
-  - Elektronická dok.: druhy_semestr/elektronicka_dokumentace/index.md
+  - Druhý semestr:
+      - Číslicová technika: druhy_semestr/cislicova_technika/index.md
+      - Matematika 2: druhy_semestr/matematika_2/index.md
+      - Programování Java 2: druhy_semestr/algoritmizace_programovani_java_2/index.md
+      - Počítačové sítě: druhy_semestr/pocitacove_site/index.md
+      - Mat. seminář 2: druhy_semestr/mat_seminar_2/index.md
+      - Elektronická dok.: druhy_semestr/elektronicka_dokumentace/index.md
 
   - První semestr:
       - Programování Java 1: prvni_semestr/algoritmizace_programovani_java_1/index.md
