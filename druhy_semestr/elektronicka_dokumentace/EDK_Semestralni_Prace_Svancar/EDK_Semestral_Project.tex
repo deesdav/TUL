@@ -121,6 +121,9 @@
 \lst@RestoreCatcodes
 \makeatother
 
+\renewcommand{\lstlistingname}{Ukázka kódu}
+\renewcommand{\lstlistlistingname}{Seznam ukázek kódu}
+
 \begin{document}
 
 \ThesisStart{male}
@@ -171,7 +174,7 @@ Technické univerzity v~Liberci\\
 \textbf{AI} & Artificial Intelligence 
 \end{abbrList}
 
-\chapter{Úvod}
+\addcontentsline{toc}{chapter}{Úvod}
 V současné éře průmyslové automatizace hraje klíčovou roli efektivní sběr a vyhodnocování procesních dat. Vestavěné (embedded) systémy představují základní stavební kámen pro realizaci konceptů \cite{Satrapa2023LatexPragmatiky}, kde je vyžadována vysoká spolehlivost, nízká spotřeba energie a schopnost pracovat v reálném čase. 
 
 Tato práce se zabývá návrhem a implementací modulární monitorovací jednotky určené pro sběr fyzikálních veličin v průmyslovém prostředí. Cílem je demonstrovat postupy při integraci senzorických polí a následném přenosu dat do nadřazeného systému.
@@ -239,7 +242,8 @@ Kromě analýzy napájení byla v rámci podsystému senzorického rozhraní zko
     \label{fig:graf_filtru}
 \end{figure}
 
-Pro teoretický výpočet celkového elektrického příkonu $P$ střídavých podsystémů monitoru se využívá standardní vztah vyjádřený rovnicí~\ref{eq:vykon}:
+
+Pro teoretický výpočet celkového elektrického příkonu $P$ střídavých podsystémů monitoru se využívá vztah:
 \begin{equation}
 P = U \cdot I \cdot \cos\varphi
 \label{eq:vykon}
