@@ -13,16 +13,16 @@
   Najdeš tu vše od předmětů přes skripta až po užitečné odkazy.
 </section>
 
-## Předměty prvního semestru
+## Předměty třetího semestru
 
 <div class="grid-predmety">
-  <div class="karta"><a href="prvni_semestr/algoritmizace_programovani_java_1/">💻 Programování Java 1</a></div>
-  <div class="karta"><a href="prvni_semestr/linearni_algerbra_diskretni_mat/">📐 Lineární algebra</a></div>
-  <div class="karta"><a href="prvni_semestr/matematika_1/">🔢 Matematika 1</a></div>
-  <div class="karta"><a href="prvni_semestr/mat_seminar_1/">📝 Matematika Seminář</a></div>
-  <div class="karta"><a href="prvni_semestr/shell_linux/">🐚 Shell / Linux</a></div>
-  <div class="karta"><a href="prvni_semestr/matlab/">📊 Matlab</a></div>
-  <div class="karta"><a href="prvni_semestr/inzenyrstvi/">⚙️ Inženýrství</a></div>
+  <div class="karta"><a href="treti_semestr/algoritmizace_a_datove_struktury/">🧩 Algoritmizace a datové struktury</a></div>
+  <div class="karta"><a href="treti_semestr/cislicova_pocitace/">🖥️ Číslicové počítače</a></div>
+  <div class="karta"><a href="treti_semestr/databazove_systemy/">🗄️ Databázové systémy</a></div>
+  <div class="karta"><a href="treti_semestr/odborna_anglictina_1/">🇬🇧 Odborná angličtina 1</a></div>
+  <div class="karta"><a href="treti_semestr/operacni_systemy/">💽 Operační systémy</a></div>
+  <div class="karta"><a href="treti_semestr/programovani_v_jazyce_C_C++/">⌨️ Programování C/C++</a></div>
+  <div class="karta"><a href="treti_semestr/signaly_a_informace/">📡 Signály a informace</a></div>
 </div>
 
 ## Předměty druhého semestru
@@ -34,6 +34,18 @@
   <div class="karta"><a href="druhy_semestr/pocitacove_site/">🌐 Počítačové sítě</a></div>
   <div class="karta"><a href="druhy_semestr/cislicova_technika/">📟 Číslicová technika</a></div>
   <div class="karta"><a href="druhy_semestr/elektronicka_dokumentace/">📄 Elektronická dok.</a></div>
+</div>
+
+## Předměty prvního semestru
+
+<div class="grid-predmety">
+  <div class="karta"><a href="prvni_semestr/algoritmizace_programovani_java_1/">💻 Programování Java 1</a></div>
+  <div class="karta"><a href="prvni_semestr/linearni_algerbra_diskretni_mat/">📐 Lineární algebra</a></div>
+  <div class="karta"><a href="prvni_semestr/matematika_1/">🔢 Matematika 1</a></div>
+  <div class="karta"><a href="prvni_semestr/mat_seminar_1/">📝 Matematika Seminář</a></div>
+  <div class="karta"><a href="prvni_semestr/shell_linux/">🐚 Shell / Linux</a></div>
+  <div class="karta"><a href="prvni_semestr/matlab/">📊 Matlab</a></div>
+  <div class="karta"><a href="prvni_semestr/inzenyrstvi/">⚙️ Inženýrství</a></div>
 </div>
 
 ---

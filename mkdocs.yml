@@ -132,6 +132,14 @@ extra_css:
 nav:
   - Domovská stránka: index.md
 
+  - Algoritmizace a datové struktury: treti_semestr/algoritmizace_a_datove_struktury/index.md
+  - Číslicové počítače: treti_semestr/cislicova_pocitace/index.md
+  - Databázové systémy: treti_semestr/databazove_systemy/index.md
+  - Odborná angličtina 1: treti_semestr/odborna_anglictina_1/index.md
+  - Operační systémy: treti_semestr/operacni_systemy/index.md
+  - Programování v jazyce C/C++: treti_semestr/programovani_v_jazyce_C_C++/index.md
+  - Signály a informace: treti_semestr/signaly_a_informace/index.md
+
   - Druhý semestr:
       - Číslicová technika: druhy_semestr/cislicova_technika/index.md
       - Matematika 2: druhy_semestr/matematika_2/index.md
