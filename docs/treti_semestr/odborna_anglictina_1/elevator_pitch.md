@@ -1,0 +1,5 @@
+- Hello everyone, my name is David Švancar, and I am an IT student here at the Faculty of Mechatronics at TUL.
+- My journey in computing began at the technical high school in Mladá Boleslav, where I graduated with honors. Since then, I've focused on practical programming. I completed an internship at Škoda Auto, developing scripts in Python, and I have also developed and optimized website for an external company using JavaScript, HTML, and CSS.
+- For my third-year project, I created a 2D clicking combat game in JavaScript to master game mechanics and core programming logic.
+- Right now at TUL, I expanded my skills in Java and shell scripting. My primary goal is to continuously improve my IT skills, keep learning modern technologies, and become a reliable software developer.
+- Thank you for your attention, and I'd be glad to answer any questions. 
