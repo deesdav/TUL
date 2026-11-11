@@ -1,6 +1,6 @@
 clear; clc; close all;
 
-Fs = 8000;
+Fs = 1000;
 T = 1;
 t = 0 : 1 / Fs : T - 1 / Fs;
 
