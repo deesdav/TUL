@@ -1,0 +1,28 @@
+;cislo 1
+mov A, #0A0h
+mov 2h, A
+mov A, #0FFh
+mov 1h, A
+mov A, #003h
+mov 0h, A
+
+;cislo 2
+mov A, #000h
+mov 6h, A
+mov A, #002h
+mov 5h, A
+mov A, #003h
+mov 4h, A
+
+;soucet
+mov A, 2h
+add A, 6h
+mov 0Ah, A
+
+mov A, 1h
+addc A, 5h
+mov 9h, A
+
+mov A, 0h
+addc A, 4h
+mov 8h, A

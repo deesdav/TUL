@@ -1,0 +1,4 @@
+;reseni ukolu
+mov A, #00111100b
+anl A, #10000000b
+out 1, A
